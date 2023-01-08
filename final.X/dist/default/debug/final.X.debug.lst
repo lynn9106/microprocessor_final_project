@@ -1,0 +1,1910 @@
+
+
+Microchip MPLAB XC8 Assembler V2.40 build 20220703182018 
+                                                                                               Sat Jan 07 22:28:26 2023
+
+Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1 
+     1                           	processor	18F4520
+     2                           	fnconf	rparam,??,?,0
+     3                           	pagewidth 120
+     4                           	opt	flic
+     5                           	psect	idataCOMRAM,global,class=CODE,delta=1,noexec
+     6                           	psect	cinit,global,reloc=2,class=CODE,delta=1
+     7                           	psect	bssCOMRAM,global,class=COMRAM,space=1,delta=1,lowdata,noexec
+     8                           	psect	dataCOMRAM,global,class=COMRAM,space=1,delta=1,lowdata,noexec
+     9                           	psect	cstackCOMRAM,global,class=COMRAM,space=1,delta=1,lowdata,noexec
+    10                           	psect	text0,global,reloc=2,class=CODE,delta=1
+    11                           	psect	text1,global,reloc=2,class=CODE,delta=1
+    12                           	psect	text2,global,reloc=2,class=CODE,delta=1
+    13                           	psect	text3,global,reloc=2,class=CODE,delta=1,group=1
+    14                           	psect	text4,global,reloc=2,class=CODE,delta=1
+    15                           	psect	intcode,global,reloc=2,class=CODE,delta=1
+    16                           	psect	intcode_body,global,reloc=2,class=CODE,delta=1
+    17                           	psect	text6,global,reloc=2,class=CODE,delta=1
+    18                           	psect	intsave_regs,global,class=BIGRAM,space=1,delta=1,noexec
+    19                           	psect	rparam,global,class=COMRAM,space=1,delta=1,noexec
+    20                           	psect	temp,global,ovrld,common,class=COMRAM,space=1,delta=1
+    21                           	psect	idloc,global,abs,ovrld,class=IDLOC,space=5,delta=1,noexec
+    22                           	psect	config,global,abs,ovrld,class=CONFIG,space=4,delta=1,noexec
+    23   000000                     
+    24                           ; Version 2.40
+    25                           ; Generated 04/07/2022 GMT
+    26                           ; 
+    27                           ; Copyright © 2022, Microchip Technology Inc. and its subsidiaries ("Microchip")
+    28                           ; All rights reserved.
+    29                           ; 
+    30                           ; This software is developed by Microchip Technology Inc. and its subsidiaries ("Microch
+      +                          ip").
+    31                           ; 
+    32                           ; Redistribution and use in source and binary forms, with or without modification, are
+    33                           ; permitted provided that the following conditions are met:
+    34                           ; 
+    35                           ;     1. Redistributions of source code must retain the above copyright notice, this lis
+      +                          t of
+    36                           ;        conditions and the following disclaimer.
+    37                           ; 
+    38                           ;     2. Redistributions in binary form must reproduce the above copyright notice, this 
+      +                          list
+    39                           ;        of conditions and the following disclaimer in the documentation and/or other
+    40                           ;        materials provided with the distribution. Publication is not required when
+    41                           ;        this file is used in an embedded application.
+    42                           ; 
+    43                           ;     3. Microchip's name may not be used to endorse or promote products derived from th
+      +                          is
+    44                           ;        software without specific prior written permission.
+    45                           ; 
+    46                           ; THIS SOFTWARE IS PROVIDED BY MICROCHIP "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES,
+    47                           ; INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS F
+      +                          OR
+    48                           ; PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL MICROCHIP BE LIABLE FOR ANY DIRECT, INDIREC
+      +                          T,
+    49                           ; INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING BUT NOT LIMITED TO
+    50                           ; PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA OR PROFITS; OR BUSINESS
+    51                           ; INTERRUPTION) HOWSOEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, ST
+      +                          RICT
+    52                           ; LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE U
+      +                          SE OF
+    53                           ; THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+    54                           ; 
+    55                           ; 
+    56                           ; Code-generator required, PIC18F4520 Definitions
+    57                           ; 
+    58                           ; SFR Addresses
+    59   000000                     
+    60                           	psect	idataCOMRAM
+    61   0005E6                     __pidataCOMRAM:
+    62                           	callstack 0
+    63                           
+    64                           ;initializer for _B
+    65   0005E6  0000               	dw	0
+    66   0005E8  0001               	dw	1
+    67   0005EA  0003               	dw	3
+    68                           
+    69                           ;initializer for _A
+    70   0005EC  0004               	dw	4
+    71   0005EE  000B               	dw	11
+    72   0005F0  0012               	dw	18
+    73   000000                     _TMR0L	set	4054
+    74   000000                     _TMR0H	set	4055
+    75   000000                     _T0CONbits	set	4053
+    76   000000                     _LATC	set	3979
+    77   000000                     _LATD	set	3980
+    78   000000                     _TRISC	set	3988
+    79   000000                     _CCP2CONbits	set	4026
+    80   000000                     _CCP1CONbits	set	4029
+    81   000000                     _CCPR1L	set	4030
+    82   000000                     _INTCON3bits	set	4080
+    83   000000                     _INTCONbits	set	4082
+    84   000000                     _ADCON1	set	4033
+    85   000000                     _T2CONbits	set	4042
+    86   000000                     _PR2	set	4043
+    87   000000                     _OSCCONbits	set	4051
+    88   000000                     _CCPR2L	set	4027
+    89   000000                     _TRISD	set	3989
+    90                           
+    91                           ; #config settings
+    92                           
+    93                           	psect	cinit
+    94   000598                     __pcinit:
+    95                           	callstack 0
+    96   000598                     start_initialization:
+    97                           	callstack 0
+    98   000598                     __initialization:
+    99                           	callstack 0
+   100                           
+   101                           ; Initialize objects allocated to COMRAM (12 bytes)
+   102                           ; load TBLPTR registers with __pidataCOMRAM
+   103   000598  0EE6               	movlw	low __pidataCOMRAM
+   104   00059A  6EF6               	movwf	tblptrl,c
+   105   00059C  0E05               	movlw	high __pidataCOMRAM
+   106   00059E  6EF7               	movwf	tblptrh,c
+   107   0005A0  0E00               	movlw	low (__pidataCOMRAM shr (0+16))
+   108   0005A2  6EF8               	movwf	tblptru,c
+   109   0005A4  EE00  F011         	lfsr	0,__pdataCOMRAM
+   110   0005A8  EE10 F00C          	lfsr	1,12
+   111   0005AC                     copy_data0:
+   112   0005AC  0009               	tblrd		*+
+   113   0005AE  CFF5 FFEE          	movff	tablat,postinc0
+   114   0005B2  50E5               	movf	postdec1,w,c
+   115   0005B4  50E1               	movf	fsr1l,w,c
+   116   0005B6  E1FA               	bnz	copy_data0
+   117                           
+   118                           ; Clear objects allocated to COMRAM (8 bytes)
+   119   0005B8  EE00  F01D         	lfsr	0,__pbssCOMRAM
+   120   0005BC  0E08               	movlw	8
+   121   0005BE                     clear_0:
+   122   0005BE  6AEE               	clrf	postinc0,c
+   123   0005C0  06E8               	decf	wreg,f,c
+   124   0005C2  E1FD               	bnz	clear_0
+   125   0005C4                     end_of_initialization:
+   126                           	callstack 0
+   127   0005C4                     __end_of__initialization:
+   128                           	callstack 0
+   129   0005C4  9025               	bcf	int$flags,0,c	;clear compiler interrupt flag (level 1)
+   130   0005C6  9225               	bcf	int$flags,1,c	;clear compiler interrupt flag (level 2)
+   131   0005C8  0100               	movlb	0
+   132   0005CA  EF11  F002         	goto	_main	;jump to C main() function
+   133                           
+   134                           	psect	bssCOMRAM
+   135   00001D                     __pbssCOMRAM:
+   136                           	callstack 0
+   137   00001D                     _player2:
+   138                           	callstack 0
+   139   00001D                     	ds	2
+   140   00001F                     _player1:
+   141                           	callstack 0
+   142   00001F                     	ds	2
+   143   000021                     _direction:
+   144                           	callstack 0
+   145   000021                     	ds	2
+   146   000023                     _i:
+   147                           	callstack 0
+   148   000023                     	ds	2
+   149                           
+   150                           	psect	dataCOMRAM
+   151   000011                     __pdataCOMRAM:
+   152                           	callstack 0
+   153   000011                     _B:
+   154                           	callstack 0
+   155   000011                     	ds	6
+   156   000017                     _A:
+   157                           	callstack 0
+   158   000017                     	ds	6
+   159                           
+   160                           	psect	cstackCOMRAM
+   161   000001                     __pcstackCOMRAM:
+   162                           	callstack 0
+   163   000001                     ??_check:
+   164   000001                     
+   165                           ; 1 bytes @ 0x0
+   166   000001                     	ds	1
+   167   000002                     ??_COMP_ISR:
+   168                           
+   169                           ; 1 bytes @ 0x1
+   170   000002                     	ds	1
+   171   000003                     ?___awdiv:
+   172                           	callstack 0
+   173   000003                     ___awdiv@dividend:
+   174                           	callstack 0
+   175                           
+   176                           ; 2 bytes @ 0x2
+   177   000003                     	ds	2
+   178   000005                     ___awdiv@divisor:
+   179                           	callstack 0
+   180                           
+   181                           ; 2 bytes @ 0x4
+   182   000005                     	ds	2
+   183   000007                     ___awdiv@counter:
+   184                           	callstack 0
+   185                           
+   186                           ; 1 bytes @ 0x6
+   187   000007                     	ds	1
+   188   000008                     ___awdiv@sign:
+   189                           	callstack 0
+   190                           
+   191                           ; 1 bytes @ 0x7
+   192   000008                     	ds	1
+   193   000009                     ___awdiv@quotient:
+   194                           	callstack 0
+   195                           
+   196                           ; 2 bytes @ 0x8
+   197   000009                     	ds	2
+   198   00000B                     ??_servo_start:
+   199                           
+   200                           ; 1 bytes @ 0xA
+   201   00000B                     	ds	1
+   202   00000C                     _servo_start$992:
+   203                           	callstack 0
+   204                           
+   205                           ; 2 bytes @ 0xB
+   206   00000C                     	ds	2
+   207   00000E                     servo_start@j:
+   208                           	callstack 0
+   209                           
+   210                           ; 2 bytes @ 0xD
+   211   00000E                     	ds	2
+   212   000010                     ??_main:
+   213                           
+   214                           ; 1 bytes @ 0xF
+   215   000010                     	ds	1
+   216                           
+   217 ;;
+   218 ;;Main: autosize = 0, tempsize = 1, incstack = 0, save=0
+   219 ;;
+   220 ;; *************** function _main *****************
+   221 ;; Defined at:
+   222 ;;		line 165 in file "setting_hardaware/buttonversion.c"
+   223 ;; Parameters:    Size  Location     Type
+   224 ;;		None
+   225 ;; Auto vars:     Size  Location     Type
+   226 ;;		None
+   227 ;; Return value:  Size  Location     Type
+   228 ;;                  1    wreg      void 
+   229 ;; Registers used:
+   230 ;;		wreg, status,2, status,0, prodl, prodh, cstack
+   231 ;; Tracked objects:
+   232 ;;		On entry : 0/0
+   233 ;;		On exit  : 0/0
+   234 ;;		Unchanged: 0/0
+   235 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+   236 ;;      Params:         0       0       0       0       0       0       0
+   237 ;;      Locals:         0       0       0       0       0       0       0
+   238 ;;      Temps:          1       0       0       0       0       0       0
+   239 ;;      Totals:         1       0       0       0       0       0       0
+   240 ;;Total ram usage:        1 bytes
+   241 ;; Hardware stack levels required when called: 4
+   242 ;; This function calls:
+   243 ;;		_servo_motor_setups
+   244 ;;		_servo_start
+   245 ;;		_timer0_setups
+   246 ;; This function is called by:
+   247 ;;		Startup code after reset
+   248 ;; This function uses a non-reentrant model
+   249 ;;
+   250                           
+   251                           	psect	text0
+   252   000422                     __ptext0:
+   253                           	callstack 0
+   254   000422                     _main:
+   255                           	callstack 27
+   256   000422                     
+   257                           ;setting_hardaware/buttonversion.c: 168:     T2CONbits.T2CKPS = 0b01;
+   258   000422  0E00               	movlw	0
+   259   000424  6E24               	movwf	(_i+1)^0,c
+   260   000426  0E00               	movlw	0
+   261   000428  6E23               	movwf	_i^0,c
+   262                           
+   263                           ;setting_hardaware/buttonversion.c: 169: 
+   264   00042A  0E00               	movlw	0
+   265   00042C  6E22               	movwf	(_direction+1)^0,c
+   266   00042E  0E00               	movlw	0
+   267   000430  6E21               	movwf	_direction^0,c
+   268                           
+   269                           ;setting_hardaware/buttonversion.c: 171:     OSCCONbits.IRCF = 0b001;
+   270   000432  0E0F               	movlw	15
+   271   000434  6EC1               	movwf	193,c	;volatile
+   272   000436                     
+   273                           ;setting_hardaware/buttonversion.c: 172: 
+   274   000436  88F2               	bsf	242,4,c	;volatile
+   275   000438                     
+   276                           ;setting_hardaware/buttonversion.c: 173: 
+   277   000438  92F2               	bcf	242,1,c	;volatile
+   278   00043A                     
+   279                           ;setting_hardaware/buttonversion.c: 174:     CCP1CONbits.CCP1M = 0b1100;
+   280   00043A  86F0               	bsf	240,3,c	;volatile
+   281   00043C                     
+   282                           ;setting_hardaware/buttonversion.c: 175: 
+   283   00043C  90F0               	bcf	240,0,c	;volatile
+   284   00043E                     
+   285                           ;setting_hardaware/buttonversion.c: 176: 
+   286   00043E  8EF2               	bsf	242,7,c	;volatile
+   287   000440                     
+   288                           ;setting_hardaware/buttonversion.c: 178:     LATC = 0;
+   289   000440  84CA               	bsf	202,2,c	;volatile
+   290                           
+   291                           ;setting_hardaware/buttonversion.c: 179:     TRISD = 0;
+   292   000442  50CA               	movf	202,w,c	;volatile
+   293   000444  0BFC               	andlw	-4
+   294   000446  0901               	iorlw	1
+   295   000448  6ECA               	movwf	202,c	;volatile
+   296                           
+   297                           ;setting_hardaware/buttonversion.c: 182:     PR2 = 0x9b;
+   298   00044A  50D3               	movf	211,w,c	;volatile
+   299   00044C  0B8F               	andlw	-113
+   300   00044E  0910               	iorlw	16
+   301   000450  6ED3               	movwf	211,c	;volatile
+   302                           
+   303                           ;setting_hardaware/buttonversion.c: 185: 
+   304   000452  50BD               	movf	189,w,c	;volatile
+   305   000454  0BF0               	andlw	-16
+   306   000456  090C               	iorlw	12
+   307   000458  6EBD               	movwf	189,c	;volatile
+   308                           
+   309                           ;setting_hardaware/buttonversion.c: 188:     servo_start();
+   310   00045A  0E00               	movlw	0
+   311   00045C  6E94               	movwf	148,c	;volatile
+   312                           
+   313                           ;setting_hardaware/buttonversion.c: 189:     while(1){
+   314   00045E  0E00               	movlw	0
+   315   000460  6E8B               	movwf	139,c	;volatile
+   316                           
+   317                           ;setting_hardaware/buttonversion.c: 190:         LATD=0b1111;
+   318   000462  0E00               	movlw	0
+   319   000464  6E95               	movwf	149,c	;volatile
+   320                           
+   321                           ;setting_hardaware/buttonversion.c: 191:         _delay((unsigned long)((10)*(4000000/40
+      +                          00.0)));
+   322   000466  0E00               	movlw	0
+   323   000468  6E8C               	movwf	140,c	;volatile
+   324                           
+   325                           ;setting_hardaware/buttonversion.c: 193:         _delay((unsigned long)((10)*(4000000/40
+      +                          00.0)));
+   326   00046A  0E9B               	movlw	155
+   327   00046C  6ECB               	movwf	203,c	;volatile
+   328   00046E  ECAA  F002         	call	_servo_motor_setups	;wreg free
+   329   000472  ECE7  F002         	call	_timer0_setups	;wreg free
+   330   000476  EC09  F000         	call	_servo_start	;wreg free
+   331   00047A                     l1156:
+   332   00047A  0E0F               	movlw	15
+   333   00047C  6E8C               	movwf	140,c	;volatile
+   334   00047E  0E0D               	movlw	13
+   335   000480  6E10               	movwf	??_main^0,c
+   336   000482  0EFC               	movlw	252
+   337   000484                     u377:
+   338   000484  2EE8               	decfsz	wreg,f,c
+   339   000486  D7FE               	bra	u377
+   340   000488  2E10               	decfsz	??_main^0,f,c
+   341   00048A  D7FC               	bra	u377
+   342   00048C  0E00               	movlw	0
+   343   00048E  6E8C               	movwf	140,c	;volatile
+   344   000490  0E0D               	movlw	13
+   345   000492  6E10               	movwf	??_main^0,c
+   346   000494  0EFC               	movlw	252
+   347   000496                     u387:
+   348   000496  2EE8               	decfsz	wreg,f,c
+   349   000498  D7FE               	bra	u387
+   350   00049A  2E10               	decfsz	??_main^0,f,c
+   351   00049C  D7FC               	bra	u387
+   352   00049E  EF3D  F002         	goto	l1156
+   353   0004A2  EF07  F000         	goto	start
+   354   0004A6                     __end_of_main:
+   355                           	callstack 0
+   356                           
+   357 ;; *************** function _timer0_setups *****************
+   358 ;; Defined at:
+   359 ;;		line 82 in file "setting_hardaware/buttonversion.c"
+   360 ;; Parameters:    Size  Location     Type
+   361 ;;		None
+   362 ;; Auto vars:     Size  Location     Type
+   363 ;;		None
+   364 ;; Return value:  Size  Location     Type
+   365 ;;                  1    wreg      void 
+   366 ;; Registers used:
+   367 ;;		wreg, status,2
+   368 ;; Tracked objects:
+   369 ;;		On entry : 0/0
+   370 ;;		On exit  : 0/0
+   371 ;;		Unchanged: 0/0
+   372 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+   373 ;;      Params:         0       0       0       0       0       0       0
+   374 ;;      Locals:         0       0       0       0       0       0       0
+   375 ;;      Temps:          0       0       0       0       0       0       0
+   376 ;;      Totals:         0       0       0       0       0       0       0
+   377 ;;Total ram usage:        0 bytes
+   378 ;; Hardware stack levels used: 1
+   379 ;; Hardware stack levels required when called: 2
+   380 ;; This function calls:
+   381 ;;		Nothing
+   382 ;; This function is called by:
+   383 ;;		_main
+   384 ;; This function uses a non-reentrant model
+   385 ;;
+   386                           
+   387                           	psect	text1
+   388   0005CE                     __ptext1:
+   389                           	callstack 0
+   390   0005CE                     _timer0_setups:
+   391                           	callstack 28
+   392   0005CE                     
+   393                           ;setting_hardaware/buttonversion.c: 84:     T0CONbits.TMR0ON = 1;
+   394   0005CE  9CD5               	bcf	213,6,c	;volatile
+   395                           
+   396                           ;setting_hardaware/buttonversion.c: 85:     while(INTCONbits.TMR0IF != 1){
+   397   0005D0  9AD5               	bcf	213,5,c	;volatile
+   398                           
+   399                           ;setting_hardaware/buttonversion.c: 86:         LATD=0b0001;
+   400   0005D2  98D5               	bcf	213,4,c	;volatile
+   401                           
+   402                           ;setting_hardaware/buttonversion.c: 87:         _delay((unsigned long)((5)*(4000000/4000
+      +                          .0)));
+   403   0005D4  96D5               	bcf	213,3,c	;volatile
+   404   0005D6                     
+   405                           ;setting_hardaware/buttonversion.c: 88:         LATD=0b0010;
+   406   0005D6  0E07               	movlw	7
+   407   0005D8  12D5               	iorwf	213,f,c	;volatile
+   408                           
+   409                           ;setting_hardaware/buttonversion.c: 89:         _delay((unsigned long)((5)*(4000000/4000
+      +                          .0)));
+   410   0005DA  0EF8               	movlw	248
+   411   0005DC  6ED7               	movwf	215,c	;volatile
+   412                           
+   413                           ;setting_hardaware/buttonversion.c: 90:         LATD=0b0100;
+   414   0005DE  0ED8               	movlw	216
+   415   0005E0  6ED6               	movwf	214,c	;volatile
+   416   0005E2                     
+   417                           ;setting_hardaware/buttonversion.c: 91:         _delay((unsigned long)((5)*(4000000/4000
+      +                          .0)));
+   418   0005E2  94F2               	bcf	242,2,c	;volatile
+   419   0005E4  0012               	return		;funcret
+   420   0005E6                     __end_of_timer0_setups:
+   421                           	callstack 0
+   422                           
+   423 ;; *************** function _servo_start *****************
+   424 ;; Defined at:
+   425 ;;		line 94 in file "setting_hardaware/buttonversion.c"
+   426 ;; Parameters:    Size  Location     Type
+   427 ;;		None
+   428 ;; Auto vars:     Size  Location     Type
+   429 ;;  j               2   13[COMRAM] int 
+   430 ;; Return value:  Size  Location     Type
+   431 ;;                  1    wreg      void 
+   432 ;; Registers used:
+   433 ;;		wreg, status,2, status,0, prodl, prodh, cstack
+   434 ;; Tracked objects:
+   435 ;;		On entry : 0/0
+   436 ;;		On exit  : 0/0
+   437 ;;		Unchanged: 0/0
+   438 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+   439 ;;      Params:         0       0       0       0       0       0       0
+   440 ;;      Locals:         4       0       0       0       0       0       0
+   441 ;;      Temps:          1       0       0       0       0       0       0
+   442 ;;      Totals:         5       0       0       0       0       0       0
+   443 ;;Total ram usage:        5 bytes
+   444 ;; Hardware stack levels used: 1
+   445 ;; Hardware stack levels required when called: 3
+   446 ;; This function calls:
+   447 ;;		___awdiv
+   448 ;; This function is called by:
+   449 ;;		_main
+   450 ;; This function uses a non-reentrant model
+   451 ;;
+   452                           
+   453                           	psect	text2
+   454   000012                     __ptext2:
+   455                           	callstack 0
+   456   000012                     _servo_start:
+   457                           	callstack 27
+   458   000012                     
+   459                           ;setting_hardaware/buttonversion.c: 95:         LATD=0b0100;
+   460   000012  8ED5               	bsf	213,7,c	;volatile
+   461                           
+   462                           ;setting_hardaware/buttonversion.c: 96:         _delay((unsigned long)((5)*(4000000/4000
+      +                          .0)));
+   463   000014  EF48  F000         	goto	l1060
+   464   000018                     l1042:
+   465                           
+   466                           ;setting_hardaware/buttonversion.c: 97:         LATD=0b0010;
+   467   000018  0E01               	movlw	1
+   468   00001A  6E8C               	movwf	140,c	;volatile
+   469   00001C                     
+   470                           ;setting_hardaware/buttonversion.c: 98:         _delay((unsigned long)((5)*(4000000/4000
+      +                          .0)));
+   471   00001C  0E07               	movlw	7
+   472   00001E  6E0B               	movwf	??_servo_start^0,c
+   473   000020  0E7D               	movlw	125
+   474   000022                     u397:
+   475   000022  2EE8               	decfsz	wreg,f,c
+   476   000024  D7FE               	bra	u397
+   477   000026  2E0B               	decfsz	??_servo_start^0,f,c
+   478   000028  D7FC               	bra	u397
+   479   00002A  F000               	nop	
+   480   00002C                     
+   481                           ;setting_hardaware/buttonversion.c: 99:     }
+   482   00002C  0E02               	movlw	2
+   483   00002E  6E8C               	movwf	140,c	;volatile
+   484                           
+   485                           ;setting_hardaware/buttonversion.c: 100:     T0CONbits.TMR0ON = 0;
+   486   000030  0E07               	movlw	7
+   487   000032  6E0B               	movwf	??_servo_start^0,c
+   488   000034  0E7D               	movlw	125
+   489   000036                     u407:
+   490   000036  2EE8               	decfsz	wreg,f,c
+   491   000038  D7FE               	bra	u407
+   492   00003A  2E0B               	decfsz	??_servo_start^0,f,c
+   493   00003C  D7FC               	bra	u407
+   494   00003E  F000               	nop	
+   495   000040                     
+   496                           ;setting_hardaware/buttonversion.c: 101:     INTCONbits.GIE=0;
+   497   000040  0E04               	movlw	4
+   498   000042  6E8C               	movwf	140,c	;volatile
+   499   000044                     
+   500                           ;setting_hardaware/buttonversion.c: 102: 
+   501   000044  0E07               	movlw	7
+   502   000046  6E0B               	movwf	??_servo_start^0,c
+   503   000048  0E7D               	movlw	125
+   504   00004A                     u417:
+   505   00004A  2EE8               	decfsz	wreg,f,c
+   506   00004C  D7FE               	bra	u417
+   507   00004E  2E0B               	decfsz	??_servo_start^0,f,c
+   508   000050  D7FC               	bra	u417
+   509   000052  F000               	nop	
+   510                           
+   511                           ;setting_hardaware/buttonversion.c: 103: 
+   512   000054  0E08               	movlw	8
+   513   000056  6E8C               	movwf	140,c	;volatile
+   514   000058                     
+   515                           ;setting_hardaware/buttonversion.c: 104: 
+   516   000058  0E07               	movlw	7
+   517   00005A  6E0B               	movwf	??_servo_start^0,c
+   518   00005C  0E7D               	movlw	125
+   519   00005E                     u427:
+   520   00005E  2EE8               	decfsz	wreg,f,c
+   521   000060  D7FE               	bra	u427
+   522   000062  2E0B               	decfsz	??_servo_start^0,f,c
+   523   000064  D7FC               	bra	u427
+   524   000066  F000               	nop	
+   525   000068                     
+   526                           ;setting_hardaware/buttonversion.c: 106: 
+   527   000068  0E04               	movlw	4
+   528   00006A  6E8C               	movwf	140,c	;volatile
+   529                           
+   530                           ;setting_hardaware/buttonversion.c: 107: 
+   531   00006C  0E07               	movlw	7
+   532   00006E  6E0B               	movwf	??_servo_start^0,c
+   533   000070  0E7D               	movlw	125
+   534   000072                     u437:
+   535   000072  2EE8               	decfsz	wreg,f,c
+   536   000074  D7FE               	bra	u437
+   537   000076  2E0B               	decfsz	??_servo_start^0,f,c
+   538   000078  D7FC               	bra	u437
+   539   00007A  F000               	nop	
+   540   00007C                     
+   541                           ;setting_hardaware/buttonversion.c: 108:     _delay((unsigned long)((10)*(4000000/4000.0
+      +                          )));
+   542   00007C  0E02               	movlw	2
+   543   00007E  6E8C               	movwf	140,c	;volatile
+   544   000080                     
+   545                           ;setting_hardaware/buttonversion.c: 109:     int j = CCPR1L*4*32;
+   546   000080  0E07               	movlw	7
+   547   000082  6E0B               	movwf	??_servo_start^0,c
+   548   000084  0E7D               	movlw	125
+   549   000086                     u447:
+   550   000086  2EE8               	decfsz	wreg,f,c
+   551   000088  D7FE               	bra	u447
+   552   00008A  2E0B               	decfsz	??_servo_start^0,f,c
+   553   00008C  D7FC               	bra	u447
+   554   00008E  F000               	nop	
+   555   000090                     l1060:
+   556                           
+   557                           ;setting_hardaware/buttonversion.c: 96:         _delay((unsigned long)((5)*(4000000/4000
+      +                          .0)));
+   558   000090  A4F2               	btfss	242,2,c	;volatile
+   559   000092  EF4D  F000         	goto	u281
+   560   000096  EF4F  F000         	goto	u280
+   561   00009A                     u281:
+   562   00009A  EF0C  F000         	goto	l1042
+   563   00009E                     u280:
+   564   00009E                     
+   565                           ;setting_hardaware/buttonversion.c: 111:         while(j <= 2400){
+   566   00009E  9ED5               	bcf	213,7,c	;volatile
+   567                           
+   568                           ;setting_hardaware/buttonversion.c: 112:             _delay((unsigned long)((1)*(4000000
+      +                          /4000.0)));
+   569   0000A0  9EF2               	bcf	242,7,c	;volatile
+   570   0000A2                     
+   571                           ;setting_hardaware/buttonversion.c: 119:         while(j >= 500){
+   572   0000A2  0E0D               	movlw	13
+   573   0000A4  6E0B               	movwf	??_servo_start^0,c
+   574   0000A6  0EFC               	movlw	252
+   575   0000A8                     u457:
+   576   0000A8  2EE8               	decfsz	wreg,f,c
+   577   0000AA  D7FE               	bra	u457
+   578   0000AC  2E0B               	decfsz	??_servo_start^0,f,c
+   579   0000AE  D7FC               	bra	u457
+   580   0000B0                     
+   581                           ;setting_hardaware/buttonversion.c: 120:             _delay((unsigned long)((1)*(4000000
+      +                          /4000.0)));
+   582   0000B0  50BE               	movf	190,w,c	;volatile
+   583   0000B2  0D80               	mullw	128
+   584   0000B4  CFF3 F00E          	movff	prodl,servo_start@j
+   585   0000B8  CFF4 F00F          	movff	prodh,servo_start@j+1
+   586   0000BC                     
+   587                           ;setting_hardaware/buttonversion.c: 121:             CCPR1L = j/32/4;
+   588   0000BC  501F               	movf	_player1^0,w,c
+   589   0000BE  5C1D               	subwf	_player2^0,w,c
+   590   0000C0  501E               	movf	(_player2+1)^0,w,c
+   591   0000C2  0A80               	xorlw	128
+   592   0000C4  6E0B               	movwf	??_servo_start^0,c
+   593   0000C6  5020               	movf	(_player1+1)^0,w,c
+   594   0000C8  0A80               	xorlw	128
+   595   0000CA  580B               	subwfb	??_servo_start^0,w,c
+   596   0000CC  B0D8               	btfsc	status,0,c
+   597   0000CE  EF6B  F000         	goto	u291
+   598   0000D2  EF6D  F000         	goto	u290
+   599   0000D6                     u291:
+   600   0000D6  EFB3  F000         	goto	l1082
+   601   0000DA                     u290:
+   602   0000DA  EFA3  F000         	goto	l1080
+   603   0000DE                     l1070:
+   604                           
+   605                           ;setting_hardaware/buttonversion.c: 123:             j -= 100;
+   606   0000DE  0EC8               	movlw	200
+   607   0000E0                     u467:
+   608   0000E0  D000               	nop2	
+   609   0000E2  2EE8               	decfsz	wreg,f,c
+   610   0000E4  D7FD               	bra	u467
+   611   0000E6                     
+   612                           ;setting_hardaware/buttonversion.c: 124:         }
+   613   0000E6  0E00               	movlw	0
+   614   0000E8  6E06               	movwf	(___awdiv@divisor+1)^0,c
+   615   0000EA  0E20               	movlw	32
+   616   0000EC  6E05               	movwf	___awdiv@divisor^0,c
+   617   0000EE  C00E  F003         	movff	servo_start@j,___awdiv@dividend
+   618   0000F2  C00F  F004         	movff	servo_start@j+1,___awdiv@dividend+1
+   619   0000F6  ECAF  F001         	call	___awdiv	;wreg free
+   620   0000FA  C003  F00C         	movff	?___awdiv,_servo_start$992
+   621   0000FE  C004  F00D         	movff	?___awdiv+1,_servo_start$992+1
+   622   000102                     
+   623                           ;setting_hardaware/buttonversion.c: 124:         }
+   624   000102  C00C  F003         	movff	_servo_start$992,___awdiv@dividend
+   625   000106  C00D  F004         	movff	_servo_start$992+1,___awdiv@dividend+1
+   626   00010A  0E00               	movlw	0
+   627   00010C  6E06               	movwf	(___awdiv@divisor+1)^0,c
+   628   00010E  0E04               	movlw	4
+   629   000110  6E05               	movwf	___awdiv@divisor^0,c
+   630   000112  ECAF  F001         	call	___awdiv	;wreg free
+   631   000116  5003               	movf	?___awdiv^0,w,c
+   632   000118  6EBE               	movwf	190,c	;volatile
+   633   00011A                     
+   634                           ;setting_hardaware/buttonversion.c: 125:     }
+   635   00011A  C00E  F003         	movff	servo_start@j,___awdiv@dividend
+   636   00011E  C00F  F004         	movff	servo_start@j+1,___awdiv@dividend+1
+   637   000122  0E00               	movlw	0
+   638   000124  6E06               	movwf	(___awdiv@divisor+1)^0,c
+   639   000126  0E20               	movlw	32
+   640   000128  6E05               	movwf	___awdiv@divisor^0,c
+   641   00012A  ECAF  F001         	call	___awdiv	;wreg free
+   642   00012E  0E03               	movlw	3
+   643   000130  1603               	andwf	?___awdiv^0,f,c
+   644   000132  3A03               	swapf	?___awdiv^0,f,c
+   645   000134  50BD               	movf	189,w,c	;volatile
+   646   000136  1803               	xorwf	?___awdiv^0,w,c
+   647   000138  0BCF               	andlw	-49
+   648   00013A  1803               	xorwf	?___awdiv^0,w,c
+   649   00013C  6EBD               	movwf	189,c	;volatile
+   650   00013E                     
+   651                           ;setting_hardaware/buttonversion.c: 126:     else{
+   652   00013E  0E64               	movlw	100
+   653   000140  260E               	addwf	servo_start@j^0,f,c
+   654   000142  0E00               	movlw	0
+   655   000144  220F               	addwfc	(servo_start@j+1)^0,f,c
+   656   000146                     l1080:
+   657                           
+   658                           ;setting_hardaware/buttonversion.c: 122:             CCP1CONbits.DC1B = (j/32)%4;
+   659   000146  BE0F               	btfsc	(servo_start@j+1)^0,7,c
+   660   000148  EFAF  F000         	goto	u301
+   661   00014C  0E61               	movlw	97
+   662   00014E  5C0E               	subwf	servo_start@j^0,w,c
+   663   000150  0E09               	movlw	9
+   664   000152  580F               	subwfb	(servo_start@j+1)^0,w,c
+   665   000154  A0D8               	btfss	status,0,c
+   666   000156  EFAF  F000         	goto	u301
+   667   00015A  EFB1  F000         	goto	u300
+   668   00015E                     u301:
+   669   00015E  EF6F  F000         	goto	l1070
+   670   000162                     u300:
+   671   000162  EF9B  F001         	goto	l81
+   672   000166                     l1082:
+   673   000166  501D               	movf	_player2^0,w,c
+   674   000168  5C1F               	subwf	_player1^0,w,c
+   675   00016A  5020               	movf	(_player1+1)^0,w,c
+   676   00016C  0A80               	xorlw	128
+   677   00016E  6E0B               	movwf	??_servo_start^0,c
+   678   000170  501E               	movf	(_player2+1)^0,w,c
+   679   000172  0A80               	xorlw	128
+   680   000174  580B               	subwfb	??_servo_start^0,w,c
+   681   000176  B0D8               	btfsc	status,0,c
+   682   000178  EFC0  F000         	goto	u311
+   683   00017C  EFC2  F000         	goto	u310
+   684   000180                     u311:
+   685   000180  EF08  F001         	goto	l1098
+   686   000184                     u310:
+   687   000184  EFF8  F000         	goto	l1096
+   688   000188                     l1086:
+   689                           
+   690                           ;setting_hardaware/buttonversion.c: 131:                 CCPR1L = j/32/4;
+   691   000188  0EC8               	movlw	200
+   692   00018A                     u477:
+   693   00018A  D000               	nop2	
+   694   00018C  2EE8               	decfsz	wreg,f,c
+   695   00018E  D7FD               	bra	u477
+   696   000190                     
+   697                           ;setting_hardaware/buttonversion.c: 132:                 CCP1CONbits.DC1B = (j/32)%4;
+   698   000190  0E00               	movlw	0
+   699   000192  6E06               	movwf	(___awdiv@divisor+1)^0,c
+   700   000194  0E20               	movlw	32
+   701   000196  6E05               	movwf	___awdiv@divisor^0,c
+   702   000198  C00E  F003         	movff	servo_start@j,___awdiv@dividend
+   703   00019C  C00F  F004         	movff	servo_start@j+1,___awdiv@dividend+1
+   704   0001A0  ECAF  F001         	call	___awdiv	;wreg free
+   705   0001A4  C003  F00C         	movff	?___awdiv,_servo_start$992
+   706   0001A8  C004  F00D         	movff	?___awdiv+1,_servo_start$992+1
+   707   0001AC                     
+   708                           ;setting_hardaware/buttonversion.c: 132:                 CCP1CONbits.DC1B = (j/32)%4;
+   709   0001AC  C00C  F003         	movff	_servo_start$992,___awdiv@dividend
+   710   0001B0  C00D  F004         	movff	_servo_start$992+1,___awdiv@dividend+1
+   711   0001B4  0E00               	movlw	0
+   712   0001B6  6E06               	movwf	(___awdiv@divisor+1)^0,c
+   713   0001B8  0E04               	movlw	4
+   714   0001BA  6E05               	movwf	___awdiv@divisor^0,c
+   715   0001BC  ECAF  F001         	call	___awdiv	;wreg free
+   716   0001C0  5003               	movf	?___awdiv^0,w,c
+   717   0001C2  6EBE               	movwf	190,c	;volatile
+   718   0001C4                     
+   719                           ;setting_hardaware/buttonversion.c: 133:                 j += 100;
+   720   0001C4  C00E  F003         	movff	servo_start@j,___awdiv@dividend
+   721   0001C8  C00F  F004         	movff	servo_start@j+1,___awdiv@dividend+1
+   722   0001CC  0E00               	movlw	0
+   723   0001CE  6E06               	movwf	(___awdiv@divisor+1)^0,c
+   724   0001D0  0E20               	movlw	32
+   725   0001D2  6E05               	movwf	___awdiv@divisor^0,c
+   726   0001D4  ECAF  F001         	call	___awdiv	;wreg free
+   727   0001D8  0E03               	movlw	3
+   728   0001DA  1603               	andwf	?___awdiv^0,f,c
+   729   0001DC  3A03               	swapf	?___awdiv^0,f,c
+   730   0001DE  50BD               	movf	189,w,c	;volatile
+   731   0001E0  1803               	xorwf	?___awdiv^0,w,c
+   732   0001E2  0BCF               	andlw	-49
+   733   0001E4  1803               	xorwf	?___awdiv^0,w,c
+   734   0001E6  6EBD               	movwf	189,c	;volatile
+   735   0001E8                     
+   736                           ;setting_hardaware/buttonversion.c: 134:             }
+   737   0001E8  0E9C               	movlw	156
+   738   0001EA  260E               	addwf	servo_start@j^0,f,c
+   739   0001EC  0EFF               	movlw	255
+   740   0001EE  220F               	addwfc	(servo_start@j+1)^0,f,c
+   741   0001F0                     l1096:
+   742                           
+   743                           ;setting_hardaware/buttonversion.c: 130:                 _delay((unsigned long)((1)*(400
+      +                          0000/4000.0)));
+   744   0001F0  BE0F               	btfsc	(servo_start@j+1)^0,7,c
+   745   0001F2  EF06  F001         	goto	u320
+   746   0001F6  0EF4               	movlw	244
+   747   0001F8  5C0E               	subwf	servo_start@j^0,w,c
+   748   0001FA  0E01               	movlw	1
+   749   0001FC  580F               	subwfb	(servo_start@j+1)^0,w,c
+   750   0001FE  B0D8               	btfsc	status,0,c
+   751   000200  EF04  F001         	goto	u321
+   752   000204  EF06  F001         	goto	u320
+   753   000208                     u321:
+   754   000208  EFC4  F000         	goto	l1086
+   755   00020C                     u320:
+   756   00020C  EF9B  F001         	goto	l81
+   757   000210                     l1098:
+   758                           
+   759                           ;setting_hardaware/buttonversion.c: 138:                _delay((unsigned long)((1)*(4000
+      +                          000/4000.0)));
+   760   000210  501D               	movf	_player2^0,w,c
+   761   000212  261F               	addwf	_player1^0,f,c
+   762   000214  501E               	movf	(_player2+1)^0,w,c
+   763   000216  2220               	addwfc	(_player1+1)^0,f,c
+   764   000218                     
+   765                           ;setting_hardaware/buttonversion.c: 139:                 CCPR1L = j/32/4;
+   766   000218  A01F               	btfss	_player1^0,0,c
+   767   00021A  EF11  F001         	goto	u331
+   768   00021E  EF13  F001         	goto	u330
+   769   000222                     u331:
+   770   000222  EF8D  F001         	goto	l1126
+   771   000226                     u330:
+   772   000226  EF49  F001         	goto	l1114
+   773   00022A                     l1104:
+   774                           
+   775                           ;setting_hardaware/buttonversion.c: 141:                 j -= 100;
+   776   00022A  0EC8               	movlw	200
+   777   00022C                     u487:
+   778   00022C  D000               	nop2	
+   779   00022E  2EE8               	decfsz	wreg,f,c
+   780   000230  D7FD               	bra	u487
+   781   000232                     
+   782                           ;setting_hardaware/buttonversion.c: 142:             }
+   783   000232  0E00               	movlw	0
+   784   000234  6E06               	movwf	(___awdiv@divisor+1)^0,c
+   785   000236  0E20               	movlw	32
+   786   000238  6E05               	movwf	___awdiv@divisor^0,c
+   787   00023A  C00E  F003         	movff	servo_start@j,___awdiv@dividend
+   788   00023E  C00F  F004         	movff	servo_start@j+1,___awdiv@dividend+1
+   789   000242  ECAF  F001         	call	___awdiv	;wreg free
+   790   000246  C003  F00C         	movff	?___awdiv,_servo_start$992
+   791   00024A  C004  F00D         	movff	?___awdiv+1,_servo_start$992+1
+   792   00024E                     
+   793                           ;setting_hardaware/buttonversion.c: 142:             }
+   794   00024E  C00C  F003         	movff	_servo_start$992,___awdiv@dividend
+   795   000252  C00D  F004         	movff	_servo_start$992+1,___awdiv@dividend+1
+   796   000256  0E00               	movlw	0
+   797   000258  6E06               	movwf	(___awdiv@divisor+1)^0,c
+   798   00025A  0E04               	movlw	4
+   799   00025C  6E05               	movwf	___awdiv@divisor^0,c
+   800   00025E  ECAF  F001         	call	___awdiv	;wreg free
+   801   000262  5003               	movf	?___awdiv^0,w,c
+   802   000264  6EBE               	movwf	190,c	;volatile
+   803   000266                     
+   804                           ;setting_hardaware/buttonversion.c: 143:         }
+   805   000266  C00E  F003         	movff	servo_start@j,___awdiv@dividend
+   806   00026A  C00F  F004         	movff	servo_start@j+1,___awdiv@dividend+1
+   807   00026E  0E00               	movlw	0
+   808   000270  6E06               	movwf	(___awdiv@divisor+1)^0,c
+   809   000272  0E20               	movlw	32
+   810   000274  6E05               	movwf	___awdiv@divisor^0,c
+   811   000276  ECAF  F001         	call	___awdiv	;wreg free
+   812   00027A  0E03               	movlw	3
+   813   00027C  1603               	andwf	?___awdiv^0,f,c
+   814   00027E  3A03               	swapf	?___awdiv^0,f,c
+   815   000280  50BD               	movf	189,w,c	;volatile
+   816   000282  1803               	xorwf	?___awdiv^0,w,c
+   817   000284  0BCF               	andlw	-49
+   818   000286  1803               	xorwf	?___awdiv^0,w,c
+   819   000288  6EBD               	movwf	189,c	;volatile
+   820   00028A                     
+   821                           ;setting_hardaware/buttonversion.c: 144:     }
+   822   00028A  0E64               	movlw	100
+   823   00028C  260E               	addwf	servo_start@j^0,f,c
+   824   00028E  0E00               	movlw	0
+   825   000290  220F               	addwfc	(servo_start@j+1)^0,f,c
+   826   000292                     l1114:
+   827                           
+   828                           ;setting_hardaware/buttonversion.c: 140:                 CCP1CONbits.DC1B = (j/32)%4;
+   829   000292  BE0F               	btfsc	(servo_start@j+1)^0,7,c
+   830   000294  EF55  F001         	goto	u341
+   831   000298  0E61               	movlw	97
+   832   00029A  5C0E               	subwf	servo_start@j^0,w,c
+   833   00029C  0E09               	movlw	9
+   834   00029E  580F               	subwfb	(servo_start@j+1)^0,w,c
+   835   0002A0  A0D8               	btfss	status,0,c
+   836   0002A2  EF55  F001         	goto	u341
+   837   0002A6  EF57  F001         	goto	u340
+   838   0002AA                     u341:
+   839   0002AA  EF15  F001         	goto	l1104
+   840   0002AE                     u340:
+   841   0002AE  EF9B  F001         	goto	l81
+   842   0002B2                     l1116:
+   843                           
+   844                           ;setting_hardaware/buttonversion.c: 149:     while(INTCONbits.TMR0IF != 1);
+   845   0002B2  0EC8               	movlw	200
+   846   0002B4                     u497:
+   847   0002B4  D000               	nop2	
+   848   0002B6  2EE8               	decfsz	wreg,f,c
+   849   0002B8  D7FD               	bra	u497
+   850   0002BA                     
+   851                           ;setting_hardaware/buttonversion.c: 150:     T0CONbits.TMR0ON = 0;
+   852   0002BA  0E00               	movlw	0
+   853   0002BC  6E06               	movwf	(___awdiv@divisor+1)^0,c
+   854   0002BE  0E20               	movlw	32
+   855   0002C0  6E05               	movwf	___awdiv@divisor^0,c
+   856   0002C2  C00E  F003         	movff	servo_start@j,___awdiv@dividend
+   857   0002C6  C00F  F004         	movff	servo_start@j+1,___awdiv@dividend+1
+   858   0002CA  ECAF  F001         	call	___awdiv	;wreg free
+   859   0002CE  C003  F00C         	movff	?___awdiv,_servo_start$992
+   860   0002D2  C004  F00D         	movff	?___awdiv+1,_servo_start$992+1
+   861   0002D6                     
+   862                           ;setting_hardaware/buttonversion.c: 150:     T0CONbits.TMR0ON = 0;
+   863   0002D6  C00C  F003         	movff	_servo_start$992,___awdiv@dividend
+   864   0002DA  C00D  F004         	movff	_servo_start$992+1,___awdiv@dividend+1
+   865   0002DE  0E00               	movlw	0
+   866   0002E0  6E06               	movwf	(___awdiv@divisor+1)^0,c
+   867   0002E2  0E04               	movlw	4
+   868   0002E4  6E05               	movwf	___awdiv@divisor^0,c
+   869   0002E6  ECAF  F001         	call	___awdiv	;wreg free
+   870   0002EA  5003               	movf	?___awdiv^0,w,c
+   871   0002EC  6EBE               	movwf	190,c	;volatile
+   872   0002EE                     
+   873                           ;setting_hardaware/buttonversion.c: 151:     CCPR2L = 1450/32/4;
+   874   0002EE  C00E  F003         	movff	servo_start@j,___awdiv@dividend
+   875   0002F2  C00F  F004         	movff	servo_start@j+1,___awdiv@dividend+1
+   876   0002F6  0E00               	movlw	0
+   877   0002F8  6E06               	movwf	(___awdiv@divisor+1)^0,c
+   878   0002FA  0E20               	movlw	32
+   879   0002FC  6E05               	movwf	___awdiv@divisor^0,c
+   880   0002FE  ECAF  F001         	call	___awdiv	;wreg free
+   881   000302  0E03               	movlw	3
+   882   000304  1603               	andwf	?___awdiv^0,f,c
+   883   000306  3A03               	swapf	?___awdiv^0,f,c
+   884   000308  50BD               	movf	189,w,c	;volatile
+   885   00030A  1803               	xorwf	?___awdiv^0,w,c
+   886   00030C  0BCF               	andlw	-49
+   887   00030E  1803               	xorwf	?___awdiv^0,w,c
+   888   000310  6EBD               	movwf	189,c	;volatile
+   889   000312                     
+   890                           ;setting_hardaware/buttonversion.c: 152:     CCP2CONbits.DC2B = (1450/32)%4;
+   891   000312  0E9C               	movlw	156
+   892   000314  260E               	addwf	servo_start@j^0,f,c
+   893   000316  0EFF               	movlw	255
+   894   000318  220F               	addwfc	(servo_start@j+1)^0,f,c
+   895   00031A                     l1126:
+   896                           
+   897                           ;setting_hardaware/buttonversion.c: 148:     T0CONbits.TMR0ON = 1;
+   898   00031A  BE0F               	btfsc	(servo_start@j+1)^0,7,c
+   899   00031C  EF9B  F001         	goto	u350
+   900   000320  0EF4               	movlw	244
+   901   000322  5C0E               	subwf	servo_start@j^0,w,c
+   902   000324  0E01               	movlw	1
+   903   000326  580F               	subwfb	(servo_start@j+1)^0,w,c
+   904   000328  B0D8               	btfsc	status,0,c
+   905   00032A  EF99  F001         	goto	u351
+   906   00032E  EF9B  F001         	goto	u350
+   907   000332                     u351:
+   908   000332  EF59  F001         	goto	l1116
+   909   000336                     u350:
+   910   000336                     l81:
+   911                           
+   912                           ;setting_hardaware/buttonversion.c: 156: 
+   913   000336  68D7               	setf	215,c	;volatile
+   914   000338                     
+   915                           ;setting_hardaware/buttonversion.c: 157:     i = 0;
+   916   000338  0EC2               	movlw	194
+   917   00033A  6ED6               	movwf	214,c	;volatile
+   918   00033C                     
+   919                           ;setting_hardaware/buttonversion.c: 158:     direction = 0;
+   920   00033C  94F2               	bcf	242,2,c	;volatile
+   921   00033E                     
+   922                           ;setting_hardaware/buttonversion.c: 159: 
+   923   00033E  8ED5               	bsf	213,7,c	;volatile
+   924   000340                     l95:
+   925   000340  A4F2               	btfss	242,2,c	;volatile
+   926   000342  EFA5  F001         	goto	u361
+   927   000346  EFA7  F001         	goto	u360
+   928   00034A                     u361:
+   929   00034A  EFA0  F001         	goto	l95
+   930   00034E                     u360:
+   931   00034E                     
+   932                           ;setting_hardaware/buttonversion.c: 161:     INTCONbits.INT0IE = 1;
+   933   00034E  9ED5               	bcf	213,7,c	;volatile
+   934   000350                     
+   935                           ;setting_hardaware/buttonversion.c: 162:     INTCONbits.INT0IF = 0;
+   936   000350  0E0B               	movlw	11
+   937   000352  6EBB               	movwf	187,c	;volatile
+   938                           
+   939                           ;setting_hardaware/buttonversion.c: 163:     INTCON3bits.INT1IE = 1;
+   940   000354  50BA               	movf	186,w,c	;volatile
+   941   000356  0BCF               	andlw	-49
+   942   000358  0910               	iorlw	16
+   943   00035A  6EBA               	movwf	186,c	;volatile
+   944   00035C  0012               	return		;funcret
+   945   00035E                     __end_of_servo_start:
+   946                           	callstack 0
+   947                           
+   948 ;; *************** function ___awdiv *****************
+   949 ;; Defined at:
+   950 ;;		line 7 in file "C:\Program Files\Microchip\xc8\v2.40\pic\sources\c99\common\awdiv.c"
+   951 ;; Parameters:    Size  Location     Type
+   952 ;;  dividend        2    2[COMRAM] int 
+   953 ;;  divisor         2    4[COMRAM] int 
+   954 ;; Auto vars:     Size  Location     Type
+   955 ;;  quotient        2    8[COMRAM] int 
+   956 ;;  sign            1    7[COMRAM] unsigned char 
+   957 ;;  counter         1    6[COMRAM] unsigned char 
+   958 ;; Return value:  Size  Location     Type
+   959 ;;                  2    2[COMRAM] int 
+   960 ;; Registers used:
+   961 ;;		wreg, status,2, status,0
+   962 ;; Tracked objects:
+   963 ;;		On entry : 0/0
+   964 ;;		On exit  : 0/0
+   965 ;;		Unchanged: 0/0
+   966 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+   967 ;;      Params:         4       0       0       0       0       0       0
+   968 ;;      Locals:         4       0       0       0       0       0       0
+   969 ;;      Temps:          0       0       0       0       0       0       0
+   970 ;;      Totals:         8       0       0       0       0       0       0
+   971 ;;Total ram usage:        8 bytes
+   972 ;; Hardware stack levels used: 1
+   973 ;; Hardware stack levels required when called: 2
+   974 ;; This function calls:
+   975 ;;		Nothing
+   976 ;; This function is called by:
+   977 ;;		_servo_start
+   978 ;; This function uses a non-reentrant model
+   979 ;;
+   980                           
+   981                           	psect	text3
+   982   00035E                     __ptext3:
+   983                           	callstack 0
+   984   00035E                     ___awdiv:
+   985                           	callstack 27
+   986   00035E  0E00               	movlw	0
+   987   000360  6E08               	movwf	___awdiv@sign^0,c
+   988   000362  BE06               	btfsc	(___awdiv@divisor+1)^0,7,c
+   989   000364  EFB8  F001         	goto	u220
+   990   000368  EFB6  F001         	goto	u221
+   991   00036C                     u221:
+   992   00036C  EFBE  F001         	goto	l1004
+   993   000370                     u220:
+   994   000370  6C05               	negf	___awdiv@divisor^0,c
+   995   000372  1E06               	comf	(___awdiv@divisor+1)^0,f,c
+   996   000374  B0D8               	btfsc	status,0,c
+   997   000376  2A06               	incf	(___awdiv@divisor+1)^0,f,c
+   998   000378  0E01               	movlw	1
+   999   00037A  6E08               	movwf	___awdiv@sign^0,c
+  1000   00037C                     l1004:
+  1001   00037C  BE04               	btfsc	(___awdiv@dividend+1)^0,7,c
+  1002   00037E  EFC5  F001         	goto	u230
+  1003   000382  EFC3  F001         	goto	u231
+  1004   000386                     u231:
+  1005   000386  EFCB  F001         	goto	l1010
+  1006   00038A                     u230:
+  1007   00038A  6C03               	negf	___awdiv@dividend^0,c
+  1008   00038C  1E04               	comf	(___awdiv@dividend+1)^0,f,c
+  1009   00038E  B0D8               	btfsc	status,0,c
+  1010   000390  2A04               	incf	(___awdiv@dividend+1)^0,f,c
+  1011   000392  0E01               	movlw	1
+  1012   000394  1A08               	xorwf	___awdiv@sign^0,f,c
+  1013   000396                     l1010:
+  1014   000396  0E00               	movlw	0
+  1015   000398  6E0A               	movwf	(___awdiv@quotient+1)^0,c
+  1016   00039A  0E00               	movlw	0
+  1017   00039C  6E09               	movwf	___awdiv@quotient^0,c
+  1018   00039E  5005               	movf	___awdiv@divisor^0,w,c
+  1019   0003A0  1006               	iorwf	(___awdiv@divisor+1)^0,w,c
+  1020   0003A2  B4D8               	btfsc	status,2,c
+  1021   0003A4  EFD6  F001         	goto	u241
+  1022   0003A8  EFD8  F001         	goto	u240
+  1023   0003AC                     u241:
+  1024   0003AC  EF00  F002         	goto	l1032
+  1025   0003B0                     u240:
+  1026   0003B0  0E01               	movlw	1
+  1027   0003B2  6E07               	movwf	___awdiv@counter^0,c
+  1028   0003B4  EFE0  F001         	goto	l1018
+  1029   0003B8                     l1016:
+  1030   0003B8  90D8               	bcf	status,0,c
+  1031   0003BA  3605               	rlcf	___awdiv@divisor^0,f,c
+  1032   0003BC  3606               	rlcf	(___awdiv@divisor+1)^0,f,c
+  1033   0003BE  2A07               	incf	___awdiv@counter^0,f,c
+  1034   0003C0                     l1018:
+  1035   0003C0  AE06               	btfss	(___awdiv@divisor+1)^0,7,c
+  1036   0003C2  EFE5  F001         	goto	u251
+  1037   0003C6  EFE7  F001         	goto	u250
+  1038   0003CA                     u251:
+  1039   0003CA  EFDC  F001         	goto	l1016
+  1040   0003CE                     u250:
+  1041   0003CE                     l1020:
+  1042   0003CE  90D8               	bcf	status,0,c
+  1043   0003D0  3609               	rlcf	___awdiv@quotient^0,f,c
+  1044   0003D2  360A               	rlcf	(___awdiv@quotient+1)^0,f,c
+  1045   0003D4  5005               	movf	___awdiv@divisor^0,w,c
+  1046   0003D6  5C03               	subwf	___awdiv@dividend^0,w,c
+  1047   0003D8  5006               	movf	(___awdiv@divisor+1)^0,w,c
+  1048   0003DA  5804               	subwfb	(___awdiv@dividend+1)^0,w,c
+  1049   0003DC  A0D8               	btfss	status,0,c
+  1050   0003DE  EFF3  F001         	goto	u261
+  1051   0003E2  EFF5  F001         	goto	u260
+  1052   0003E6                     u261:
+  1053   0003E6  EFFA  F001         	goto	l1028
+  1054   0003EA                     u260:
+  1055   0003EA  5005               	movf	___awdiv@divisor^0,w,c
+  1056   0003EC  5E03               	subwf	___awdiv@dividend^0,f,c
+  1057   0003EE  5006               	movf	(___awdiv@divisor+1)^0,w,c
+  1058   0003F0  5A04               	subwfb	(___awdiv@dividend+1)^0,f,c
+  1059   0003F2  8009               	bsf	___awdiv@quotient^0,0,c
+  1060   0003F4                     l1028:
+  1061   0003F4  90D8               	bcf	status,0,c
+  1062   0003F6  3206               	rrcf	(___awdiv@divisor+1)^0,f,c
+  1063   0003F8  3205               	rrcf	___awdiv@divisor^0,f,c
+  1064   0003FA  2E07               	decfsz	___awdiv@counter^0,f,c
+  1065   0003FC  EFE7  F001         	goto	l1020
+  1066   000400                     l1032:
+  1067   000400  5008               	movf	___awdiv@sign^0,w,c
+  1068   000402  B4D8               	btfsc	status,2,c
+  1069   000404  EF06  F002         	goto	u271
+  1070   000408  EF08  F002         	goto	u270
+  1071   00040C                     u271:
+  1072   00040C  EF0C  F002         	goto	l1036
+  1073   000410                     u270:
+  1074   000410  6C09               	negf	___awdiv@quotient^0,c
+  1075   000412  1E0A               	comf	(___awdiv@quotient+1)^0,f,c
+  1076   000414  B0D8               	btfsc	status,0,c
+  1077   000416  2A0A               	incf	(___awdiv@quotient+1)^0,f,c
+  1078   000418                     l1036:
+  1079   000418  C009  F003         	movff	___awdiv@quotient,?___awdiv
+  1080   00041C  C00A  F004         	movff	___awdiv@quotient+1,?___awdiv+1
+  1081   000420  0012               	return		;funcret
+  1082   000422                     __end_of___awdiv:
+  1083                           	callstack 0
+  1084                           
+  1085 ;; *************** function _servo_motor_setups *****************
+  1086 ;; Defined at:
+  1087 ;;		line 58 in file "setting_hardaware/buttonversion.c"
+  1088 ;; Parameters:    Size  Location     Type
+  1089 ;;		None
+  1090 ;; Auto vars:     Size  Location     Type
+  1091 ;;		None
+  1092 ;; Return value:  Size  Location     Type
+  1093 ;;                  1    wreg      void 
+  1094 ;; Registers used:
+  1095 ;;		wreg, status,2
+  1096 ;; Tracked objects:
+  1097 ;;		On entry : 0/0
+  1098 ;;		On exit  : 0/0
+  1099 ;;		Unchanged: 0/0
+  1100 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+  1101 ;;      Params:         0       0       0       0       0       0       0
+  1102 ;;      Locals:         0       0       0       0       0       0       0
+  1103 ;;      Temps:          0       0       0       0       0       0       0
+  1104 ;;      Totals:         0       0       0       0       0       0       0
+  1105 ;;Total ram usage:        0 bytes
+  1106 ;; Hardware stack levels used: 1
+  1107 ;; Hardware stack levels required when called: 2
+  1108 ;; This function calls:
+  1109 ;;		Nothing
+  1110 ;; This function is called by:
+  1111 ;;		_main
+  1112 ;; This function uses a non-reentrant model
+  1113 ;;
+  1114                           
+  1115                           	psect	text4
+  1116   000554                     __ptext4:
+  1117                           	callstack 0
+  1118   000554                     _servo_motor_setups:
+  1119                           	callstack 28
+  1120   000554                     
+  1121                           ;setting_hardaware/buttonversion.c: 60: 
+  1122   000554  0E0F               	movlw	15
+  1123   000556  6EC1               	movwf	193,c	;volatile
+  1124   000558                     
+  1125                           ;setting_hardaware/buttonversion.c: 62: 
+  1126   000558  84CA               	bsf	202,2,c	;volatile
+  1127                           
+  1128                           ;setting_hardaware/buttonversion.c: 63:     CCPR1L = 1450/32/4;
+  1129   00055A  50CA               	movf	202,w,c	;volatile
+  1130   00055C  0BFC               	andlw	-4
+  1131   00055E  0901               	iorlw	1
+  1132   000560  6ECA               	movwf	202,c	;volatile
+  1133                           
+  1134                           ;setting_hardaware/buttonversion.c: 65: 
+  1135   000562  50D3               	movf	211,w,c	;volatile
+  1136   000564  0B8F               	andlw	-113
+  1137   000566  0910               	iorlw	16
+  1138   000568  6ED3               	movwf	211,c	;volatile
+  1139                           
+  1140                           ;setting_hardaware/buttonversion.c: 67:     CCP2CONbits.DC2B = (500/32)%4;
+  1141   00056A  50BD               	movf	189,w,c	;volatile
+  1142   00056C  0BF0               	andlw	-16
+  1143   00056E  090C               	iorlw	12
+  1144   000570  6EBD               	movwf	189,c	;volatile
+  1145                           
+  1146                           ;setting_hardaware/buttonversion.c: 68: }
+  1147   000572  50BA               	movf	186,w,c	;volatile
+  1148   000574  0BF0               	andlw	-16
+  1149   000576  090C               	iorlw	12
+  1150   000578  6EBA               	movwf	186,c	;volatile
+  1151                           
+  1152                           ;setting_hardaware/buttonversion.c: 70: 
+  1153   00057A  0E00               	movlw	0
+  1154   00057C  6E94               	movwf	148,c	;volatile
+  1155                           
+  1156                           ;setting_hardaware/buttonversion.c: 72: 
+  1157   00057E  0E9B               	movlw	155
+  1158   000580  6ECB               	movwf	203,c	;volatile
+  1159                           
+  1160                           ;setting_hardaware/buttonversion.c: 74:     T0CONbits.T0CS = 0;
+  1161   000582  0E0B               	movlw	11
+  1162   000584  6EBE               	movwf	190,c	;volatile
+  1163                           
+  1164                           ;setting_hardaware/buttonversion.c: 75:     T0CONbits.T0SE = 0;
+  1165   000586  50BD               	movf	189,w,c	;volatile
+  1166   000588  0BCF               	andlw	-49
+  1167   00058A  0910               	iorlw	16
+  1168   00058C  6EBD               	movwf	189,c	;volatile
+  1169                           
+  1170                           ;setting_hardaware/buttonversion.c: 77:     T0CONbits.T0PS = 0b111;
+  1171   00058E  0E03               	movlw	3
+  1172   000590  6EBB               	movwf	187,c	;volatile
+  1173                           
+  1174                           ;setting_hardaware/buttonversion.c: 78:     TMR0H = 0xF8;
+  1175   000592  0E30               	movlw	48
+  1176   000594  12BA               	iorwf	186,f,c	;volatile
+  1177   000596  0012               	return		;funcret
+  1178   000598                     __end_of_servo_motor_setups:
+  1179                           	callstack 0
+  1180                           
+  1181 ;; *************** function _COMP_ISR *****************
+  1182 ;; Defined at:
+  1183 ;;		line 24 in file "setting_hardaware/buttonversion.c"
+  1184 ;; Parameters:    Size  Location     Type
+  1185 ;;		None
+  1186 ;; Auto vars:     Size  Location     Type
+  1187 ;;		None
+  1188 ;; Return value:  Size  Location     Type
+  1189 ;;                  1    wreg      void 
+  1190 ;; Registers used:
+  1191 ;;		wreg, status,2, status,0, cstack
+  1192 ;; Tracked objects:
+  1193 ;;		On entry : 0/0
+  1194 ;;		On exit  : 0/0
+  1195 ;;		Unchanged: 0/0
+  1196 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+  1197 ;;      Params:         0       0       0       0       0       0       0
+  1198 ;;      Locals:         0       0       0       0       0       0       0
+  1199 ;;      Temps:          1       0       0       0       0       0       0
+  1200 ;;      Totals:         1       0       0       0       0       0       0
+  1201 ;;Total ram usage:        1 bytes
+  1202 ;; Hardware stack levels used: 1
+  1203 ;; Hardware stack levels required when called: 1
+  1204 ;; This function calls:
+  1205 ;;		_check
+  1206 ;; This function is called by:
+  1207 ;;		Interrupt level 2
+  1208 ;; This function uses a non-reentrant model
+  1209 ;;
+  1210                           
+  1211                           	psect	intcode
+  1212   000008                     __pintcode:
+  1213                           	callstack 0
+  1214   000008                     _COMP_ISR:
+  1215                           	callstack 27
+  1216                           
+  1217                           ;incstack = 0
+  1218   000008  8225               	bsf	int$flags,1,c	;set compiler interrupt flag (level 2)
+  1219   00000A  ED86  F002         	call	int_func,f	;refresh shadow registers
+  1220                           
+  1221                           	psect	intcode_body
+  1222   00050C                     __pintcode_body:
+  1223                           	callstack 27
+  1224   00050C                     int_func:
+  1225                           	callstack 27
+  1226   00050C  0006               	pop		; remove dummy address from shadow register refresh
+  1227   00050E                     
+  1228                           ;setting_hardaware/buttonversion.c: 25:     check();
+  1229   00050E  0E0D               	movlw	13
+  1230   000510  6E02               	movwf	??_COMP_ISR^0,c
+  1231   000512  0EFC               	movlw	252
+  1232   000514                     i2u50_47:
+  1233   000514  2EE8               	decfsz	wreg,f,c
+  1234   000516  D7FE               	bra	i2u50_47
+  1235   000518  2E02               	decfsz	??_COMP_ISR^0,f,c
+  1236   00051A  D7FC               	bra	i2u50_47
+  1237   00051C                     
+  1238                           ;setting_hardaware/buttonversion.c: 26: 
+  1239   00051C  98F2               	bcf	242,4,c	;volatile
+  1240   00051E                     
+  1241                           ;setting_hardaware/buttonversion.c: 27: 
+  1242   00051E  96F0               	bcf	240,3,c	;volatile
+  1243   000520                     
+  1244                           ;setting_hardaware/buttonversion.c: 28: 
+  1245   000520  A2F2               	btfss	242,1,c	;volatile
+  1246   000522  EF95  F002         	goto	i2u20_41
+  1247   000526  EF97  F002         	goto	i2u20_40
+  1248   00052A                     i2u20_41:
+  1249   00052A  EF99  F002         	goto	i2l954
+  1250   00052E                     i2u20_40:
+  1251   00052E                     
+  1252                           ;setting_hardaware/buttonversion.c: 30: 
+  1253   00052E  4A1F               	infsnz	_player1^0,f,c
+  1254   000530  2A20               	incf	(_player1+1)^0,f,c
+  1255   000532                     i2l954:
+  1256                           
+  1257                           ;setting_hardaware/buttonversion.c: 32:     INTCONbits.INT0IE = 1;
+  1258   000532  A0F0               	btfss	240,0,c	;volatile
+  1259   000534  EF9E  F002         	goto	i2u21_41
+  1260   000538  EFA0  F002         	goto	i2u21_40
+  1261   00053C                     i2u21_41:
+  1262   00053C  EFA2  F002         	goto	i2l958
+  1263   000540                     i2u21_40:
+  1264   000540                     
+  1265                           ;setting_hardaware/buttonversion.c: 34:     INTCONbits.INT0IF = 0;
+  1266   000540  4A1D               	infsnz	_player2^0,f,c
+  1267   000542  2A1E               	incf	(_player2+1)^0,f,c
+  1268   000544                     i2l958:
+  1269                           
+  1270                           ;setting_hardaware/buttonversion.c: 36: }
+  1271   000544  EC53  F002         	call	_check	;wreg free
+  1272   000548                     
+  1273                           ;setting_hardaware/buttonversion.c: 43:         if(CCPR1L>700/32/4)
+  1274   000548  88F2               	bsf	242,4,c	;volatile
+  1275   00054A                     
+  1276                           ;setting_hardaware/buttonversion.c: 44:             CCPR1L--;
+  1277   00054A  86F0               	bsf	240,3,c	;volatile
+  1278   00054C                     
+  1279                           ;setting_hardaware/buttonversion.c: 45:     }
+  1280   00054C  92F2               	bcf	242,1,c	;volatile
+  1281   00054E                     
+  1282                           ;setting_hardaware/buttonversion.c: 46: }
+  1283   00054E  90F0               	bcf	240,0,c	;volatile
+  1284   000550  9225               	bcf	int$flags,1,c	;clear compiler interrupt flag (level 2)
+  1285   000552  0011               	retfie		f
+  1286   000554                     __end_of_COMP_ISR:
+  1287                           	callstack 0
+  1288                           
+  1289 ;; *************** function _check *****************
+  1290 ;; Defined at:
+  1291 ;;		line 48 in file "setting_hardaware/buttonversion.c"
+  1292 ;; Parameters:    Size  Location     Type
+  1293 ;;		None
+  1294 ;; Auto vars:     Size  Location     Type
+  1295 ;;		None
+  1296 ;; Return value:  Size  Location     Type
+  1297 ;;                  1    wreg      void 
+  1298 ;; Registers used:
+  1299 ;;		wreg, status,2, status,0
+  1300 ;; Tracked objects:
+  1301 ;;		On entry : 0/0
+  1302 ;;		On exit  : 0/0
+  1303 ;;		Unchanged: 0/0
+  1304 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+  1305 ;;      Params:         0       0       0       0       0       0       0
+  1306 ;;      Locals:         0       0       0       0       0       0       0
+  1307 ;;      Temps:          1       0       0       0       0       0       0
+  1308 ;;      Totals:         1       0       0       0       0       0       0
+  1309 ;;Total ram usage:        1 bytes
+  1310 ;; Hardware stack levels used: 1
+  1311 ;; This function calls:
+  1312 ;;		Nothing
+  1313 ;; This function is called by:
+  1314 ;;		_COMP_ISR
+  1315 ;; This function uses a non-reentrant model
+  1316 ;;
+  1317                           
+  1318                           	psect	text6
+  1319   0004A6                     __ptext6:
+  1320                           	callstack 0
+  1321   0004A6                     _check:
+  1322                           	callstack 27
+  1323   0004A6                     
+  1324                           ;setting_hardaware/buttonversion.c: 49:     ADCON1 = 0x0F;
+  1325   0004A6  501F               	movf	_player1^0,w,c
+  1326   0004A8  5C1D               	subwf	_player2^0,w,c
+  1327   0004AA  501E               	movf	(_player2+1)^0,w,c
+  1328   0004AC  0A80               	xorlw	128
+  1329   0004AE  6E01               	movwf	??_check^0,c
+  1330   0004B0  5020               	movf	(_player1+1)^0,w,c
+  1331   0004B2  0A80               	xorlw	128
+  1332   0004B4  5801               	subwfb	??_check^0,w,c
+  1333   0004B6  B0D8               	btfsc	status,0,c
+  1334   0004B8  EF60  F002         	goto	i2u7_41
+  1335   0004BC  EF62  F002         	goto	i2u7_40
+  1336   0004C0                     i2u7_41:
+  1337   0004C0  EF6D  F002         	goto	i2l832
+  1338   0004C4                     i2u7_40:
+  1339   0004C4                     
+  1340                           ;setting_hardaware/buttonversion.c: 50: 
+  1341   0004C4  0E11               	movlw	17
+  1342   0004C6  60BE               	cpfslt	190,c	;volatile
+  1343   0004C8  EF68  F002         	goto	i2u8_41
+  1344   0004CC  EF6A  F002         	goto	i2u8_40
+  1345   0004D0                     i2u8_41:
+  1346   0004D0  EF85  F002         	goto	i2l65
+  1347   0004D4                     i2u8_40:
+  1348   0004D4                     
+  1349                           ;setting_hardaware/buttonversion.c: 51:     T2CONbits.TMR2ON = 0b1;
+  1350   0004D4  2ABE               	incf	190,f,c	;volatile
+  1351   0004D6  EF85  F002         	goto	i2l65
+  1352   0004DA                     i2l832:
+  1353   0004DA  501D               	movf	_player2^0,w,c
+  1354   0004DC  5C1F               	subwf	_player1^0,w,c
+  1355   0004DE  5020               	movf	(_player1+1)^0,w,c
+  1356   0004E0  0A80               	xorlw	128
+  1357   0004E2  6E01               	movwf	??_check^0,c
+  1358   0004E4  501E               	movf	(_player2+1)^0,w,c
+  1359   0004E6  0A80               	xorlw	128
+  1360   0004E8  5801               	subwfb	??_check^0,w,c
+  1361   0004EA  B0D8               	btfsc	status,0,c
+  1362   0004EC  EF7A  F002         	goto	i2u9_41
+  1363   0004F0  EF7C  F002         	goto	i2u9_40
+  1364   0004F4                     i2u9_41:
+  1365   0004F4  EF85  F002         	goto	i2l65
+  1366   0004F8                     i2u9_40:
+  1367   0004F8                     
+  1368                           ;setting_hardaware/buttonversion.c: 54:     OSCCONbits.IRCF = 0b001;
+  1369   0004F8  0E05               	movlw	5
+  1370   0004FA  64BE               	cpfsgt	190,c	;volatile
+  1371   0004FC  EF82  F002         	goto	i2u10_41
+  1372   000500  EF84  F002         	goto	i2u10_40
+  1373   000504                     i2u10_41:
+  1374   000504  EF85  F002         	goto	i2l65
+  1375   000508                     i2u10_40:
+  1376   000508                     
+  1377                           ;setting_hardaware/buttonversion.c: 55: 
+  1378   000508  06BE               	decf	190,f,c	;volatile
+  1379   00050A                     i2l65:
+  1380   00050A  0012               	return		;funcret
+  1381   00050C                     __end_of_check:
+  1382                           	callstack 0
+  1383   000000                     
+  1384                           	psect	rparam
+  1385   000000                     
+  1386                           	psect	temp
+  1387   000025                     btemp:
+  1388                           	callstack 0
+  1389   000025                     	ds	1
+  1390   000000                     int$flags	set	btemp
+  1391   000000                     wtemp8	set	btemp+1
+  1392   000000                     ttemp5	set	btemp+1
+  1393   000000                     ttemp6	set	btemp+4
+  1394   000000                     ttemp7	set	btemp+8
+  1395                           
+  1396                           	psect	idloc
+  1397                           
+  1398                           ;Config register IDLOC0 @ 0x200000
+  1399                           ;	unspecified, using default values
+  1400   200000                     	org	2097152
+  1401   200000  FF                 	db	255
+  1402                           
+  1403                           ;Config register IDLOC1 @ 0x200001
+  1404                           ;	unspecified, using default values
+  1405   200001                     	org	2097153
+  1406   200001  FF                 	db	255
+  1407                           
+  1408                           ;Config register IDLOC2 @ 0x200002
+  1409                           ;	unspecified, using default values
+  1410   200002                     	org	2097154
+  1411   200002  FF                 	db	255
+  1412                           
+  1413                           ;Config register IDLOC3 @ 0x200003
+  1414                           ;	unspecified, using default values
+  1415   200003                     	org	2097155
+  1416   200003  FF                 	db	255
+  1417                           
+  1418                           ;Config register IDLOC4 @ 0x200004
+  1419                           ;	unspecified, using default values
+  1420   200004                     	org	2097156
+  1421   200004  FF                 	db	255
+  1422                           
+  1423                           ;Config register IDLOC5 @ 0x200005
+  1424                           ;	unspecified, using default values
+  1425   200005                     	org	2097157
+  1426   200005  FF                 	db	255
+  1427                           
+  1428                           ;Config register IDLOC6 @ 0x200006
+  1429                           ;	unspecified, using default values
+  1430   200006                     	org	2097158
+  1431   200006  FF                 	db	255
+  1432                           
+  1433                           ;Config register IDLOC7 @ 0x200007
+  1434                           ;	unspecified, using default values
+  1435   200007                     	org	2097159
+  1436   200007  FF                 	db	255
+  1437                           
+  1438                           	psect	config
+  1439                           
+  1440                           ; Padding undefined space
+  1441   300000                     	org	3145728
+  1442   300000  FF                 	db	255
+  1443                           
+  1444                           ;Config register CONFIG1H @ 0x300001
+  1445                           ;	Oscillator Selection bits
+  1446                           ;	OSC = INTIO67, Internal oscillator block, port function on RA6 and RA7
+  1447                           ;	Fail-Safe Clock Monitor Enable bit
+  1448                           ;	FCMEN = 0x0, unprogrammed default
+  1449                           ;	Internal/External Oscillator Switchover bit
+  1450                           ;	IESO = 0x0, unprogrammed default
+  1451   300001                     	org	3145729
+  1452   300001  08                 	db	8
+  1453                           
+  1454                           ;Config register CONFIG2L @ 0x300002
+  1455                           ;	Power-up Timer Enable bit
+  1456                           ;	PWRT = OFF, PWRT disabled
+  1457                           ;	Brown-out Reset Enable bits
+  1458                           ;	BOREN = ON, Brown-out Reset enabled and controlled by software (SBOREN is enabled)
+  1459                           ;	Brown Out Reset Voltage bits
+  1460                           ;	BORV = 0x3, unprogrammed default
+  1461   300002                     	org	3145730
+  1462   300002  1B                 	db	27
+  1463                           
+  1464                           ;Config register CONFIG2H @ 0x300003
+  1465                           ;	Watchdog Timer Enable bit
+  1466                           ;	WDT = OFF, WDT disabled (control is placed on the SWDTEN bit)
+  1467                           ;	Watchdog Timer Postscale Select bits
+  1468                           ;	WDTPS = 0xF, unprogrammed default
+  1469   300003                     	org	3145731
+  1470   300003  1E                 	db	30
+  1471                           
+  1472                           ; Padding undefined space
+  1473   300004                     	org	3145732
+  1474   300004  FF                 	db	255
+  1475                           
+  1476                           ;Config register CONFIG3H @ 0x300005
+  1477                           ;	CCP2 MUX bit
+  1478                           ;	CCP2MX = 0x1, unprogrammed default
+  1479                           ;	PORTB A/D Enable bit
+  1480                           ;	PBADEN = OFF, PORTB<4:0> pins are configured as digital I/O on Reset
+  1481                           ;	Low-Power Timer1 Oscillator Enable bit
+  1482                           ;	LPT1OSC = 0x0, unprogrammed default
+  1483                           ;	MCLR Pin Enable bit
+  1484                           ;	MCLRE = 0x1, unprogrammed default
+  1485   300005                     	org	3145733
+  1486   300005  81                 	db	129
+  1487                           
+  1488                           ;Config register CONFIG4L @ 0x300006
+  1489                           ;	Stack Full/Underflow Reset Enable bit
+  1490                           ;	STVREN = 0x1, unprogrammed default
+  1491                           ;	Single-Supply ICSP Enable bit
+  1492                           ;	LVP = OFF, Single-Supply ICSP disabled
+  1493                           ;	Extended Instruction Set Enable bit
+  1494                           ;	XINST = 0x0, unprogrammed default
+  1495                           ;	Background Debugger Enable bit
+  1496                           ;	DEBUG = 0x1, unprogrammed default
+  1497   300006                     	org	3145734
+  1498   300006  81                 	db	129
+  1499                           
+  1500                           ; Padding undefined space
+  1501   300007                     	org	3145735
+  1502   300007  FF                 	db	255
+  1503                           
+  1504                           ;Config register CONFIG5L @ 0x300008
+  1505                           ;	unspecified, using default values
+  1506                           ;	Code Protection bit
+  1507                           ;	CP0 = 0x1, unprogrammed default
+  1508                           ;	Code Protection bit
+  1509                           ;	CP1 = 0x1, unprogrammed default
+  1510                           ;	Code Protection bit
+  1511                           ;	CP2 = 0x1, unprogrammed default
+  1512                           ;	Code Protection bit
+  1513                           ;	CP3 = 0x1, unprogrammed default
+  1514   300008                     	org	3145736
+  1515   300008  0F                 	db	15
+  1516                           
+  1517                           ;Config register CONFIG5H @ 0x300009
+  1518                           ;	Boot Block Code Protection bit
+  1519                           ;	CPB = 0x1, unprogrammed default
+  1520                           ;	Data EEPROM Code Protection bit
+  1521                           ;	CPD = OFF, Data EEPROM not code-protected
+  1522   300009                     	org	3145737
+  1523   300009  C0                 	db	192
+  1524                           
+  1525                           ;Config register CONFIG6L @ 0x30000A
+  1526                           ;	unspecified, using default values
+  1527                           ;	Write Protection bit
+  1528                           ;	WRT0 = 0x1, unprogrammed default
+  1529                           ;	Write Protection bit
+  1530                           ;	WRT1 = 0x1, unprogrammed default
+  1531                           ;	Write Protection bit
+  1532                           ;	WRT2 = 0x1, unprogrammed default
+  1533                           ;	Write Protection bit
+  1534                           ;	WRT3 = 0x1, unprogrammed default
+  1535   30000A                     	org	3145738
+  1536   30000A  0F                 	db	15
+  1537                           
+  1538                           ;Config register CONFIG6H @ 0x30000B
+  1539                           ;	unspecified, using default values
+  1540                           ;	Configuration Register Write Protection bit
+  1541                           ;	WRTC = 0x1, unprogrammed default
+  1542                           ;	Boot Block Write Protection bit
+  1543                           ;	WRTB = 0x1, unprogrammed default
+  1544                           ;	Data EEPROM Write Protection bit
+  1545                           ;	WRTD = 0x1, unprogrammed default
+  1546   30000B                     	org	3145739
+  1547   30000B  E0                 	db	224
+  1548                           
+  1549                           ;Config register CONFIG7L @ 0x30000C
+  1550                           ;	unspecified, using default values
+  1551                           ;	Table Read Protection bit
+  1552                           ;	EBTR0 = 0x1, unprogrammed default
+  1553                           ;	Table Read Protection bit
+  1554                           ;	EBTR1 = 0x1, unprogrammed default
+  1555                           ;	Table Read Protection bit
+  1556                           ;	EBTR2 = 0x1, unprogrammed default
+  1557                           ;	Table Read Protection bit
+  1558                           ;	EBTR3 = 0x1, unprogrammed default
+  1559   30000C                     	org	3145740
+  1560   30000C  0F                 	db	15
+  1561                           
+  1562                           ;Config register CONFIG7H @ 0x30000D
+  1563                           ;	unspecified, using default values
+  1564                           ;	Boot Block Table Read Protection bit
+  1565                           ;	EBTRB = 0x1, unprogrammed default
+  1566   30000D                     	org	3145741
+  1567   30000D  40                 	db	64
+  1568                           tosu	equ	0xFFF
+  1569                           tosh	equ	0xFFE
+  1570                           tosl	equ	0xFFD
+  1571                           stkptr	equ	0xFFC
+  1572                           pclatu	equ	0xFFB
+  1573                           pclath	equ	0xFFA
+  1574                           pcl	equ	0xFF9
+  1575                           tblptru	equ	0xFF8
+  1576                           tblptrh	equ	0xFF7
+  1577                           tblptrl	equ	0xFF6
+  1578                           tablat	equ	0xFF5
+  1579                           prodh	equ	0xFF4
+  1580                           prodl	equ	0xFF3
+  1581                           indf0	equ	0xFEF
+  1582                           postinc0	equ	0xFEE
+  1583                           postdec0	equ	0xFED
+  1584                           preinc0	equ	0xFEC
+  1585                           plusw0	equ	0xFEB
+  1586                           fsr0h	equ	0xFEA
+  1587                           fsr0l	equ	0xFE9
+  1588                           wreg	equ	0xFE8
+  1589                           indf1	equ	0xFE7
+  1590                           postinc1	equ	0xFE6
+  1591                           postdec1	equ	0xFE5
+  1592                           preinc1	equ	0xFE4
+  1593                           plusw1	equ	0xFE3
+  1594                           fsr1h	equ	0xFE2
+  1595                           fsr1l	equ	0xFE1
+  1596                           bsr	equ	0xFE0
+  1597                           indf2	equ	0xFDF
+  1598                           postinc2	equ	0xFDE
+  1599                           postdec2	equ	0xFDD
+  1600                           preinc2	equ	0xFDC
+  1601                           plusw2	equ	0xFDB
+  1602                           fsr2h	equ	0xFDA
+  1603                           fsr2l	equ	0xFD9
+  1604                           status	equ	0xFD8
+
+Data Sizes:
+    Strings     0
+    Constant    0
+    Data        12
+    BSS         8
+    Persistent  0
+    Stack       0
+
+Auto Spaces:
+    Space          Size  Autos    Used
+    COMRAM          126     16      36
+    BANK0           128      0       0
+    BANK1           256      0       0
+    BANK2           256      0       0
+    BANK3           256      0       0
+    BANK4           256      0       0
+    BANK5           244      0       0
+
+Pointer List with Targets:
+
+    None.
+
+Critical Paths under _main in COMRAM
+
+    _main->_servo_start
+    _servo_start->___awdiv
+
+Critical Paths under _COMP_ISR in COMRAM
+
+    _COMP_ISR->_check
+
+Critical Paths under _main in BANK0
+
+    None.
+
+Critical Paths under _COMP_ISR in BANK0
+
+    None.
+
+Critical Paths under _main in BANK1
+
+    None.
+
+Critical Paths under _COMP_ISR in BANK1
+
+    None.
+
+Critical Paths under _main in BANK2
+
+    None.
+
+Critical Paths under _COMP_ISR in BANK2
+
+    None.
+
+Critical Paths under _main in BANK3
+
+    None.
+
+Critical Paths under _COMP_ISR in BANK3
+
+    None.
+
+Critical Paths under _main in BANK4
+
+    None.
+
+Critical Paths under _COMP_ISR in BANK4
+
+    None.
+
+Critical Paths under _main in BANK5
+
+    None.
+
+Critical Paths under _COMP_ISR in BANK5
+
+    None.
+
+Call Graph Tables:
+
+ ---------------------------------------------------------------------------------
+ (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
+ ---------------------------------------------------------------------------------
+ (0) _main                                                 1     1      0    2485
+                                             15 COMRAM     1     1      0
+                 _servo_motor_setups
+                        _servo_start
+                      _timer0_setups
+ ---------------------------------------------------------------------------------
+ (1) _timer0_setups                                        0     0      0       0
+ ---------------------------------------------------------------------------------
+ (1) _servo_start                                          5     5      0    2485
+                                             10 COMRAM     5     5      0
+                            ___awdiv
+ ---------------------------------------------------------------------------------
+ (2) ___awdiv                                              8     4      4    2124
+                                              2 COMRAM     8     4      4
+ ---------------------------------------------------------------------------------
+ (1) _servo_motor_setups                                   0     0      0       0
+ ---------------------------------------------------------------------------------
+ Estimated maximum stack depth 2
+ ---------------------------------------------------------------------------------
+ (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
+ ---------------------------------------------------------------------------------
+ (3) _COMP_ISR                                             1     1      0       0
+                                              1 COMRAM     1     1      0
+                              _check
+ ---------------------------------------------------------------------------------
+ (4) _check                                                1     1      0       0
+                                              0 COMRAM     1     1      0
+ ---------------------------------------------------------------------------------
+ Estimated maximum stack depth 4
+ ---------------------------------------------------------------------------------
+
+ Call Graph Graphs:
+
+ _main (ROOT)
+   _servo_motor_setups
+   _servo_start
+     ___awdiv
+   _timer0_setups
+
+ _COMP_ISR (ROOT)
+   _check
+
+ Address spaces:
+Name               Size   Autos  Total    Cost      Usage
+BIGRAM             5F3      0       0      29        0.0%
+EEDATA             100      0       0       0        0.0%
+BITBANK4           100      0       0      11        0.0%
+BANK4              100      0       0      12        0.0%
+BITBANK3           100      0       0       9        0.0%
+BANK3              100      0       0      10        0.0%
+BITBANK2           100      0       0       7        0.0%
+BANK2              100      0       0       8        0.0%
+BITBANK1           100      0       0       5        0.0%
+BANK1              100      0       0       6        0.0%
+BITBANK5            F4      0       0      13        0.0%
+BANK5               F4      0       0      14        0.0%
+BITBANK0            80      0       0       3        0.0%
+BANK0               80      0       0       4        0.0%
+BITCOMRAM           7E      0       0       0        0.0%
+COMRAM              7E     10      24       1       28.6%
+BITBIGSFR_1ll       1D      0       0      24        0.0%
+BITBIGSFRll          B      0       0      27        0.0%
+BITBIGSFR_5h         A      0       0      15        0.0%
+BITBIGSFR_1hhl       8      0       0      21        0.0%
+BITBIGSFRlh          7      0       0      26        0.0%
+BITBIGSFR_1hhh       7      0       0      20        0.0%
+BITBIGSFRh           6      0       0      25        0.0%
+BITBIGSFR_2h         3      0       0      19        0.0%
+BITBIGSFR_4          3      0       0      17        0.0%
+BITBIGSFR_3          3      0       0      18        0.0%
+BITBIGSFR_1hl        2      0       0      22        0.0%
+BITBIGSFR_1lh        1      0       0      23        0.0%
+BITBIGSFR_5l         1      0       0      16        0.0%
+BIGSFR_5             0      0       0     200        0.0%
+BIGSFR_4             0      0       0     200        0.0%
+BIGSFR_3             0      0       0     200        0.0%
+BIGSFR_2             0      0       0     200        0.0%
+BIGSFR_1             0      0       0     200        0.0%
+BIGSFR               0      0       0     200        0.0%
+BITSFR_5             0      0       0     200        0.0%
+SFR_5                0      0       0     200        0.0%
+BITSFR_4             0      0       0     200        0.0%
+SFR_4                0      0       0     200        0.0%
+BITSFR_3             0      0       0     200        0.0%
+SFR_3                0      0       0     200        0.0%
+BITSFR_2             0      0       0     200        0.0%
+SFR_2                0      0       0     200        0.0%
+BITSFR_1             0      0       0     200        0.0%
+SFR_1                0      0       0     200        0.0%
+BITSFR               0      0       0     200        0.0%
+SFR                  0      0       0     200        0.0%
+STACK                0      0       0       2        0.0%
+NULL                 0      0       0       0        0.0%
+ABS                  0      0      24      28        0.0%
+DATA                 0      0      24      30        0.0%
+CODE                 0      0       0       0        0.0%
+
+
+Microchip Technology PIC18 Macro Assembler V2.40 build 20220703182018 
+Symbol Table                                                                                   Sat Jan 07 22:28:26 2023
+
+                         _A 0017                           _B 0011                           _i 0023  
+                        l71 05E4                          l81 0336                          l68 0596  
+                        l76 009E                          l95 0340                          l97 034E  
+                        l98 035C                ___awdiv@sign 0008                         l340 0420  
+                       l840 0558                         l842 05CE                         l844 05D6  
+                       l838 0554                         l846 05E2                         l996 035E  
+                       l998 0362                         u220 0370                         u300 0162  
+                       u221 036C                         u301 015E                         u230 038A  
+                       u310 0184                         u231 0386                         u311 0180  
+                       u240 03B0                         u320 020C                         u241 03AC  
+                       u321 0208                         u250 03CE                         u330 0226  
+                       u251 03CA                         u331 0222                         u260 03EA  
+                       u340 02AE                         u261 03E6                         u341 02AA  
+                       u270 0410                         u350 0336                         _PR2 000FCB  
+                       u271 040C                         u351 0332                         u407 0036  
+                       u360 034E                         u280 009E                         u361 034A  
+                       u281 009A                         u417 004A                         u290 00DA  
+                       u291 00D6                         u427 005E                         u437 0072  
+                       u447 0086                         u457 00A8                         u377 0484  
+                       u467 00E0                         u387 0496                         u477 018A  
+                       u397 0022                         u487 022C                         u497 02B4  
+                       wreg 000FE8                servo_start@j 000E                        l1000 0370  
+                      l1010 0396                        l1002 0378                        l1020 03CE  
+                      l1012 039E                        l1004 037C                        l1100 0218  
+                      l1030 03FA                        l1022 03D4                        l1014 03B0  
+                      l1006 038A                        l1110 0266                        l1024 03EA  
+                      l1016 03B8                        l1032 0400                        l1008 0392  
+                      l1120 02D6                        l1112 028A                        l1104 022A  
+                      l1040 0012                        l1034 0410                        l1026 03F2  
+                      l1018 03C0                        l1130 033C                        l1122 02EE  
+                      l1106 0232                        l1114 0292                        l1050 0044  
+                      l1042 0018                        l1036 0418                        l1028 03F4  
+                      l1132 033E                        l1124 0312                        l1116 02B2  
+                      l1108 024E                        l1052 0058                        l1044 001C  
+                      l1060 0090                        l1140 0438                        l1134 0350  
+                      l1118 02BA                        l1126 031A                        l1070 00DE  
+                      l1062 00A2                        l1054 0068                        l1046 002C  
+                      l1150 046E                        l1142 043A                        l1128 0338  
+                      l1072 00E6                        l1080 0146                        l1064 00B0  
+                      l1056 007C                        l1048 0040                        l1160 048C  
+                      l1152 0472                        l1144 043C                        l1136 0422  
+                      l1090 01AC                        l1074 0102                        l1082 0166  
+                      l1066 00BC                        l1058 0080                        l1162 0490  
+                      l1154 0476                        l1146 043E                        l1138 0436  
+                      l1092 01C4                        l1076 011A                        l1156 047A  
+                      l1148 0440                        l1094 01E8                        l1086 0188  
+                      l1078 013E                        l1158 047E                        l1088 0190  
+                      l1096 01F0                        l1098 0210                        _LATC 000F8B  
+                      _LATD 000F8C                        i2l65 050A                        i2l57 0550  
+                      _main 0422                        fsr1l 000FE1                        btemp 0025  
+                      prodh 000FF4                        prodl 000FF3                        start 000E  
+              ___param_bank 000000            __end_of_COMP_ISR 0554                       ?_main 0001  
+           __end_of___awdiv 0422             ___awdiv@divisor 0005                       i2l830 04D4  
+                     i2l832 04DA                       i2l834 04F8                       i2l826 04A6  
+                     i2l836 0508                       i2l828 04C4                       i2l950 0520  
+                     i2l960 0548                       i2l952 052E                       i2l944 050E  
+                     i2l962 054A                       i2l954 0532                       i2l946 051C  
+                     i2l964 054C                       i2l956 0540                       i2l948 051E  
+           ___awdiv@counter 0007                       i2l966 054E                       i2l958 0544  
+                     _TMR0H 000FD7                       _TMR0L 000FD6                       _TRISC 000F94  
+                     _TRISD 000F95                       _check 04A6                       tablat 000FF5  
+                     ttemp5 0026                       ttemp6 0029                       ttemp7 002D  
+                     status 000FD8                       wtemp8 0026             __initialization 0598  
+              __end_of_main 04A6                      ??_main 0010               __activetblptr 000000  
+                    ?_check 0001                      _ADCON1 000FC1                      _CCPR1L 000FBE  
+                    _CCPR2L 000FBB            ___awdiv@dividend 0003                      i2u7_40 04C4  
+                    i2u7_41 04C0                      i2u8_40 04D4                      i2u8_41 04D0  
+                    i2u9_40 04F8                      i2u9_41 04F4                   ??___awdiv 0007  
+                    clear_0 05BE            ___awdiv@quotient 0009                      isa$std 000001  
+              __pdataCOMRAM 0011                      tblptrh 000FF7                      tblptrl 000FF6  
+                    tblptru 000FF8                ?_servo_start 0001                   ?_COMP_ISR 0001  
+                __accesstop 0080     __end_of__initialization 05C4               ___rparam_used 000001  
+            __pcstackCOMRAM 0001               __end_of_check 050C                     ??_check 0001  
+     __end_of_timer0_setups 05E6                  ??_COMP_ISR 0002                     i2u10_40 0508  
+                   i2u10_41 0504                     i2u20_40 052E                     i2u20_41 052A  
+                   i2u21_40 0540                     i2u21_41 053C                     i2u50_47 0514  
+                   __Hparam 0000                     __Lparam 0000                     ___awdiv 035E  
+                   __pcinit 0598                     __ramtop 0600                     __ptext0 0422  
+                   __ptext1 05CE                     __ptext2 0012                     __ptext3 035E  
+                   __ptext4 0554                     __ptext6 04A6                   _T0CONbits 000FD5  
+                 _T2CONbits 000FCA                     _player1 001F                     _player2 001D  
+            __pintcode_body 050C        end_of_initialization 05C4                     int_func 050C  
+                   postdec1 000FE5                     postinc0 000FEE                 _CCP1CONbits 000FBD  
+               _CCP2CONbits 000FBA               __pidataCOMRAM 05E6         start_initialization 0598  
+           _servo_start$992 000C                 __pbssCOMRAM 001D  __end_of_servo_motor_setups 0598  
+                 __pintcode 0008                    ?___awdiv 0003                   _direction 0021  
+                  _COMP_ISR 0008               ??_servo_start 000B                 _INTCON3bits 000FF0  
+                 copy_data0 05AC               _timer0_setups 05CE                    __Hrparam 0000  
+                  __Lrparam 0000              ?_timer0_setups 0001         __end_of_servo_start 035E  
+                  isa$xinst 000000                    int$flags 0025                  _INTCONbits 000FF2  
+                  intlevel2 0000          _servo_motor_setups 0554                  _OSCCONbits 000FD3  
+       ?_servo_motor_setups 0001             ??_timer0_setups 0003        ??_servo_motor_setups 0003  
+               _servo_start 0012  
