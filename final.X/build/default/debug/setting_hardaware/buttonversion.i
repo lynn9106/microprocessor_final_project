@@ -4679,6 +4679,7 @@ void servo_motor_setups(){
     CCP2CONbits.CCP2M = 0b1100;
 
     TRISC = 0;
+    LATC = 0x01;
 
     PR2 = 0x9b;
 
@@ -4704,6 +4705,7 @@ void timer0_setups(){
 
 void servo_start(){
     T0CONbits.TMR0ON = 1;
+    LATC = 0;
     while(INTCONbits.TMR0IF != 1){
         LATD=0b0001;
         _delay((unsigned long)((5)*(4000000/4000.0)));
@@ -4720,7 +4722,9 @@ void servo_start(){
         _delay((unsigned long)((5)*(4000000/4000.0)));
     }
     T0CONbits.TMR0ON = 0;
-    INTCONbits.GIE=0;
+    INTCONbits.INT0IE = 0;
+    INTCON3bits.INT1IE = 0;
+    LATC = 1;
 
 
 
@@ -4776,46 +4780,58 @@ void servo_start(){
 void main(void)
 {
 
-    i = 0;
-    direction = 0;
 
     ADCON1 = 0x0F;
-    INTCONbits.INT0IE = 1;
-    INTCONbits.INT0IF = 0;
-    INTCON3bits.INT1IE = 1;
-    INTCON3bits.INT1IF = 0;
-    INTCONbits.GIE = 1;
-
-    T2CONbits.TMR2ON = 0b1;
-    T2CONbits.T2CKPS = 0b01;
-
-
-    OSCCONbits.IRCF = 0b001;
-
-
-    CCP1CONbits.CCP1M = 0b1100;
-
-
-    TRISC = 0;
-    LATC = 0;
-    TRISD = 0;
-    LATD = 0;
-
-    PR2 = 0x9b;
-
-
-
-    servo_motor_setups();
-    timer0_setups();
-    servo_start();
+    INTCON3bits.INT2IF = 0;
     while(1){
-        LATD=0b1111;
-        _delay((unsigned long)((10)*(4000000/4000.0)));
-        LATD=0b0000;
-        _delay((unsigned long)((10)*(4000000/4000.0)));
+        player1 = 0;
+        player2 = 0;
+        while(INTCON3bits.INT2IF != 1);
+        INTCON3bits.INT2IE = 0;
+        INTCON3bits.INT2IF = 0;
+        i = 0;
+        direction = 0;
+
+        ADCON1 = 0x0F;
+        INTCONbits.INT0IE = 1;
+        INTCONbits.INT0IF = 0;
+        INTCON3bits.INT1IE = 1;
+        INTCON3bits.INT1IF = 0;
+        INTCONbits.GIE = 1;
+
+        T2CONbits.TMR2ON = 0b1;
+        T2CONbits.T2CKPS = 0b01;
+
+
+        OSCCONbits.IRCF = 0b001;
+
+
+        CCP1CONbits.CCP1M = 0b1100;
+
+
+
+
+        TRISD = 0;
+        LATD = 0;
+
+        PR2 = 0x9b;
+
+
+
+        servo_motor_setups();
+        timer0_setups();
+        servo_start();
+        INTCON3bits.INT2IF = 0;
+        while(INTCON3bits.INT2IF == 0){
+            LATD=0b1111;
+            _delay((unsigned long)((10)*(4000000/4000.0)));
+            LATD=0b0000;
+            _delay((unsigned long)((10)*(4000000/4000.0)));
+        }
     }
+
     return;
 }
 #pragma interrupt COMP_ISR
-# 208 "setting_hardaware/buttonversion.c"
+# 224 "setting_hardaware/buttonversion.c"
 

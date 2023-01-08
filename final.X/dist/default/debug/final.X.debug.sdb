@@ -29,17 +29,17 @@
 [v ___lmul __lmul `(ul  1 e 4 0 ]
 "91 C:\Program Files\Microchip\xc8\v2.40\pic\sources\c99\common\Umul64.c
 [v ___omul __omul `(uo  1 e 8 0 ]
-"24 D:\Microprocessor\project\final.X\setting_hardaware/buttonversion.c
+"24 D:\college\111-1\MicroProcessor\microprocessor_final_project\final.X\setting_hardaware/buttonversion.c
 [v _COMP_ISR COMP_ISR `IIH(v  1 e 1 0 ]
 "48
 [v _check check `(v  1 e 1 0 ]
 "58
 [v _servo_motor_setups servo_motor_setups `(v  1 e 1 0 ]
-"82
+"83
 [v _timer0_setups timer0_setups `(v  1 e 1 0 ]
-"94
+"95
 [v _servo_start servo_start `(v  1 e 1 0 ]
-"165
+"169
 [v _main main `(v  1 e 1 0 ]
 "1202 C:\Program Files\Microchip\xc8\v2.40\pic\include\proc\pic18f4520.h
 [v _LATC LATC `VEuc  1 e 1 @3979 ]
@@ -132,7 +132,7 @@
 ]
 [u S180 . 1 `S166 1 . 1 0 `S172 1 . 1 0 ]
 [v _OSCCONbits OSCCONbits `VES180  1 e 1 @4051 ]
-[s S273 . 1 `uc 1 T0PS 1 0 :3:0 
+[s S274 . 1 `uc 1 T0PS 1 0 :3:0 
 `uc 1 PSA 1 0 :1:3 
 `uc 1 T0SE 1 0 :1:4 
 `uc 1 T0CS 1 0 :1:5 
@@ -140,15 +140,15 @@
 `uc 1 TMR0ON 1 0 :1:7 
 ]
 "6192
-[s S280 . 1 `uc 1 T0PS0 1 0 :1:0 
+[s S281 . 1 `uc 1 T0PS0 1 0 :1:0 
 `uc 1 T0PS1 1 0 :1:1 
 `uc 1 T0PS2 1 0 :1:2 
 `uc 1 T0PS3 1 0 :1:3 
 `uc 1 . 1 0 :2:4 
 `uc 1 T016BIT 1 0 :1:6 
 ]
-[u S287 . 1 `S273 1 . 1 0 `S280 1 . 1 0 ]
-[v _T0CONbits T0CONbits `VES287  1 e 1 @4053 ]
+[u S288 . 1 `S274 1 . 1 0 `S281 1 . 1 0 ]
+[v _T0CONbits T0CONbits `VES288  1 e 1 @4053 ]
 "6259
 [v _TMR0L TMR0L `VEuc  1 e 1 @4054 ]
 "6266
@@ -199,29 +199,29 @@
 ]
 [u S52 . 1 `S30 1 . 1 0 `S39 1 . 1 0 `S48 1 . 1 0 ]
 [v _INTCONbits INTCONbits `VES52  1 e 1 @4082 ]
-"18 D:\Microprocessor\project\final.X\setting_hardaware/buttonversion.c
+"18 D:\college\111-1\MicroProcessor\microprocessor_final_project\final.X\setting_hardaware/buttonversion.c
 [v _i i `i  1 e 2 0 ]
 [v _direction direction `i  1 e 2 0 ]
 "21
 [v _player1 player1 `i  1 e 2 0 ]
 "22
 [v _player2 player2 `i  1 e 2 0 ]
-"165
+"169
 [v _main main `(v  1 e 1 0 ]
 {
-"207
+"223
 } 0
-"82
+"83
 [v _timer0_setups timer0_setups `(v  1 e 1 0 ]
 {
-"92
+"93
 } 0
-"94
+"95
 [v _servo_start servo_start `(v  1 e 1 0 ]
 {
-"120
+"124
 [v servo_start@j j `i  1 a 2 13 ]
-"164
+"168
 } 0
 "7 C:\Program Files\Microchip\xc8\v2.40\pic\sources\c99\common\awdiv.c
 [v ___awdiv __awdiv `(i  1 e 2 0 ]
@@ -236,10 +236,10 @@
 [v ___awdiv@divisor divisor `i  1 p 2 4 ]
 "41
 } 0
-"58 D:\Microprocessor\project\final.X\setting_hardaware/buttonversion.c
+"58 D:\college\111-1\MicroProcessor\microprocessor_final_project\final.X\setting_hardaware/buttonversion.c
 [v _servo_motor_setups servo_motor_setups `(v  1 e 1 0 ]
 {
-"79
+"80
 } 0
 "24
 [v _COMP_ISR COMP_ISR `IIH(v  1 e 1 0 ]

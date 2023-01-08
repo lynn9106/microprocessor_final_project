@@ -68,6 +68,7 @@ void servo_motor_setups(){
     CCP2CONbits.CCP2M = 0b1100;
     // CCP1 -> Output
     TRISC = 0;
+    LATC = 0x01;
     // Set up PR2, CCP to decide PWM period and Duty Cycle
     PR2 = 0x9b;
     //reset 2 motors
@@ -93,6 +94,7 @@ void timer0_setups(){
 
 void servo_start(){
     T0CONbits.TMR0ON = 1;//start timer0
+    LATC = 0;
     while(INTCONbits.TMR0IF != 1){
         LATD=0b0001;
         __delay_ms(5);
@@ -109,7 +111,9 @@ void servo_start(){
         __delay_ms(5);
     }
     T0CONbits.TMR0ON = 0;//stop timer0
-    INTCONbits.GIE=0;
+    INTCONbits.INT0IE = 0;
+    INTCON3bits.INT1IE = 0;
+    LATC = 1;
     /*
     for(int j = 1450; j <= 2400; j+=100){//2400
         CCPR1L = j/32/4;
@@ -164,45 +168,57 @@ void servo_start(){
 }
 void main(void)
 {
-    
-    i = 0;
-    direction = 0;
-    //setups for interrupt
+    //INTCONbits.GIE = 1;
+    //INTCON3bits.INT2IE = 1;
     ADCON1 = 0x0F;
-    INTCONbits.INT0IE = 1;//Enable external interrupt
-    INTCONbits.INT0IF = 0;//Clear external interrupt flag
-    INTCON3bits.INT1IE = 1;//Enable external interrupt
-    INTCON3bits.INT1IF = 0;//Clear external interrupt flag
-    INTCONbits.GIE = 1;//Enable global interrupt
-    // Timer2 -> On, prescaler -> 4
-    T2CONbits.TMR2ON = 0b1;
-    T2CONbits.T2CKPS = 0b01;
-
-    // Internal Oscillator Frequency, Fosc = 125 kHz, Tosc = 8 ?
-    OSCCONbits.IRCF = 0b001;
-    
-    // PWM mode, P1A, P1C active-high; P1B, P1D active-high
-    CCP1CONbits.CCP1M = 0b1100;
-    
-    // CCP1/RC2 -> Output
-    TRISC = 0;
-    LATC = 0;
-    TRISD = 0;
-    LATD = 0;
-    // Set up PR2, CCP to decide PWM period and Duty Cycle
-    PR2 = 0x9b;
-    //CCPR1L = A[0];
-    //CCP1CONbits.DC1B = B[0];//(3*4+4)*8*4=512?
-    
-    servo_motor_setups();
-    timer0_setups();
-    servo_start();
+    INTCON3bits.INT2IF = 0;
     while(1){
-        LATD=0b1111;
-        __delay_ms(10);
-        LATD=0b0000;
-        __delay_ms(10);
+        player1 = 0;
+        player2 = 0;
+        while(INTCON3bits.INT2IF != 1);
+        INTCON3bits.INT2IE = 0;
+        INTCON3bits.INT2IF = 0;
+        i = 0;
+        direction = 0;
+        //setups for interrupt
+        ADCON1 = 0x0F;
+        INTCONbits.INT0IE = 1;//Enable external interrupt
+        INTCONbits.INT0IF = 0;//Clear external interrupt flag
+        INTCON3bits.INT1IE = 1;//Enable external interrupt
+        INTCON3bits.INT1IF = 0;//Clear external interrupt flag
+        INTCONbits.GIE = 1;//Enable global interrupt
+        // Timer2 -> On, prescaler -> 4
+        T2CONbits.TMR2ON = 0b1;
+        T2CONbits.T2CKPS = 0b01;
+
+        // Internal Oscillator Frequency, Fosc = 125 kHz, Tosc = 8 ?
+        OSCCONbits.IRCF = 0b001;
+
+        // PWM mode, P1A, P1C active-high; P1B, P1D active-high
+        CCP1CONbits.CCP1M = 0b1100;
+
+        // CCP1/RC2 -> Output
+        //TRISC = 0;
+        //LATC = 0;
+        TRISD = 0;
+        LATD = 0;
+        // Set up PR2, CCP to decide PWM period and Duty Cycle
+        PR2 = 0x9b;
+        //CCPR1L = A[0];
+        //CCP1CONbits.DC1B = B[0];//(3*4+4)*8*4=512?
+
+        servo_motor_setups();
+        timer0_setups();
+        servo_start();
+        INTCON3bits.INT2IF = 0;
+        while(INTCON3bits.INT2IF == 0){
+            LATD=0b1111;
+            __delay_ms(10);
+            LATD=0b0000;
+            __delay_ms(10);
+        }
     }
+    
     return;
 }
 #pragma interrupt COMP_ISR
