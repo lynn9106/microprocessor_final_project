@@ -108,14 +108,18 @@ int music_signal = 0;
 
 void __interrupt() buttom(void)             // High priority interrupt
 {
+    PlayMusic();
+    PlayMusic1();
+    /*
     if (music_signal == 0){
         music_signal = 1;
         PlayMusic();
     }
     else if (music_signal == 1){
-        music_signal = 2;
+        music_signal = 0;
         PlayMusic1();
     }  
+     */
     INTCONbits.INT0IF = 0;
 }
 
@@ -215,7 +219,7 @@ void PlayMusic1(void) {
     };
 
     static uint8_t duration[] = {
-        16, 16, 16, 8, 16, 8, 16, 16,
+        16, 16, 16, 8, 16, 8, 16, 16, 
     };
 
     for (int i = 0; i < sizeof (duration); i++) {
@@ -224,6 +228,6 @@ void PlayMusic1(void) {
     }
 }
 
-
-
+//16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16
+// NOTE_C5, NOTE_CS5, NOTE_D5, NOTE_DS6, NOTE_E5, NOTE_F5, NOTE_FS5, NOTE_G5, NOTE_G5, NOTE_A5, NOTE_AS5, NOTE_B5, NOTE_REST,
 //NOTE_C5, NOTE_D5, NOTE_E5, NOTE_F5, NOTE_G5, NOTE_A5, NOTE_B5, NOTE_REST,
