@@ -773,422 +773,422 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;setting_hardaware/buttonversion.c: 78:     T0CONbits.T0PS = 0b111;
 [e = _CCPR2L -> / / -> 500 `i -> 32 `i -> 4 `i `uc ]
 "79
-[; ;setting_hardaware/buttonversion.c: 79:     TMR0H = 0xF8;
+[; ;setting_hardaware/buttonversion.c: 79: 
 [e = . . _CCP2CONbits 0 1 -> % / -> 500 `i -> 32 `i -> 4 `i `uc ]
 "80
-[; ;setting_hardaware/buttonversion.c: 80:     TMR0L = 0xD8;
+[; ;setting_hardaware/buttonversion.c: 80: 
 [e :UE 290 ]
 }
 "83
-[; ;setting_hardaware/buttonversion.c: 83: 
+[; ;setting_hardaware/buttonversion.c: 83:     INTCONbits.TMR0IF = 0;
 [v _timer0_setups `(v ~T0 @X0 1 ef ]
 {
 [e :U _timer0_setups ]
 [f ]
 "85
-[; ;setting_hardaware/buttonversion.c: 85:     T0CONbits.TMR0ON = 1;
+[; ;setting_hardaware/buttonversion.c: 85: 
 [e = . . _T0CONbits 0 4 -> -> 0 `i `uc ]
 "86
-[; ;setting_hardaware/buttonversion.c: 86:     LATC = 0;
+[; ;setting_hardaware/buttonversion.c: 86: void servo_start(){
 [e = . . _T0CONbits 0 3 -> -> 0 `i `uc ]
 "87
-[; ;setting_hardaware/buttonversion.c: 87:     while(INTCONbits.TMR0IF != 1){
+[; ;setting_hardaware/buttonversion.c: 87:     T0CONbits.TMR0ON = 1;
 [e = . . _T0CONbits 0 2 -> -> 0 `i `uc ]
 "88
-[; ;setting_hardaware/buttonversion.c: 88:         LATD=0b0001;
+[; ;setting_hardaware/buttonversion.c: 88:     LATC = 0;
 [e = . . _T0CONbits 0 1 -> -> 0 `i `uc ]
 "89
-[; ;setting_hardaware/buttonversion.c: 89:         _delay((unsigned long)((5)*(4000000/4000.0)));
+[; ;setting_hardaware/buttonversion.c: 89:     while(INTCONbits.TMR0IF != 1){
 [e = . . _T0CONbits 0 0 -> -> 7 `i `uc ]
-"90
-[; ;setting_hardaware/buttonversion.c: 90:         LATD=0b0010;
-[e = _TMR0H -> -> 248 `i `uc ]
-"91
-[; ;setting_hardaware/buttonversion.c: 91:         _delay((unsigned long)((5)*(4000000/4000.0)));
-[e = _TMR0L -> -> 216 `i `uc ]
 "92
-[; ;setting_hardaware/buttonversion.c: 92:         LATD=0b0100;
-[e = . . _INTCONbits 0 2 -> -> 0 `i `uc ]
+[; ;setting_hardaware/buttonversion.c: 92:         LATD=0b0010;
+[e = _TMR0H -> -> 246 `i `uc ]
 "93
 [; ;setting_hardaware/buttonversion.c: 93:         _delay((unsigned long)((5)*(4000000/4000.0)));
-[e :UE 291 ]
-}
+[e = _TMR0L -> -> 117 `i `uc ]
+"94
+[; ;setting_hardaware/buttonversion.c: 94:         LATD=0b0100;
+[e = . . _INTCONbits 0 2 -> -> 0 `i `uc ]
 "95
 [; ;setting_hardaware/buttonversion.c: 95:         _delay((unsigned long)((5)*(4000000/4000.0)));
+[e :UE 291 ]
+}
+"97
+[; ;setting_hardaware/buttonversion.c: 97:         _delay((unsigned long)((5)*(4000000/4000.0)));
 [v _servo_start `(v ~T0 @X0 1 ef ]
 {
 [e :U _servo_start ]
 [f ]
-"96
-[; ;setting_hardaware/buttonversion.c: 96: 
-[e = . . _T0CONbits 0 5 -> -> 1 `i `uc ]
-"97
-[; ;setting_hardaware/buttonversion.c: 97:         LATD=0b0100;
-[e = _LATC -> -> 0 `i `uc ]
 "98
-[; ;setting_hardaware/buttonversion.c: 98:         _delay((unsigned long)((5)*(4000000/4000.0)));
+[; ;setting_hardaware/buttonversion.c: 98: 
+[e = . . _T0CONbits 0 5 -> -> 1 `i `uc ]
+"99
+[; ;setting_hardaware/buttonversion.c: 99:         LATD=0b0100;
+[e = _LATC -> -> 0 `i `uc ]
+"100
+[; ;setting_hardaware/buttonversion.c: 100:         _delay((unsigned long)((5)*(4000000/4000.0)));
 [e $U 293  ]
 [e :U 294 ]
 {
-"99
-[; ;setting_hardaware/buttonversion.c: 99:         LATD=0b0010;
-[e = _LATD -> -> 1 `i `uc ]
-"100
-[; ;setting_hardaware/buttonversion.c: 100:         _delay((unsigned long)((5)*(4000000/4000.0)));
-[e ( __delay (1 -> * -> -> 5 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
 "101
-[; ;setting_hardaware/buttonversion.c: 101:     }
-[e = _LATD -> -> 2 `i `uc ]
+[; ;setting_hardaware/buttonversion.c: 101:         LATD=0b0010;
+[e = _LATD -> -> 1 `i `uc ]
 "102
-[; ;setting_hardaware/buttonversion.c: 102:     T0CONbits.TMR0ON = 0;
+[; ;setting_hardaware/buttonversion.c: 102:         _delay((unsigned long)((5)*(4000000/4000.0)));
 [e ( __delay (1 -> * -> -> 5 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
 "103
-[; ;setting_hardaware/buttonversion.c: 103:     INTCONbits.INT0IE = 0;
-[e = _LATD -> -> 4 `i `uc ]
+[; ;setting_hardaware/buttonversion.c: 103:     }
+[e = _LATD -> -> 2 `i `uc ]
 "104
-[; ;setting_hardaware/buttonversion.c: 104:     INTCON3bits.INT1IE = 0;
+[; ;setting_hardaware/buttonversion.c: 104:     T0CONbits.TMR0ON = 0;
 [e ( __delay (1 -> * -> -> 5 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
 "105
-[; ;setting_hardaware/buttonversion.c: 105:     LATC = 1;
-[e = _LATD -> -> 8 `i `uc ]
+[; ;setting_hardaware/buttonversion.c: 105:     INTCONbits.INT0IE = 0;
+[e = _LATD -> -> 4 `i `uc ]
 "106
-[; ;setting_hardaware/buttonversion.c: 106: 
+[; ;setting_hardaware/buttonversion.c: 106:     INTCON3bits.INT1IE = 0;
 [e ( __delay (1 -> * -> -> 5 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"107
+[; ;setting_hardaware/buttonversion.c: 107:     LATC = 1;
+[e = _LATD -> -> 8 `i `uc ]
 "108
 [; ;setting_hardaware/buttonversion.c: 108: 
-[e = _LATD -> -> 4 `i `uc ]
-"109
-[; ;setting_hardaware/buttonversion.c: 109: 
 [e ( __delay (1 -> * -> -> 5 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
 "110
 [; ;setting_hardaware/buttonversion.c: 110: 
-[e = _LATD -> -> 2 `i `uc ]
+[e = _LATD -> -> 4 `i `uc ]
 "111
 [; ;setting_hardaware/buttonversion.c: 111: 
 [e ( __delay (1 -> * -> -> 5 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
 "112
-[; ;setting_hardaware/buttonversion.c: 112:     _delay((unsigned long)((10)*(4000000/4000.0)));
+[; ;setting_hardaware/buttonversion.c: 112: 
+[e = _LATD -> -> 2 `i `uc ]
+"113
+[; ;setting_hardaware/buttonversion.c: 113: 
+[e ( __delay (1 -> * -> -> 5 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"114
+[; ;setting_hardaware/buttonversion.c: 114:     _delay((unsigned long)((10)*(4000000/4000.0)));
 }
 [e :U 293 ]
-"98
-[; ;setting_hardaware/buttonversion.c: 98:         _delay((unsigned long)((5)*(4000000/4000.0)));
+"100
+[; ;setting_hardaware/buttonversion.c: 100:         _delay((unsigned long)((5)*(4000000/4000.0)));
 [e $ != -> . . _INTCONbits 0 2 `i -> 1 `i 294  ]
 [e :U 295 ]
-"113
-[; ;setting_hardaware/buttonversion.c: 113:     int j = CCPR1L*4*32;
-[e = . . _T0CONbits 0 5 -> -> 0 `i `uc ]
-"114
-[; ;setting_hardaware/buttonversion.c: 114:     if(player1>player2){
-[e = . . _INTCONbits 0 4 -> -> 0 `i `uc ]
 "115
-[; ;setting_hardaware/buttonversion.c: 115:         while(j <= 2400){
-[e = . . _INTCON3bits 0 3 -> -> 0 `i `uc ]
+[; ;setting_hardaware/buttonversion.c: 115:     int j = CCPR1L*4*32;
+[e = . . _T0CONbits 0 5 -> -> 0 `i `uc ]
 "116
-[; ;setting_hardaware/buttonversion.c: 116:             _delay((unsigned long)((1)*(4000000/4000.0)));
+[; ;setting_hardaware/buttonversion.c: 116:     if(player1>player2){
+[e = . . _INTCONbits 0 4 -> -> 0 `i `uc ]
+"117
+[; ;setting_hardaware/buttonversion.c: 117:         while(j <= 2400){
+[e = . . _INTCON3bits 0 3 -> -> 0 `i `uc ]
+"118
+[; ;setting_hardaware/buttonversion.c: 118:             _delay((unsigned long)((1)*(4000000/4000.0)));
 [e = _LATC -> -> 1 `i `uc ]
-"123
-[; ;setting_hardaware/buttonversion.c: 123:         while(j >= 500){
+"125
+[; ;setting_hardaware/buttonversion.c: 125:         while(j >= 500){
 [e ( __delay (1 -> * -> -> 10 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-"124
-[; ;setting_hardaware/buttonversion.c: 124:             _delay((unsigned long)((1)*(4000000/4000.0)));
+"126
+[; ;setting_hardaware/buttonversion.c: 126:             _delay((unsigned long)((1)*(4000000/4000.0)));
 [v _j `i ~T0 @X0 1 a ]
 [e = _j * * -> _CCPR1L `i -> 4 `i -> 32 `i ]
-"125
-[; ;setting_hardaware/buttonversion.c: 125:             CCPR1L = j/32/4;
+"127
+[; ;setting_hardaware/buttonversion.c: 127:             CCPR1L = j/32/4;
 [e $ ! > _player1 _player2 296  ]
 {
-"126
-[; ;setting_hardaware/buttonversion.c: 126:             CCP1CONbits.DC1B = (j/32)%4;
+"128
+[; ;setting_hardaware/buttonversion.c: 128:             CCP1CONbits.DC1B = (j/32)%4;
 [e $U 297  ]
 [e :U 298 ]
 {
-"127
-[; ;setting_hardaware/buttonversion.c: 127:             j -= 100;
-[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-"128
-[; ;setting_hardaware/buttonversion.c: 128:         }
-[e = _CCPR1L -> / / _j -> 32 `i -> 4 `i `uc ]
 "129
-[; ;setting_hardaware/buttonversion.c: 129:     }
-[e = . . _CCP1CONbits 0 1 -> % / _j -> 32 `i -> 4 `i `uc ]
+[; ;setting_hardaware/buttonversion.c: 129:             j -= 100;
+[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
 "130
-[; ;setting_hardaware/buttonversion.c: 130:     else{
-[e =+ _j -> 100 `i ]
+[; ;setting_hardaware/buttonversion.c: 130:         }
+[e = _CCPR1L -> / / _j -> 32 `i -> 4 `i `uc ]
 "131
-[; ;setting_hardaware/buttonversion.c: 131:         player1+=player2;
+[; ;setting_hardaware/buttonversion.c: 131:     }
+[e = . . _CCP1CONbits 0 1 -> % / _j -> 32 `i -> 4 `i `uc ]
+"132
+[; ;setting_hardaware/buttonversion.c: 132:     else{
+[e =+ _j -> 100 `i ]
+"133
+[; ;setting_hardaware/buttonversion.c: 133:         player1+=player2;
 }
 [e :U 297 ]
-"126
-[; ;setting_hardaware/buttonversion.c: 126:             CCP1CONbits.DC1B = (j/32)%4;
+"128
+[; ;setting_hardaware/buttonversion.c: 128:             CCP1CONbits.DC1B = (j/32)%4;
 [e $ <= _j -> 2400 `i 298  ]
 [e :U 299 ]
-"132
-[; ;setting_hardaware/buttonversion.c: 132:         if(player1%2==1){
+"134
+[; ;setting_hardaware/buttonversion.c: 134:         if(player1%2==1){
 }
 [e $U 300  ]
-"133
-[; ;setting_hardaware/buttonversion.c: 133:             while(j <= 2400){
+"135
+[; ;setting_hardaware/buttonversion.c: 135:             while(j <= 2400){
 [e :U 296 ]
 [e $ ! < _player1 _player2 301  ]
 {
-"134
-[; ;setting_hardaware/buttonversion.c: 134:                 _delay((unsigned long)((1)*(4000000/4000.0)));
+"136
+[; ;setting_hardaware/buttonversion.c: 136:                 _delay((unsigned long)((1)*(4000000/4000.0)));
 [e $U 302  ]
 [e :U 303 ]
 {
-"135
-[; ;setting_hardaware/buttonversion.c: 135:                 CCPR1L = j/32/4;
-[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-"136
-[; ;setting_hardaware/buttonversion.c: 136:                 CCP1CONbits.DC1B = (j/32)%4;
-[e = _CCPR1L -> / / _j -> 32 `i -> 4 `i `uc ]
 "137
-[; ;setting_hardaware/buttonversion.c: 137:                 j += 100;
-[e = . . _CCP1CONbits 0 1 -> % / _j -> 32 `i -> 4 `i `uc ]
+[; ;setting_hardaware/buttonversion.c: 137:                 CCPR1L = j/32/4;
+[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
 "138
-[; ;setting_hardaware/buttonversion.c: 138:             }
-[e =- _j -> 100 `i ]
+[; ;setting_hardaware/buttonversion.c: 138:                 CCP1CONbits.DC1B = (j/32)%4;
+[e = _CCPR1L -> / / _j -> 32 `i -> 4 `i `uc ]
 "139
-[; ;setting_hardaware/buttonversion.c: 139:         }
+[; ;setting_hardaware/buttonversion.c: 139:                 j += 100;
+[e = . . _CCP1CONbits 0 1 -> % / _j -> 32 `i -> 4 `i `uc ]
+"140
+[; ;setting_hardaware/buttonversion.c: 140:             }
+[e =- _j -> 100 `i ]
+"141
+[; ;setting_hardaware/buttonversion.c: 141:         }
 }
 [e :U 302 ]
-"134
-[; ;setting_hardaware/buttonversion.c: 134:                 _delay((unsigned long)((1)*(4000000/4000.0)));
+"136
+[; ;setting_hardaware/buttonversion.c: 136:                 _delay((unsigned long)((1)*(4000000/4000.0)));
 [e $ >= _j -> 500 `i 303  ]
 [e :U 304 ]
-"140
-[; ;setting_hardaware/buttonversion.c: 140:         else{
+"142
+[; ;setting_hardaware/buttonversion.c: 142:         else{
 }
 [e $U 305  ]
-"141
-[; ;setting_hardaware/buttonversion.c: 141:            while(j >= 500){
+"143
+[; ;setting_hardaware/buttonversion.c: 143:            while(j >= 500){
 [e :U 301 ]
 {
-"142
-[; ;setting_hardaware/buttonversion.c: 142:                _delay((unsigned long)((1)*(4000000/4000.0)));
+"144
+[; ;setting_hardaware/buttonversion.c: 144:                _delay((unsigned long)((1)*(4000000/4000.0)));
 [e =+ _player1 _player2 ]
-"143
-[; ;setting_hardaware/buttonversion.c: 143:                 CCPR1L = j/32/4;
+"145
+[; ;setting_hardaware/buttonversion.c: 145:                 CCPR1L = j/32/4;
 [e $ ! == % _player1 -> 2 `i -> 1 `i 306  ]
 {
-"144
-[; ;setting_hardaware/buttonversion.c: 144:                 CCP1CONbits.DC1B = (j/32)%4;
+"146
+[; ;setting_hardaware/buttonversion.c: 146:                 CCP1CONbits.DC1B = (j/32)%4;
 [e $U 307  ]
 [e :U 308 ]
 {
-"145
-[; ;setting_hardaware/buttonversion.c: 145:                 j -= 100;
-[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-"146
-[; ;setting_hardaware/buttonversion.c: 146:             }
-[e = _CCPR1L -> / / _j -> 32 `i -> 4 `i `uc ]
 "147
-[; ;setting_hardaware/buttonversion.c: 147:         }
-[e = . . _CCP1CONbits 0 1 -> % / _j -> 32 `i -> 4 `i `uc ]
+[; ;setting_hardaware/buttonversion.c: 147:                 j -= 100;
+[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
 "148
-[; ;setting_hardaware/buttonversion.c: 148:     }
-[e =+ _j -> 100 `i ]
+[; ;setting_hardaware/buttonversion.c: 148:             }
+[e = _CCPR1L -> / / _j -> 32 `i -> 4 `i `uc ]
 "149
-[; ;setting_hardaware/buttonversion.c: 149:     TMR0H = 0xFF;
+[; ;setting_hardaware/buttonversion.c: 149:         }
+[e = . . _CCP1CONbits 0 1 -> % / _j -> 32 `i -> 4 `i `uc ]
+"150
+[; ;setting_hardaware/buttonversion.c: 150:     }
+[e =+ _j -> 100 `i ]
+"151
+[; ;setting_hardaware/buttonversion.c: 151:     TMR0H = 0xFF;
 }
 [e :U 307 ]
-"144
-[; ;setting_hardaware/buttonversion.c: 144:                 CCP1CONbits.DC1B = (j/32)%4;
+"146
+[; ;setting_hardaware/buttonversion.c: 146:                 CCP1CONbits.DC1B = (j/32)%4;
 [e $ <= _j -> 2400 `i 308  ]
 [e :U 309 ]
-"150
-[; ;setting_hardaware/buttonversion.c: 150:     TMR0L = 0xC2;
+"152
+[; ;setting_hardaware/buttonversion.c: 152:     TMR0L = 0xC2;
 }
 [e $U 310  ]
-"151
-[; ;setting_hardaware/buttonversion.c: 151:     INTCONbits.TMR0IF = 0;
+"153
+[; ;setting_hardaware/buttonversion.c: 153:     INTCONbits.TMR0IF = 0;
 [e :U 306 ]
 {
-"152
-[; ;setting_hardaware/buttonversion.c: 152:     T0CONbits.TMR0ON = 1;
+"154
+[; ;setting_hardaware/buttonversion.c: 154:     T0CONbits.TMR0ON = 1;
 [e $U 311  ]
 [e :U 312 ]
 {
-"153
-[; ;setting_hardaware/buttonversion.c: 153:     while(INTCONbits.TMR0IF != 1);
-[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-"154
-[; ;setting_hardaware/buttonversion.c: 154:     T0CONbits.TMR0ON = 0;
-[e = _CCPR1L -> / / _j -> 32 `i -> 4 `i `uc ]
 "155
-[; ;setting_hardaware/buttonversion.c: 155:     CCPR2L = 1450/32/4;
-[e = . . _CCP1CONbits 0 1 -> % / _j -> 32 `i -> 4 `i `uc ]
+[; ;setting_hardaware/buttonversion.c: 155:     while(INTCONbits.TMR0IF != 1);
+[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
 "156
-[; ;setting_hardaware/buttonversion.c: 156:     CCP2CONbits.DC2B = (1450/32)%4;
-[e =- _j -> 100 `i ]
+[; ;setting_hardaware/buttonversion.c: 156:     T0CONbits.TMR0ON = 0;
+[e = _CCPR1L -> / / _j -> 32 `i -> 4 `i `uc ]
 "157
-[; ;setting_hardaware/buttonversion.c: 157: }
+[; ;setting_hardaware/buttonversion.c: 157:     CCPR2L = 1450/32/4;
+[e = . . _CCP1CONbits 0 1 -> % / _j -> 32 `i -> 4 `i `uc ]
+"158
+[; ;setting_hardaware/buttonversion.c: 158:     CCP2CONbits.DC2B = (1450/32)%4;
+[e =- _j -> 100 `i ]
+"159
+[; ;setting_hardaware/buttonversion.c: 159: }
 }
 [e :U 311 ]
-"152
-[; ;setting_hardaware/buttonversion.c: 152:     T0CONbits.TMR0ON = 1;
+"154
+[; ;setting_hardaware/buttonversion.c: 154:     T0CONbits.TMR0ON = 1;
 [e $ >= _j -> 500 `i 312  ]
 [e :U 313 ]
-"158
-[; ;setting_hardaware/buttonversion.c: 158: void main(void)
+"160
+[; ;setting_hardaware/buttonversion.c: 160: void main(void)
 }
 [e :U 310 ]
-"159
-[; ;setting_hardaware/buttonversion.c: 159: {
+"161
+[; ;setting_hardaware/buttonversion.c: 161: {
 }
 [e :U 305 ]
 [e :U 300 ]
-"160
-[; ;setting_hardaware/buttonversion.c: 160: 
-[e = _TMR0H -> -> 255 `i `uc ]
-"161
-[; ;setting_hardaware/buttonversion.c: 161: 
-[e = _TMR0L -> -> 194 `i `uc ]
 "162
-[; ;setting_hardaware/buttonversion.c: 162:     ADCON1 = 0x0F;
-[e = . . _INTCONbits 0 2 -> -> 0 `i `uc ]
+[; ;setting_hardaware/buttonversion.c: 162: 
+[e = _TMR0H -> -> 255 `i `uc ]
 "163
-[; ;setting_hardaware/buttonversion.c: 163:     INTCON3bits.INT2IF = 0;
-[e = . . _T0CONbits 0 5 -> -> 1 `i `uc ]
+[; ;setting_hardaware/buttonversion.c: 163: 
+[e = _TMR0L -> -> 194 `i `uc ]
 "164
-[; ;setting_hardaware/buttonversion.c: 164:     while(1){
+[; ;setting_hardaware/buttonversion.c: 164:     ADCON1 = 0x0F;
+[e = . . _INTCONbits 0 2 -> -> 0 `i `uc ]
+"165
+[; ;setting_hardaware/buttonversion.c: 165:     INTCON3bits.INT2IF = 0;
+[e = . . _T0CONbits 0 5 -> -> 1 `i `uc ]
+"166
+[; ;setting_hardaware/buttonversion.c: 166:     while(1){
 [e $U 314  ]
 [e :U 315 ]
 [e :U 314 ]
 [e $ != -> . . _INTCONbits 0 2 `i -> 1 `i 315  ]
 [e :U 316 ]
-"165
-[; ;setting_hardaware/buttonversion.c: 165:         player1 = 0;
-[e = . . _T0CONbits 0 5 -> -> 0 `i `uc ]
-"166
-[; ;setting_hardaware/buttonversion.c: 166:         player2 = 0;
-[e = _CCPR2L -> / / -> 1450 `i -> 32 `i -> 4 `i `uc ]
 "167
-[; ;setting_hardaware/buttonversion.c: 167:         while(INTCON3bits.INT2IF != 1);
-[e = . . _CCP2CONbits 0 1 -> % / -> 1450 `i -> 32 `i -> 4 `i `uc ]
+[; ;setting_hardaware/buttonversion.c: 167:         player1 = 0;
+[e = . . _T0CONbits 0 5 -> -> 0 `i `uc ]
 "168
-[; ;setting_hardaware/buttonversion.c: 168:         INTCON3bits.INT2IE = 0;
+[; ;setting_hardaware/buttonversion.c: 168:         player2 = 0;
+[e = _CCPR2L -> / / -> 1450 `i -> 32 `i -> 4 `i `uc ]
+"169
+[; ;setting_hardaware/buttonversion.c: 169:         while(INTCON3bits.INT2IF != 1);
+[e = . . _CCP2CONbits 0 1 -> % / -> 1450 `i -> 32 `i -> 4 `i `uc ]
+"170
+[; ;setting_hardaware/buttonversion.c: 170:         INTCON3bits.INT2IE = 0;
 [e :UE 292 ]
 }
 [v $root$_main `(v ~T0 @X0 0 e ]
-"169
-[; ;setting_hardaware/buttonversion.c: 169:         INTCON3bits.INT2IF = 0;
+"171
+[; ;setting_hardaware/buttonversion.c: 171:         INTCON3bits.INT2IF = 0;
 [v _main `(v ~T0 @X0 1 ef ]
-"170
-[; ;setting_hardaware/buttonversion.c: 170:         i = 0;
+"172
+[; ;setting_hardaware/buttonversion.c: 172:         i = 0;
 {
 [e :U _main ]
 [f ]
-"173
-[; ;setting_hardaware/buttonversion.c: 173:         ADCON1 = 0x0F;
-[e = _ADCON1 -> -> 15 `i `uc ]
-"174
-[; ;setting_hardaware/buttonversion.c: 174:         INTCONbits.INT0IE = 1;
-[e = . . _INTCON3bits 0 1 -> -> 0 `i `uc ]
 "175
-[; ;setting_hardaware/buttonversion.c: 175:         INTCONbits.INT0IF = 0;
+[; ;setting_hardaware/buttonversion.c: 175:         ADCON1 = 0x0F;
+[e = _ADCON1 -> -> 15 `i `uc ]
+"176
+[; ;setting_hardaware/buttonversion.c: 176:         INTCONbits.INT0IE = 1;
+[e = . . _INTCON3bits 0 1 -> -> 0 `i `uc ]
+"177
+[; ;setting_hardaware/buttonversion.c: 177:         INTCONbits.INT0IF = 0;
 [e :U 319 ]
 {
-"176
-[; ;setting_hardaware/buttonversion.c: 176:         INTCON3bits.INT1IE = 1;
-[e = _player1 -> 0 `i ]
-"177
-[; ;setting_hardaware/buttonversion.c: 177:         INTCON3bits.INT1IF = 0;
-[e = _player2 -> 0 `i ]
 "178
-[; ;setting_hardaware/buttonversion.c: 178:         INTCONbits.GIE = 1;
+[; ;setting_hardaware/buttonversion.c: 178:         INTCON3bits.INT1IE = 1;
+[e = _player1 -> 0 `i ]
+"179
+[; ;setting_hardaware/buttonversion.c: 179:         INTCON3bits.INT1IF = 0;
+[e = _player2 -> 0 `i ]
+"180
+[; ;setting_hardaware/buttonversion.c: 180:         INTCONbits.GIE = 1;
 [e $U 321  ]
 [e :U 322 ]
 [e :U 321 ]
 [e $ != -> . . _INTCON3bits 0 1 `i -> 1 `i 322  ]
 [e :U 323 ]
-"179
-[; ;setting_hardaware/buttonversion.c: 179: 
-[e = . . _INTCON3bits 0 4 -> -> 0 `i `uc ]
-"180
-[; ;setting_hardaware/buttonversion.c: 180:         T2CONbits.TMR2ON = 0b1;
-[e = . . _INTCON3bits 0 1 -> -> 0 `i `uc ]
 "181
-[; ;setting_hardaware/buttonversion.c: 181:         T2CONbits.T2CKPS = 0b01;
-[e = _i -> 0 `i ]
+[; ;setting_hardaware/buttonversion.c: 181: 
+[e = . . _INTCON3bits 0 4 -> -> 0 `i `uc ]
 "182
-[; ;setting_hardaware/buttonversion.c: 182: 
-[e = _direction -> 0 `i ]
+[; ;setting_hardaware/buttonversion.c: 182:         T2CONbits.TMR2ON = 0b1;
+[e = . . _INTCON3bits 0 1 -> -> 0 `i `uc ]
+"183
+[; ;setting_hardaware/buttonversion.c: 183:         T2CONbits.T2CKPS = 0b01;
+[e = _i -> 0 `i ]
 "184
-[; ;setting_hardaware/buttonversion.c: 184:         OSCCONbits.IRCF = 0b001;
-[e = _ADCON1 -> -> 15 `i `uc ]
-"185
-[; ;setting_hardaware/buttonversion.c: 185: 
-[e = . . _INTCONbits 0 4 -> -> 1 `i `uc ]
+[; ;setting_hardaware/buttonversion.c: 184: 
+[e = _direction -> 0 `i ]
 "186
-[; ;setting_hardaware/buttonversion.c: 186: 
-[e = . . _INTCONbits 0 1 -> -> 0 `i `uc ]
+[; ;setting_hardaware/buttonversion.c: 186:         OSCCONbits.IRCF = 0b001;
+[e = _ADCON1 -> -> 15 `i `uc ]
 "187
-[; ;setting_hardaware/buttonversion.c: 187:         CCP1CONbits.CCP1M = 0b1100;
-[e = . . _INTCON3bits 0 3 -> -> 1 `i `uc ]
+[; ;setting_hardaware/buttonversion.c: 187: 
+[e = . . _INTCONbits 0 4 -> -> 1 `i `uc ]
 "188
 [; ;setting_hardaware/buttonversion.c: 188: 
-[e = . . _INTCON3bits 0 0 -> -> 0 `i `uc ]
+[e = . . _INTCONbits 0 1 -> -> 0 `i `uc ]
 "189
-[; ;setting_hardaware/buttonversion.c: 189: 
-[e = . . _INTCONbits 1 7 -> -> 1 `i `uc ]
+[; ;setting_hardaware/buttonversion.c: 189:         CCP1CONbits.CCP1M = 0b1100;
+[e = . . _INTCON3bits 0 3 -> -> 1 `i `uc ]
+"190
+[; ;setting_hardaware/buttonversion.c: 190: 
+[e = . . _INTCON3bits 0 0 -> -> 0 `i `uc ]
 "191
 [; ;setting_hardaware/buttonversion.c: 191: 
+[e = . . _INTCONbits 1 7 -> -> 1 `i `uc ]
+"193
+[; ;setting_hardaware/buttonversion.c: 193: 
 [e = . . _T2CONbits 0 1 -> -> 1 `i `uc ]
-"192
-[; ;setting_hardaware/buttonversion.c: 192:         TRISD = 0;
+"194
+[; ;setting_hardaware/buttonversion.c: 194:         TRISD = 0;
 [e = . . _T2CONbits 0 0 -> -> 1 `i `uc ]
-"195
-[; ;setting_hardaware/buttonversion.c: 195:         PR2 = 0x9b;
+"197
+[; ;setting_hardaware/buttonversion.c: 197:         PR2 = 0x9b;
 [e = . . _OSCCONbits 0 3 -> -> 1 `i `uc ]
-"198
-[; ;setting_hardaware/buttonversion.c: 198: 
+"200
+[; ;setting_hardaware/buttonversion.c: 200: 
 [e = . . _CCP1CONbits 0 0 -> -> 12 `i `uc ]
-"203
-[; ;setting_hardaware/buttonversion.c: 203:         while(INTCON3bits.INT2IF == 0){
+"205
+[; ;setting_hardaware/buttonversion.c: 205:         while(INTCON3bits.INT2IF == 0){
 [e = _TRISD -> -> 0 `i `uc ]
-"204
-[; ;setting_hardaware/buttonversion.c: 204:             LATD=0b1111;
-[e = _LATD -> -> 0 `i `uc ]
 "206
-[; ;setting_hardaware/buttonversion.c: 206:             LATD=0b0000;
+[; ;setting_hardaware/buttonversion.c: 206:             LATD=0b1111;
+[e = _LATD -> -> 0 `i `uc ]
+"208
+[; ;setting_hardaware/buttonversion.c: 208:             LATD=0b0000;
 [e = _PR2 -> -> 155 `i `uc ]
-"210
-[; ;setting_hardaware/buttonversion.c: 210: 
-[e ( _servo_motor_setups ..  ]
-"211
-[; ;setting_hardaware/buttonversion.c: 211:     return;
-[e ( _timer0_setups ..  ]
 "212
-[; ;setting_hardaware/buttonversion.c: 212: }
-[e ( _servo_start ..  ]
+[; ;setting_hardaware/buttonversion.c: 212: 
+[e ( _servo_motor_setups ..  ]
 "213
-[e = . . _INTCON3bits 0 1 -> -> 0 `i `uc ]
+[; ;setting_hardaware/buttonversion.c: 213:     return;
+[e ( _timer0_setups ..  ]
 "214
+[; ;setting_hardaware/buttonversion.c: 214: }
+[e ( _servo_start ..  ]
+"215
+[e = . . _INTCON3bits 0 1 -> -> 0 `i `uc ]
+"216
 [e $U 324  ]
 [e :U 325 ]
 {
-"215
-[e = _LATD -> -> 15 `i `uc ]
-"216
-[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
 "217
-[e = _LATD -> -> 0 `i `uc ]
+[e = _LATD -> -> 15 `i `uc ]
 "218
 [e ( __delay (1 -> * -> -> 10 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
 "219
+[e = _LATD -> -> 0 `i `uc ]
+"220
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"221
 }
 [e :U 324 ]
-"214
+"216
 [e $ == -> . . _INTCON3bits 0 1 `i -> 0 `i 325  ]
 [e :U 326 ]
-"220
+"222
 }
 [e :U 318 ]
 [e $U 319  ]
 [e :U 320 ]
-"222
+"224
 [e $UE 317  ]
-"223
+"225
 [e :UE 317 ]
 }

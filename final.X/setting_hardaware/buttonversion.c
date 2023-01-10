@@ -87,8 +87,10 @@ void timer0_setups(){
     T0CONbits.T0SE = 0;
     T0CONbits.PSA = 0;
     T0CONbits.T0PS = 0b111;//1:256
-    TMR0H = 0xF8;//15 sec
-    TMR0L = 0xD8;
+    //TMR0H = 0xF8;//15 sec
+    //TMR0L = 0xD8;
+    TMR0H = 0xF6;//20 sec
+    TMR0L = 0x75;
     INTCONbits.TMR0IF = 0;//clear timer flag
 }
 

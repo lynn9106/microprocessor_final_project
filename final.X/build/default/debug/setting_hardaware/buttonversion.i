@@ -4698,8 +4698,10 @@ void timer0_setups(){
     T0CONbits.T0SE = 0;
     T0CONbits.PSA = 0;
     T0CONbits.T0PS = 0b111;
-    TMR0H = 0xF8;
-    TMR0L = 0xD8;
+
+
+    TMR0H = 0xF6;
+    TMR0L = 0x75;
     INTCONbits.TMR0IF = 0;
 }
 
@@ -4833,5 +4835,5 @@ void main(void)
     return;
 }
 #pragma interrupt COMP_ISR
-# 224 "setting_hardaware/buttonversion.c"
+# 226 "setting_hardaware/buttonversion.c"
 

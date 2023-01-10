@@ -1,7 +1,7 @@
 
 
 Microchip MPLAB XC8 Assembler V2.40 build 20220703182018 
-                                                                                               Sun Jan 08 19:13:23 2023
+                                                                                               Tue Jan 10 13:21:20 2023
 
 Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1 
      1                           	processor	18F4520
@@ -236,7 +236,7 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
    222 ;;
    223 ;; *************** function _main *****************
    224 ;; Defined at:
-   225 ;;		line 169 in file "setting_hardaware/buttonversion.c"
+   225 ;;		line 171 in file "setting_hardaware/buttonversion.c"
    226 ;; Parameters:    Size  Location     Type
    227 ;;		None
    228 ;; Auto vars:     Size  Location     Type
@@ -271,21 +271,21 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
    257   00042C                     _main:
    258                           	callstack 27
    259   00042C                     
-   260                           ;setting_hardaware/buttonversion.c: 173:         ADCON1 = 0x0F;
+   260                           ;setting_hardaware/buttonversion.c: 175:         ADCON1 = 0x0F;
    261   00042C  0E0F               	movlw	15
    262   00042E  6EC1               	movwf	193,c	;volatile
    263   000430                     
-   264                           ;setting_hardaware/buttonversion.c: 174:         INTCONbits.INT0IE = 1;
+   264                           ;setting_hardaware/buttonversion.c: 176:         INTCONbits.INT0IE = 1;
    265   000430  92F0               	bcf	240,1,c	;volatile
    266   000432                     l103:
    267                           
-   268                           ;setting_hardaware/buttonversion.c: 176:         INTCON3bits.INT1IE = 1;
+   268                           ;setting_hardaware/buttonversion.c: 178:         INTCON3bits.INT1IE = 1;
    269   000432  0E00               	movlw	0
    270   000434  6E20               	movwf	(_player1+1)^0,c
    271   000436  0E00               	movlw	0
    272   000438  6E1F               	movwf	_player1^0,c
    273                           
-   274                           ;setting_hardaware/buttonversion.c: 177:         INTCON3bits.INT1IF = 0;
+   274                           ;setting_hardaware/buttonversion.c: 179:         INTCON3bits.INT1IF = 0;
    275   00043A  0E00               	movlw	0
    276   00043C  6E1E               	movwf	(_player2+1)^0,c
    277   00043E  0E00               	movlw	0
@@ -298,83 +298,83 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
    284   00044C  EF21  F002         	goto	l104
    285   000450                     u390:
    286   000450                     
-   287                           ;setting_hardaware/buttonversion.c: 179: 
+   287                           ;setting_hardaware/buttonversion.c: 181: 
    288   000450  98F0               	bcf	240,4,c	;volatile
    289                           
-   290                           ;setting_hardaware/buttonversion.c: 180:         T2CONbits.TMR2ON = 0b1;
+   290                           ;setting_hardaware/buttonversion.c: 182:         T2CONbits.TMR2ON = 0b1;
    291   000452  92F0               	bcf	240,1,c	;volatile
    292   000454                     
-   293                           ;setting_hardaware/buttonversion.c: 181:         T2CONbits.T2CKPS = 0b01;
+   293                           ;setting_hardaware/buttonversion.c: 183:         T2CONbits.T2CKPS = 0b01;
    294   000454  0E00               	movlw	0
    295   000456  6E24               	movwf	(_i+1)^0,c
    296   000458  0E00               	movlw	0
    297   00045A  6E23               	movwf	_i^0,c
    298                           
-   299                           ;setting_hardaware/buttonversion.c: 182: 
+   299                           ;setting_hardaware/buttonversion.c: 184: 
    300   00045C  0E00               	movlw	0
    301   00045E  6E22               	movwf	(_direction+1)^0,c
    302   000460  0E00               	movlw	0
    303   000462  6E21               	movwf	_direction^0,c
    304                           
-   305                           ;setting_hardaware/buttonversion.c: 184:         OSCCONbits.IRCF = 0b001;
+   305                           ;setting_hardaware/buttonversion.c: 186:         OSCCONbits.IRCF = 0b001;
    306   000464  0E0F               	movlw	15
    307   000466  6EC1               	movwf	193,c	;volatile
    308   000468                     
-   309                           ;setting_hardaware/buttonversion.c: 185: 
+   309                           ;setting_hardaware/buttonversion.c: 187: 
    310   000468  88F2               	bsf	242,4,c	;volatile
    311   00046A                     
-   312                           ;setting_hardaware/buttonversion.c: 186: 
+   312                           ;setting_hardaware/buttonversion.c: 188: 
    313   00046A  92F2               	bcf	242,1,c	;volatile
    314   00046C                     
-   315                           ;setting_hardaware/buttonversion.c: 187:         CCP1CONbits.CCP1M = 0b1100;
+   315                           ;setting_hardaware/buttonversion.c: 189:         CCP1CONbits.CCP1M = 0b1100;
    316   00046C  86F0               	bsf	240,3,c	;volatile
    317   00046E                     
-   318                           ;setting_hardaware/buttonversion.c: 188: 
+   318                           ;setting_hardaware/buttonversion.c: 190: 
    319   00046E  90F0               	bcf	240,0,c	;volatile
    320   000470                     
-   321                           ;setting_hardaware/buttonversion.c: 189: 
+   321                           ;setting_hardaware/buttonversion.c: 191: 
    322   000470  8EF2               	bsf	242,7,c	;volatile
    323   000472                     
-   324                           ;setting_hardaware/buttonversion.c: 191: 
+   324                           ;setting_hardaware/buttonversion.c: 193: 
    325   000472  84CA               	bsf	202,2,c	;volatile
    326                           
-   327                           ;setting_hardaware/buttonversion.c: 192:         TRISD = 0;
+   327                           ;setting_hardaware/buttonversion.c: 194:         TRISD = 0;
    328   000474  50CA               	movf	202,w,c	;volatile
    329   000476  0BFC               	andlw	-4
    330   000478  0901               	iorlw	1
    331   00047A  6ECA               	movwf	202,c	;volatile
    332                           
-   333                           ;setting_hardaware/buttonversion.c: 195:         PR2 = 0x9b;
+   333                           ;setting_hardaware/buttonversion.c: 197:         PR2 = 0x9b;
    334   00047C  50D3               	movf	211,w,c	;volatile
    335   00047E  0B8F               	andlw	-113
    336   000480  0910               	iorlw	16
    337   000482  6ED3               	movwf	211,c	;volatile
    338                           
-   339                           ;setting_hardaware/buttonversion.c: 198: 
+   339                           ;setting_hardaware/buttonversion.c: 200: 
    340   000484  50BD               	movf	189,w,c	;volatile
    341   000486  0BF0               	andlw	-16
    342   000488  090C               	iorlw	12
    343   00048A  6EBD               	movwf	189,c	;volatile
    344                           
-   345                           ;setting_hardaware/buttonversion.c: 203:         while(INTCON3bits.INT2IF == 0){
+   345                           ;setting_hardaware/buttonversion.c: 205:         while(INTCON3bits.INT2IF == 0){
    346   00048C  0E00               	movlw	0
    347   00048E  6E95               	movwf	149,c	;volatile
    348                           
-   349                           ;setting_hardaware/buttonversion.c: 204:             LATD=0b1111;
+   349                           ;setting_hardaware/buttonversion.c: 206:             LATD=0b1111;
    350   000490  0E00               	movlw	0
    351   000492  6E8C               	movwf	140,c	;volatile
    352                           
-   353                           ;setting_hardaware/buttonversion.c: 206:             LATD=0b0000;
+   353                           ;setting_hardaware/buttonversion.c: 208:             LATD=0b0000;
    354   000494  0E9B               	movlw	155
    355   000496  6ECB               	movwf	203,c	;volatile
    356   000498                     
-   357                           ;setting_hardaware/buttonversion.c: 210: 
+   357                           ;setting_hardaware/buttonversion.c: 212: 
    358   000498  ECA5  F002         	call	_servo_motor_setups	;wreg free
    359   00049C                     
-   360                           ;setting_hardaware/buttonversion.c: 211:     return;
+   360                           ;setting_hardaware/buttonversion.c: 213:     return;
    361   00049C  EC06  F003         	call	_timer0_setups	;wreg free
    362   0004A0                     
-   363                           ;setting_hardaware/buttonversion.c: 212: }
+   363                           ;setting_hardaware/buttonversion.c: 214: }
    364   0004A0  EC09  F000         	call	_servo_start	;wreg free
    365   0004A4  92F0               	bcf	240,1,c	;volatile
    366   0004A6  EF67  F002         	goto	l1188
@@ -447,33 +447,32 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
    433   00060C                     _timer0_setups:
    434                           	callstack 28
    435   00060C                     
-   436                           ;setting_hardaware/buttonversion.c: 85:     T0CONbits.TMR0ON = 1;
+   436                           ;setting_hardaware/buttonversion.c: 85: 
    437   00060C  9CD5               	bcf	213,6,c	;volatile
    438                           
-   439                           ;setting_hardaware/buttonversion.c: 86:     LATC = 0;
+   439                           ;setting_hardaware/buttonversion.c: 86: void servo_start(){
    440   00060E  9AD5               	bcf	213,5,c	;volatile
    441                           
-   442                           ;setting_hardaware/buttonversion.c: 87:     while(INTCONbits.TMR0IF != 1){
+   442                           ;setting_hardaware/buttonversion.c: 87:     T0CONbits.TMR0ON = 1;
    443   000610  98D5               	bcf	213,4,c	;volatile
    444                           
-   445                           ;setting_hardaware/buttonversion.c: 88:         LATD=0b0001;
+   445                           ;setting_hardaware/buttonversion.c: 88:     LATC = 0;
    446   000612  96D5               	bcf	213,3,c	;volatile
    447   000614                     
-   448                           ;setting_hardaware/buttonversion.c: 89:         _delay((unsigned long)((5)*(4000000/4000
-      +                          .0)));
+   448                           ;setting_hardaware/buttonversion.c: 89:     while(INTCONbits.TMR0IF != 1){
    449   000614  0E07               	movlw	7
    450   000616  12D5               	iorwf	213,f,c	;volatile
    451                           
-   452                           ;setting_hardaware/buttonversion.c: 90:         LATD=0b0010;
-   453   000618  0EF8               	movlw	248
+   452                           ;setting_hardaware/buttonversion.c: 92:         LATD=0b0010;
+   453   000618  0EF6               	movlw	246
    454   00061A  6ED7               	movwf	215,c	;volatile
    455                           
-   456                           ;setting_hardaware/buttonversion.c: 91:         _delay((unsigned long)((5)*(4000000/4000
+   456                           ;setting_hardaware/buttonversion.c: 93:         _delay((unsigned long)((5)*(4000000/4000
       +                          .0)));
-   457   00061C  0ED8               	movlw	216
+   457   00061C  0E75               	movlw	117
    458   00061E  6ED6               	movwf	214,c	;volatile
    459   000620                     
-   460                           ;setting_hardaware/buttonversion.c: 92:         LATD=0b0100;
+   460                           ;setting_hardaware/buttonversion.c: 94:         LATD=0b0100;
    461   000620  94F2               	bcf	242,2,c	;volatile
    462   000622  0012               	return		;funcret
    463   000624                     __end_of_timer0_setups:
@@ -481,7 +480,7 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
    465                           
    466 ;; *************** function _servo_start *****************
    467 ;; Defined at:
-   468 ;;		line 95 in file "setting_hardaware/buttonversion.c"
+   468 ;;		line 97 in file "setting_hardaware/buttonversion.c"
    469 ;; Parameters:    Size  Location     Type
    470 ;;		None
    471 ;; Auto vars:     Size  Location     Type
@@ -515,23 +514,23 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
    499   000012                     _servo_start:
    500                           	callstack 27
    501   000012                     
-   502                           ;setting_hardaware/buttonversion.c: 96: 
+   502                           ;setting_hardaware/buttonversion.c: 98: 
    503   000012  8ED5               	bsf	213,7,c	;volatile
    504   000014                     
-   505                           ;setting_hardaware/buttonversion.c: 97:         LATD=0b0100;
+   505                           ;setting_hardaware/buttonversion.c: 99:         LATD=0b0100;
    506   000014  0E00               	movlw	0
    507   000016  6E8B               	movwf	139,c	;volatile
    508                           
-   509                           ;setting_hardaware/buttonversion.c: 98:         _delay((unsigned long)((5)*(4000000/4000
-      +                          .0)));
+   509                           ;setting_hardaware/buttonversion.c: 100:         _delay((unsigned long)((5)*(4000000/400
+      +                          0.0)));
    510   000018  EF4A  F000         	goto	l1078
    511   00001C                     l1060:
    512                           
-   513                           ;setting_hardaware/buttonversion.c: 99:         LATD=0b0010;
+   513                           ;setting_hardaware/buttonversion.c: 101:         LATD=0b0010;
    514   00001C  0E01               	movlw	1
    515   00001E  6E8C               	movwf	140,c	;volatile
    516   000020                     
-   517                           ;setting_hardaware/buttonversion.c: 100:         _delay((unsigned long)((5)*(4000000/400
+   517                           ;setting_hardaware/buttonversion.c: 102:         _delay((unsigned long)((5)*(4000000/400
       +                          0.0)));
    518   000020  0E07               	movlw	7
    519   000022  6E0B               	movwf	??_servo_start^0,c
@@ -543,11 +542,11 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
    525   00002C  D7FC               	bra	u437
    526   00002E  F000               	nop	
    527   000030                     
-   528                           ;setting_hardaware/buttonversion.c: 101:     }
+   528                           ;setting_hardaware/buttonversion.c: 103:     }
    529   000030  0E02               	movlw	2
    530   000032  6E8C               	movwf	140,c	;volatile
    531                           
-   532                           ;setting_hardaware/buttonversion.c: 102:     T0CONbits.TMR0ON = 0;
+   532                           ;setting_hardaware/buttonversion.c: 104:     T0CONbits.TMR0ON = 0;
    533   000034  0E07               	movlw	7
    534   000036  6E0B               	movwf	??_servo_start^0,c
    535   000038  0E7D               	movlw	125
@@ -558,11 +557,11 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
    540   000040  D7FC               	bra	u447
    541   000042  F000               	nop	
    542   000044                     
-   543                           ;setting_hardaware/buttonversion.c: 103:     INTCONbits.INT0IE = 0;
+   543                           ;setting_hardaware/buttonversion.c: 105:     INTCONbits.INT0IE = 0;
    544   000044  0E04               	movlw	4
    545   000046  6E8C               	movwf	140,c	;volatile
    546   000048                     
-   547                           ;setting_hardaware/buttonversion.c: 104:     INTCON3bits.INT1IE = 0;
+   547                           ;setting_hardaware/buttonversion.c: 106:     INTCON3bits.INT1IE = 0;
    548   000048  0E07               	movlw	7
    549   00004A  6E0B               	movwf	??_servo_start^0,c
    550   00004C  0E7D               	movlw	125
@@ -573,11 +572,11 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
    555   000054  D7FC               	bra	u457
    556   000056  F000               	nop	
    557                           
-   558                           ;setting_hardaware/buttonversion.c: 105:     LATC = 1;
+   558                           ;setting_hardaware/buttonversion.c: 107:     LATC = 1;
    559   000058  0E08               	movlw	8
    560   00005A  6E8C               	movwf	140,c	;volatile
    561   00005C                     
-   562                           ;setting_hardaware/buttonversion.c: 106: 
+   562                           ;setting_hardaware/buttonversion.c: 108: 
    563   00005C  0E07               	movlw	7
    564   00005E  6E0B               	movwf	??_servo_start^0,c
    565   000060  0E7D               	movlw	125
@@ -588,11 +587,11 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
    570   000068  D7FC               	bra	u467
    571   00006A  F000               	nop	
    572   00006C                     
-   573                           ;setting_hardaware/buttonversion.c: 108: 
+   573                           ;setting_hardaware/buttonversion.c: 110: 
    574   00006C  0E04               	movlw	4
    575   00006E  6E8C               	movwf	140,c	;volatile
    576                           
-   577                           ;setting_hardaware/buttonversion.c: 109: 
+   577                           ;setting_hardaware/buttonversion.c: 111: 
    578   000070  0E07               	movlw	7
    579   000072  6E0B               	movwf	??_servo_start^0,c
    580   000074  0E7D               	movlw	125
@@ -603,11 +602,11 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
    585   00007C  D7FC               	bra	u477
    586   00007E  F000               	nop	
    587   000080                     
-   588                           ;setting_hardaware/buttonversion.c: 110: 
+   588                           ;setting_hardaware/buttonversion.c: 112: 
    589   000080  0E02               	movlw	2
    590   000082  6E8C               	movwf	140,c	;volatile
    591   000084                     
-   592                           ;setting_hardaware/buttonversion.c: 111: 
+   592                           ;setting_hardaware/buttonversion.c: 113: 
    593   000084  0E07               	movlw	7
    594   000086  6E0B               	movwf	??_servo_start^0,c
    595   000088  0E7D               	movlw	125
@@ -619,8 +618,8 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
    601   000092  F000               	nop	
    602   000094                     l1078:
    603                           
-   604                           ;setting_hardaware/buttonversion.c: 98:         _delay((unsigned long)((5)*(4000000/4000
-      +                          .0)));
+   604                           ;setting_hardaware/buttonversion.c: 100:         _delay((unsigned long)((5)*(4000000/400
+      +                          0.0)));
    605   000094  A4F2               	btfss	242,2,c	;volatile
    606   000096  EF4F  F000         	goto	u301
    607   00009A  EF51  F000         	goto	u300
@@ -628,21 +627,21 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
    609   00009E  EF0E  F000         	goto	l1060
    610   0000A2                     u300:
    611   0000A2                     
-   612                           ;setting_hardaware/buttonversion.c: 113:     int j = CCPR1L*4*32;
+   612                           ;setting_hardaware/buttonversion.c: 115:     int j = CCPR1L*4*32;
    613   0000A2  9ED5               	bcf	213,7,c	;volatile
    614                           
-   615                           ;setting_hardaware/buttonversion.c: 114:     if(player1>player2){
+   615                           ;setting_hardaware/buttonversion.c: 116:     if(player1>player2){
    616   0000A4  98F2               	bcf	242,4,c	;volatile
    617                           
-   618                           ;setting_hardaware/buttonversion.c: 115:         while(j <= 2400){
+   618                           ;setting_hardaware/buttonversion.c: 117:         while(j <= 2400){
    619   0000A6  96F0               	bcf	240,3,c	;volatile
    620   0000A8                     
-   621                           ;setting_hardaware/buttonversion.c: 116:             _delay((unsigned long)((1)*(4000000
+   621                           ;setting_hardaware/buttonversion.c: 118:             _delay((unsigned long)((1)*(4000000
       +                          /4000.0)));
    622   0000A8  0E01               	movlw	1
    623   0000AA  6E8B               	movwf	139,c	;volatile
    624   0000AC                     
-   625                           ;setting_hardaware/buttonversion.c: 123:         while(j >= 500){
+   625                           ;setting_hardaware/buttonversion.c: 125:         while(j >= 500){
    626   0000AC  0E0D               	movlw	13
    627   0000AE  6E0B               	movwf	??_servo_start^0,c
    628   0000B0  0EFC               	movlw	252
@@ -652,14 +651,14 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
    632   0000B6  2E0B               	decfsz	??_servo_start^0,f,c
    633   0000B8  D7FC               	bra	u497
    634   0000BA                     
-   635                           ;setting_hardaware/buttonversion.c: 124:             _delay((unsigned long)((1)*(4000000
+   635                           ;setting_hardaware/buttonversion.c: 126:             _delay((unsigned long)((1)*(4000000
       +                          /4000.0)));
    636   0000BA  50BE               	movf	190,w,c	;volatile
    637   0000BC  0D80               	mullw	128
    638   0000BE  CFF3 F00E          	movff	prodl,servo_start@j
    639   0000C2  CFF4 F00F          	movff	prodh,servo_start@j+1
    640   0000C6                     
-   641                           ;setting_hardaware/buttonversion.c: 125:             CCPR1L = j/32/4;
+   641                           ;setting_hardaware/buttonversion.c: 127:             CCPR1L = j/32/4;
    642   0000C6  501F               	movf	_player1^0,w,c
    643   0000C8  5C1D               	subwf	_player2^0,w,c
    644   0000CA  501E               	movf	(_player2+1)^0,w,c
@@ -677,14 +676,14 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
    656   0000E4  EFA8  F000         	goto	l1100
    657   0000E8                     l1090:
    658                           
-   659                           ;setting_hardaware/buttonversion.c: 127:             j -= 100;
+   659                           ;setting_hardaware/buttonversion.c: 129:             j -= 100;
    660   0000E8  0EC8               	movlw	200
    661   0000EA                     u507:
    662   0000EA  D000               	nop2	
    663   0000EC  2EE8               	decfsz	wreg,f,c
    664   0000EE  D7FD               	bra	u507
    665   0000F0                     
-   666                           ;setting_hardaware/buttonversion.c: 128:         }
+   666                           ;setting_hardaware/buttonversion.c: 130:         }
    667   0000F0  0E00               	movlw	0
    668   0000F2  6E06               	movwf	(___awdiv@divisor+1)^0,c
    669   0000F4  0E20               	movlw	32
@@ -695,7 +694,7 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
    674   000104  C003  F00C         	movff	?___awdiv,_servo_start$992
    675   000108  C004  F00D         	movff	?___awdiv+1,_servo_start$992+1
    676   00010C                     
-   677                           ;setting_hardaware/buttonversion.c: 128:         }
+   677                           ;setting_hardaware/buttonversion.c: 130:         }
    678   00010C  C00C  F003         	movff	_servo_start$992,___awdiv@dividend
    679   000110  C00D  F004         	movff	_servo_start$992+1,___awdiv@dividend+1
    680   000114  0E00               	movlw	0
@@ -706,7 +705,7 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
    685   000120  5003               	movf	?___awdiv^0,w,c
    686   000122  6EBE               	movwf	190,c	;volatile
    687   000124                     
-   688                           ;setting_hardaware/buttonversion.c: 129:     }
+   688                           ;setting_hardaware/buttonversion.c: 131:     }
    689   000124  C00E  F003         	movff	servo_start@j,___awdiv@dividend
    690   000128  C00F  F004         	movff	servo_start@j+1,___awdiv@dividend+1
    691   00012C  0E00               	movlw	0
@@ -723,14 +722,14 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
    702   000144  1803               	xorwf	?___awdiv^0,w,c
    703   000146  6EBD               	movwf	189,c	;volatile
    704   000148                     
-   705                           ;setting_hardaware/buttonversion.c: 130:     else{
+   705                           ;setting_hardaware/buttonversion.c: 132:     else{
    706   000148  0E64               	movlw	100
    707   00014A  260E               	addwf	servo_start@j^0,f,c
    708   00014C  0E00               	movlw	0
    709   00014E  220F               	addwfc	(servo_start@j+1)^0,f,c
    710   000150                     l1100:
    711                           
-   712                           ;setting_hardaware/buttonversion.c: 126:             CCP1CONbits.DC1B = (j/32)%4;
+   712                           ;setting_hardaware/buttonversion.c: 128:             CCP1CONbits.DC1B = (j/32)%4;
    713   000150  BE0F               	btfsc	(servo_start@j+1)^0,7,c
    714   000152  EFB4  F000         	goto	u321
    715   000156  0E61               	movlw	97
@@ -762,14 +761,14 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
    741   00018E  EFFD  F000         	goto	l1116
    742   000192                     l1106:
    743                           
-   744                           ;setting_hardaware/buttonversion.c: 135:                 CCPR1L = j/32/4;
+   744                           ;setting_hardaware/buttonversion.c: 137:                 CCPR1L = j/32/4;
    745   000192  0EC8               	movlw	200
    746   000194                     u517:
    747   000194  D000               	nop2	
    748   000196  2EE8               	decfsz	wreg,f,c
    749   000198  D7FD               	bra	u517
    750   00019A                     
-   751                           ;setting_hardaware/buttonversion.c: 136:                 CCP1CONbits.DC1B = (j/32)%4;
+   751                           ;setting_hardaware/buttonversion.c: 138:                 CCP1CONbits.DC1B = (j/32)%4;
    752   00019A  0E00               	movlw	0
    753   00019C  6E06               	movwf	(___awdiv@divisor+1)^0,c
    754   00019E  0E20               	movlw	32
@@ -780,7 +779,7 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
    759   0001AE  C003  F00C         	movff	?___awdiv,_servo_start$992
    760   0001B2  C004  F00D         	movff	?___awdiv+1,_servo_start$992+1
    761   0001B6                     
-   762                           ;setting_hardaware/buttonversion.c: 136:                 CCP1CONbits.DC1B = (j/32)%4;
+   762                           ;setting_hardaware/buttonversion.c: 138:                 CCP1CONbits.DC1B = (j/32)%4;
    763   0001B6  C00C  F003         	movff	_servo_start$992,___awdiv@dividend
    764   0001BA  C00D  F004         	movff	_servo_start$992+1,___awdiv@dividend+1
    765   0001BE  0E00               	movlw	0
@@ -791,7 +790,7 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
    770   0001CA  5003               	movf	?___awdiv^0,w,c
    771   0001CC  6EBE               	movwf	190,c	;volatile
    772   0001CE                     
-   773                           ;setting_hardaware/buttonversion.c: 137:                 j += 100;
+   773                           ;setting_hardaware/buttonversion.c: 139:                 j += 100;
    774   0001CE  C00E  F003         	movff	servo_start@j,___awdiv@dividend
    775   0001D2  C00F  F004         	movff	servo_start@j+1,___awdiv@dividend+1
    776   0001D6  0E00               	movlw	0
@@ -808,14 +807,14 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
    787   0001EE  1803               	xorwf	?___awdiv^0,w,c
    788   0001F0  6EBD               	movwf	189,c	;volatile
    789   0001F2                     
-   790                           ;setting_hardaware/buttonversion.c: 138:             }
+   790                           ;setting_hardaware/buttonversion.c: 140:             }
    791   0001F2  0E9C               	movlw	156
    792   0001F4  260E               	addwf	servo_start@j^0,f,c
    793   0001F6  0EFF               	movlw	255
    794   0001F8  220F               	addwfc	(servo_start@j+1)^0,f,c
    795   0001FA                     l1116:
    796                           
-   797                           ;setting_hardaware/buttonversion.c: 134:                 _delay((unsigned long)((1)*(400
+   797                           ;setting_hardaware/buttonversion.c: 136:                 _delay((unsigned long)((1)*(400
       +                          0000/4000.0)));
    798   0001FA  BE0F               	btfsc	(servo_start@j+1)^0,7,c
    799   0001FC  EF0B  F001         	goto	u340
@@ -832,14 +831,14 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
    810   000216  EFA0  F001         	goto	l81
    811   00021A                     l1118:
    812                           
-   813                           ;setting_hardaware/buttonversion.c: 142:                _delay((unsigned long)((1)*(4000
+   813                           ;setting_hardaware/buttonversion.c: 144:                _delay((unsigned long)((1)*(4000
       +                          000/4000.0)));
    814   00021A  501D               	movf	_player2^0,w,c
    815   00021C  261F               	addwf	_player1^0,f,c
    816   00021E  501E               	movf	(_player2+1)^0,w,c
    817   000220  2220               	addwfc	(_player1+1)^0,f,c
    818   000222                     
-   819                           ;setting_hardaware/buttonversion.c: 143:                 CCPR1L = j/32/4;
+   819                           ;setting_hardaware/buttonversion.c: 145:                 CCPR1L = j/32/4;
    820   000222  A01F               	btfss	_player1^0,0,c
    821   000224  EF16  F001         	goto	u351
    822   000228  EF18  F001         	goto	u350
@@ -849,14 +848,14 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
    826   000230  EF4E  F001         	goto	l1134
    827   000234                     l1124:
    828                           
-   829                           ;setting_hardaware/buttonversion.c: 145:                 j -= 100;
+   829                           ;setting_hardaware/buttonversion.c: 147:                 j -= 100;
    830   000234  0EC8               	movlw	200
    831   000236                     u527:
    832   000236  D000               	nop2	
    833   000238  2EE8               	decfsz	wreg,f,c
    834   00023A  D7FD               	bra	u527
    835   00023C                     
-   836                           ;setting_hardaware/buttonversion.c: 146:             }
+   836                           ;setting_hardaware/buttonversion.c: 148:             }
    837   00023C  0E00               	movlw	0
    838   00023E  6E06               	movwf	(___awdiv@divisor+1)^0,c
    839   000240  0E20               	movlw	32
@@ -867,7 +866,7 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
    844   000250  C003  F00C         	movff	?___awdiv,_servo_start$992
    845   000254  C004  F00D         	movff	?___awdiv+1,_servo_start$992+1
    846   000258                     
-   847                           ;setting_hardaware/buttonversion.c: 146:             }
+   847                           ;setting_hardaware/buttonversion.c: 148:             }
    848   000258  C00C  F003         	movff	_servo_start$992,___awdiv@dividend
    849   00025C  C00D  F004         	movff	_servo_start$992+1,___awdiv@dividend+1
    850   000260  0E00               	movlw	0
@@ -878,7 +877,7 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
    855   00026C  5003               	movf	?___awdiv^0,w,c
    856   00026E  6EBE               	movwf	190,c	;volatile
    857   000270                     
-   858                           ;setting_hardaware/buttonversion.c: 147:         }
+   858                           ;setting_hardaware/buttonversion.c: 149:         }
    859   000270  C00E  F003         	movff	servo_start@j,___awdiv@dividend
    860   000274  C00F  F004         	movff	servo_start@j+1,___awdiv@dividend+1
    861   000278  0E00               	movlw	0
@@ -895,14 +894,14 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
    872   000290  1803               	xorwf	?___awdiv^0,w,c
    873   000292  6EBD               	movwf	189,c	;volatile
    874   000294                     
-   875                           ;setting_hardaware/buttonversion.c: 148:     }
+   875                           ;setting_hardaware/buttonversion.c: 150:     }
    876   000294  0E64               	movlw	100
    877   000296  260E               	addwf	servo_start@j^0,f,c
    878   000298  0E00               	movlw	0
    879   00029A  220F               	addwfc	(servo_start@j+1)^0,f,c
    880   00029C                     l1134:
    881                           
-   882                           ;setting_hardaware/buttonversion.c: 144:                 CCP1CONbits.DC1B = (j/32)%4;
+   882                           ;setting_hardaware/buttonversion.c: 146:                 CCP1CONbits.DC1B = (j/32)%4;
    883   00029C  BE0F               	btfsc	(servo_start@j+1)^0,7,c
    884   00029E  EF5A  F001         	goto	u361
    885   0002A2  0E61               	movlw	97
@@ -918,14 +917,14 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
    895   0002B8  EFA0  F001         	goto	l81
    896   0002BC                     l1136:
    897                           
-   898                           ;setting_hardaware/buttonversion.c: 153:     while(INTCONbits.TMR0IF != 1);
+   898                           ;setting_hardaware/buttonversion.c: 155:     while(INTCONbits.TMR0IF != 1);
    899   0002BC  0EC8               	movlw	200
    900   0002BE                     u537:
    901   0002BE  D000               	nop2	
    902   0002C0  2EE8               	decfsz	wreg,f,c
    903   0002C2  D7FD               	bra	u537
    904   0002C4                     
-   905                           ;setting_hardaware/buttonversion.c: 154:     T0CONbits.TMR0ON = 0;
+   905                           ;setting_hardaware/buttonversion.c: 156:     T0CONbits.TMR0ON = 0;
    906   0002C4  0E00               	movlw	0
    907   0002C6  6E06               	movwf	(___awdiv@divisor+1)^0,c
    908   0002C8  0E20               	movlw	32
@@ -936,7 +935,7 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
    913   0002D8  C003  F00C         	movff	?___awdiv,_servo_start$992
    914   0002DC  C004  F00D         	movff	?___awdiv+1,_servo_start$992+1
    915   0002E0                     
-   916                           ;setting_hardaware/buttonversion.c: 154:     T0CONbits.TMR0ON = 0;
+   916                           ;setting_hardaware/buttonversion.c: 156:     T0CONbits.TMR0ON = 0;
    917   0002E0  C00C  F003         	movff	_servo_start$992,___awdiv@dividend
    918   0002E4  C00D  F004         	movff	_servo_start$992+1,___awdiv@dividend+1
    919   0002E8  0E00               	movlw	0
@@ -947,7 +946,7 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
    924   0002F4  5003               	movf	?___awdiv^0,w,c
    925   0002F6  6EBE               	movwf	190,c	;volatile
    926   0002F8                     
-   927                           ;setting_hardaware/buttonversion.c: 155:     CCPR2L = 1450/32/4;
+   927                           ;setting_hardaware/buttonversion.c: 157:     CCPR2L = 1450/32/4;
    928   0002F8  C00E  F003         	movff	servo_start@j,___awdiv@dividend
    929   0002FC  C00F  F004         	movff	servo_start@j+1,___awdiv@dividend+1
    930   000300  0E00               	movlw	0
@@ -964,14 +963,14 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
    941   000318  1803               	xorwf	?___awdiv^0,w,c
    942   00031A  6EBD               	movwf	189,c	;volatile
    943   00031C                     
-   944                           ;setting_hardaware/buttonversion.c: 156:     CCP2CONbits.DC2B = (1450/32)%4;
+   944                           ;setting_hardaware/buttonversion.c: 158:     CCP2CONbits.DC2B = (1450/32)%4;
    945   00031C  0E9C               	movlw	156
    946   00031E  260E               	addwf	servo_start@j^0,f,c
    947   000320  0EFF               	movlw	255
    948   000322  220F               	addwfc	(servo_start@j+1)^0,f,c
    949   000324                     l1146:
    950                           
-   951                           ;setting_hardaware/buttonversion.c: 152:     T0CONbits.TMR0ON = 1;
+   951                           ;setting_hardaware/buttonversion.c: 154:     T0CONbits.TMR0ON = 1;
    952   000324  BE0F               	btfsc	(servo_start@j+1)^0,7,c
    953   000326  EFA0  F001         	goto	u370
    954   00032A  0EF4               	movlw	244
@@ -986,17 +985,17 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
    963   000340                     u370:
    964   000340                     l81:
    965                           
-   966                           ;setting_hardaware/buttonversion.c: 160: 
+   966                           ;setting_hardaware/buttonversion.c: 162: 
    967   000340  68D7               	setf	215,c	;volatile
    968   000342                     
-   969                           ;setting_hardaware/buttonversion.c: 161: 
+   969                           ;setting_hardaware/buttonversion.c: 163: 
    970   000342  0EC2               	movlw	194
    971   000344  6ED6               	movwf	214,c	;volatile
    972   000346                     
-   973                           ;setting_hardaware/buttonversion.c: 162:     ADCON1 = 0x0F;
+   973                           ;setting_hardaware/buttonversion.c: 164:     ADCON1 = 0x0F;
    974   000346  94F2               	bcf	242,2,c	;volatile
    975   000348                     
-   976                           ;setting_hardaware/buttonversion.c: 163:     INTCON3bits.INT2IF = 0;
+   976                           ;setting_hardaware/buttonversion.c: 165:     INTCON3bits.INT2IF = 0;
    977   000348  8ED5               	bsf	213,7,c	;volatile
    978   00034A                     l95:
    979   00034A  A4F2               	btfss	242,2,c	;volatile
@@ -1006,14 +1005,14 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
    983   000354  EFA5  F001         	goto	l95
    984   000358                     u380:
    985   000358                     
-   986                           ;setting_hardaware/buttonversion.c: 165:         player1 = 0;
+   986                           ;setting_hardaware/buttonversion.c: 167:         player1 = 0;
    987   000358  9ED5               	bcf	213,7,c	;volatile
    988   00035A                     
-   989                           ;setting_hardaware/buttonversion.c: 166:         player2 = 0;
+   989                           ;setting_hardaware/buttonversion.c: 168:         player2 = 0;
    990   00035A  0E0B               	movlw	11
    991   00035C  6EBB               	movwf	187,c	;volatile
    992                           
-   993                           ;setting_hardaware/buttonversion.c: 167:         while(INTCON3bits.INT2IF != 1);
+   993                           ;setting_hardaware/buttonversion.c: 169:         while(INTCON3bits.INT2IF != 1);
    994   00035E  50BA               	movf	186,w,c	;volatile
    995   000360  0BCF               	andlw	-49
    996   000362  0910               	iorlw	16
@@ -1252,7 +1251,7 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
   1229   000588  0E03               	movlw	3
   1230   00058A  6EBB               	movwf	187,c	;volatile
   1231                           
-  1232                           ;setting_hardaware/buttonversion.c: 79:     TMR0H = 0xF8;
+  1232                           ;setting_hardaware/buttonversion.c: 79: 
   1233   00058C  0E30               	movlw	48
   1234   00058E  12BA               	iorwf	186,f,c	;volatile
   1235   000590  0012               	return		;funcret
@@ -1867,7 +1866,7 @@ CODE                 0      0       0       0        0.0%
 
 
 Microchip Technology PIC18 Macro Assembler V2.40 build 20220703182018 
-Symbol Table                                                                                   Sun Jan 08 19:13:23 2023
+Symbol Table                                                                                   Tue Jan 10 13:21:20 2023
 
                          _A 0017                           _B 0011                           _i 0023  
                         l71 0622                          l81 0340                          l68 0590  

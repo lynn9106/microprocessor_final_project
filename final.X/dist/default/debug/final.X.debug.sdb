@@ -37,9 +37,9 @@
 [v _servo_motor_setups servo_motor_setups `(v  1 e 1 0 ]
 "83
 [v _timer0_setups timer0_setups `(v  1 e 1 0 ]
-"95
+"97
 [v _servo_start servo_start `(v  1 e 1 0 ]
-"169
+"171
 [v _main main `(v  1 e 1 0 ]
 "1202 C:\Program Files\Microchip\xc8\v2.40\pic\include\proc\pic18f4520.h
 [v _LATC LATC `VEuc  1 e 1 @3979 ]
@@ -206,22 +206,22 @@
 [v _player1 player1 `i  1 e 2 0 ]
 "22
 [v _player2 player2 `i  1 e 2 0 ]
-"169
+"171
 [v _main main `(v  1 e 1 0 ]
 {
-"223
+"225
 } 0
 "83
 [v _timer0_setups timer0_setups `(v  1 e 1 0 ]
 {
-"93
-} 0
 "95
+} 0
+"97
 [v _servo_start servo_start `(v  1 e 1 0 ]
 {
-"124
+"126
 [v servo_start@j j `i  1 a 2 13 ]
-"168
+"170
 } 0
 "7 C:\Program Files\Microchip\xc8\v2.40\pic\sources\c99\common\awdiv.c
 [v ___awdiv __awdiv `(i  1 e 2 0 ]
