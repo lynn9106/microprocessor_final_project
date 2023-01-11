@@ -4633,7 +4633,7 @@ int player1=0;
 int player2=0;
 void check();
 void __attribute__((picinterrupt(("")))) COMP_ISR(void){
-    _delay((unsigned long)((10)*(4000000/4000.0)));
+
     INTCONbits.INT0IE = 0;
     INTCON3bits.INT1IE = 0;
     if(INTCONbits.INT0IF == 1){
@@ -4686,8 +4686,8 @@ void servo_motor_setups(){
     CCPR1L = 1450/32/4;
     CCP1CONbits.DC1B = (1450/32)%4;
 
-    CCPR2L = 500/32/4;
-    CCP2CONbits.DC2B = (500/32)%4;
+    CCPR2L = 1100/32/4;
+    CCP2CONbits.DC2B = (1100/32)%4;
 }
 
 
@@ -4776,8 +4776,8 @@ void servo_start(){
     T0CONbits.TMR0ON = 1;
     while(INTCONbits.TMR0IF != 1);
     T0CONbits.TMR0ON = 0;
-    CCPR2L = 1450/32/4;
-    CCP2CONbits.DC2B = (1450/32)%4;
+    CCPR2L = 2200/32/4;
+    CCP2CONbits.DC2B = (2200/32)%4;
 }
 void main(void)
 {

@@ -11,28 +11,28 @@
 # All addresses and the length are given in unqualified hexadecimal
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
-$C:\Users\User\AppData\Local\Temp\xcAs167s.o
+$dist/default/debug\final.X.debug.o
+cinit CODE 0 5CC 5CC 32 1 2
+idloc IDLOC 5 200000 200000 8 1 1
+intcode_body CODE 0 592 592 3A 1 2
+text0 CODE 0 428 428 B8 1 2
+text1 CODE 0 5FE 5FE 18 1 2
+text2 CODE 0 12 12 352 1 2
+text3 CODE 0 364 364 C4 1 2
+text4 CODE 0 546 546 4C 1 2
+text6 CODE 0 4E0 4E0 66 1 2
+nvCOMRAM COMRAM 1 1C 1C 4 1 1
+idataCOMRAM CODE 0 616 616 C 1 1
+cstackCOMRAM COMRAM 1 1 1 F 1 1
+temp COMRAM 1 24 24 1 1 1
+intcode CODE 0 8 8 6 1 2
+dataCOMRAM COMRAM 1 10 10 C 1 1
+bssCOMRAM COMRAM 1 20 20 4 1 1
+config CONFIG 4 300000 300000 E 1 1
+$C:\Users\User\AppData\Local\Temp\xcAsvas.o
 idloc IDLOC 5 200000 200000 8 1 1
 init CODE 0 E E 4 1 2
 reset_vec CODE 0 0 0 4 1 2
-config CONFIG 4 300000 300000 E 1 1
-$dist/default/debug\final.X.debug.o
-cinit CODE 0 5DA 5DA 32 1 2
-idloc IDLOC 5 200000 200000 8 1 1
-intcode_body CODE 0 592 592 48 1 2
-text0 CODE 0 42C 42C B8 1 2
-text1 CODE 0 60C 60C 18 1 2
-text2 CODE 0 12 12 356 1 2
-text3 CODE 0 368 368 C4 1 2
-text4 CODE 0 54A 54A 48 1 2
-text6 CODE 0 4E4 4E4 66 1 2
-nvCOMRAM COMRAM 1 1D 1D 4 1 1
-idataCOMRAM CODE 0 624 624 C 1 1
-cstackCOMRAM COMRAM 1 1 1 10 1 1
-temp COMRAM 1 25 25 1 1 1
-intcode CODE 0 8 8 6 1 2
-dataCOMRAM COMRAM 1 11 11 C 1 1
-bssCOMRAM COMRAM 1 21 21 4 1 1
 config CONFIG 4 300000 300000 E 1 1
 # %UNUSED Section
 # This section enumerates the unused ranges of each CLASS. Each entry
@@ -54,20 +54,20 @@ BANK3 300-3FF 1
 BANK4 400-4FF 1
 BANK5 500-5F3 1
 CONST 4-7 1
-CONST 630-7DBF 1
-SMALLCONST 630-7DBF 1
+CONST 622-7DBF 1
+SMALLCONST 622-7DBF 1
 CODE 4-7 1
-CODE 630-7DBF 1
-BIGRAM 26-5F3 1
+CODE 622-7DBF 1
+BIGRAM 25-5F3 1
 BIGSFR F80-F9B 1
 BIGSFR F9D-FD3 1
 BIGSFR FD5-FDA 1
 BIGSFR FE0-FE2 1
 BIGSFR FE8-FEA 1
 BIGSFR FF0-FFC 1
-COMRAM 26-7F 1
+COMRAM 25-7F 1
 EEDATA F00000-F000FF 1
-MEDIUMCONST 630-7DBF 1
+MEDIUMCONST 622-7DBF 1
 # %LINETAB Section
 # This section enumerates the file/line to address mappings.
 # The beginning of the section is indicated by %LINETAB.
@@ -82,70 +82,69 @@ MEDIUMCONST 630-7DBF 1
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/debug\final.X.debug.o
-8 intcode CODE >2155:C:\Users\User\AppData\Local\Temp\xcAs167s.s
+8 intcode CODE >2153:C:\Users\User\AppData\Local\Temp\xcAsvas.s
 8 intcode CODE >24:D:\college\111-1\MicroProcessor\microprocessor_final_project\final.X\setting_hardaware/buttonversion.c
-4E4 text6 CODE >48:D:\college\111-1\MicroProcessor\microprocessor_final_project\final.X\setting_hardaware/buttonversion.c
-4E4 text6 CODE >49:D:\college\111-1\MicroProcessor\microprocessor_final_project\final.X\setting_hardaware/buttonversion.c
-502 text6 CODE >50:D:\college\111-1\MicroProcessor\microprocessor_final_project\final.X\setting_hardaware/buttonversion.c
-512 text6 CODE >51:D:\college\111-1\MicroProcessor\microprocessor_final_project\final.X\setting_hardaware/buttonversion.c
-518 text6 CODE >53:D:\college\111-1\MicroProcessor\microprocessor_final_project\final.X\setting_hardaware/buttonversion.c
-536 text6 CODE >54:D:\college\111-1\MicroProcessor\microprocessor_final_project\final.X\setting_hardaware/buttonversion.c
-546 text6 CODE >55:D:\college\111-1\MicroProcessor\microprocessor_final_project\final.X\setting_hardaware/buttonversion.c
-548 text6 CODE >57:D:\college\111-1\MicroProcessor\microprocessor_final_project\final.X\setting_hardaware/buttonversion.c
+4E0 text6 CODE >48:D:\college\111-1\MicroProcessor\microprocessor_final_project\final.X\setting_hardaware/buttonversion.c
+4E0 text6 CODE >49:D:\college\111-1\MicroProcessor\microprocessor_final_project\final.X\setting_hardaware/buttonversion.c
+4FE text6 CODE >50:D:\college\111-1\MicroProcessor\microprocessor_final_project\final.X\setting_hardaware/buttonversion.c
+50E text6 CODE >51:D:\college\111-1\MicroProcessor\microprocessor_final_project\final.X\setting_hardaware/buttonversion.c
+514 text6 CODE >53:D:\college\111-1\MicroProcessor\microprocessor_final_project\final.X\setting_hardaware/buttonversion.c
+532 text6 CODE >54:D:\college\111-1\MicroProcessor\microprocessor_final_project\final.X\setting_hardaware/buttonversion.c
+542 text6 CODE >55:D:\college\111-1\MicroProcessor\microprocessor_final_project\final.X\setting_hardaware/buttonversion.c
+544 text6 CODE >57:D:\college\111-1\MicroProcessor\microprocessor_final_project\final.X\setting_hardaware/buttonversion.c
 592 intcode_body CODE >24:D:\college\111-1\MicroProcessor\microprocessor_final_project\final.X\setting_hardaware/buttonversion.c
-594 intcode_body CODE >25:D:\college\111-1\MicroProcessor\microprocessor_final_project\final.X\setting_hardaware/buttonversion.c
-5A2 intcode_body CODE >26:D:\college\111-1\MicroProcessor\microprocessor_final_project\final.X\setting_hardaware/buttonversion.c
-5A4 intcode_body CODE >27:D:\college\111-1\MicroProcessor\microprocessor_final_project\final.X\setting_hardaware/buttonversion.c
-5A6 intcode_body CODE >28:D:\college\111-1\MicroProcessor\microprocessor_final_project\final.X\setting_hardaware/buttonversion.c
-5B4 intcode_body CODE >30:D:\college\111-1\MicroProcessor\microprocessor_final_project\final.X\setting_hardaware/buttonversion.c
-5B8 intcode_body CODE >32:D:\college\111-1\MicroProcessor\microprocessor_final_project\final.X\setting_hardaware/buttonversion.c
-5C6 intcode_body CODE >34:D:\college\111-1\MicroProcessor\microprocessor_final_project\final.X\setting_hardaware/buttonversion.c
-5CA intcode_body CODE >36:D:\college\111-1\MicroProcessor\microprocessor_final_project\final.X\setting_hardaware/buttonversion.c
-5CE intcode_body CODE >43:D:\college\111-1\MicroProcessor\microprocessor_final_project\final.X\setting_hardaware/buttonversion.c
-5D0 intcode_body CODE >44:D:\college\111-1\MicroProcessor\microprocessor_final_project\final.X\setting_hardaware/buttonversion.c
-5D2 intcode_body CODE >45:D:\college\111-1\MicroProcessor\microprocessor_final_project\final.X\setting_hardaware/buttonversion.c
-5D4 intcode_body CODE >46:D:\college\111-1\MicroProcessor\microprocessor_final_project\final.X\setting_hardaware/buttonversion.c
-5D6 intcode_body CODE >47:D:\college\111-1\MicroProcessor\microprocessor_final_project\final.X\setting_hardaware/buttonversion.c
-54A text4 CODE >58:D:\college\111-1\MicroProcessor\microprocessor_final_project\final.X\setting_hardaware/buttonversion.c
-54A text4 CODE >60:D:\college\111-1\MicroProcessor\microprocessor_final_project\final.X\setting_hardaware/buttonversion.c
-54E text4 CODE >62:D:\college\111-1\MicroProcessor\microprocessor_final_project\final.X\setting_hardaware/buttonversion.c
-550 text4 CODE >63:D:\college\111-1\MicroProcessor\microprocessor_final_project\final.X\setting_hardaware/buttonversion.c
-558 text4 CODE >65:D:\college\111-1\MicroProcessor\microprocessor_final_project\final.X\setting_hardaware/buttonversion.c
-560 text4 CODE >67:D:\college\111-1\MicroProcessor\microprocessor_final_project\final.X\setting_hardaware/buttonversion.c
-568 text4 CODE >68:D:\college\111-1\MicroProcessor\microprocessor_final_project\final.X\setting_hardaware/buttonversion.c
-570 text4 CODE >70:D:\college\111-1\MicroProcessor\microprocessor_final_project\final.X\setting_hardaware/buttonversion.c
-574 text4 CODE >71:D:\college\111-1\MicroProcessor\microprocessor_final_project\final.X\setting_hardaware/buttonversion.c
-578 text4 CODE >73:D:\college\111-1\MicroProcessor\microprocessor_final_project\final.X\setting_hardaware/buttonversion.c
-57C text4 CODE >75:D:\college\111-1\MicroProcessor\microprocessor_final_project\final.X\setting_hardaware/buttonversion.c
-580 text4 CODE >76:D:\college\111-1\MicroProcessor\microprocessor_final_project\final.X\setting_hardaware/buttonversion.c
-588 text4 CODE >78:D:\college\111-1\MicroProcessor\microprocessor_final_project\final.X\setting_hardaware/buttonversion.c
-58C text4 CODE >79:D:\college\111-1\MicroProcessor\microprocessor_final_project\final.X\setting_hardaware/buttonversion.c
+594 intcode_body CODE >26:D:\college\111-1\MicroProcessor\microprocessor_final_project\final.X\setting_hardaware/buttonversion.c
+596 intcode_body CODE >27:D:\college\111-1\MicroProcessor\microprocessor_final_project\final.X\setting_hardaware/buttonversion.c
+598 intcode_body CODE >28:D:\college\111-1\MicroProcessor\microprocessor_final_project\final.X\setting_hardaware/buttonversion.c
+5A6 intcode_body CODE >30:D:\college\111-1\MicroProcessor\microprocessor_final_project\final.X\setting_hardaware/buttonversion.c
+5AA intcode_body CODE >32:D:\college\111-1\MicroProcessor\microprocessor_final_project\final.X\setting_hardaware/buttonversion.c
+5B8 intcode_body CODE >34:D:\college\111-1\MicroProcessor\microprocessor_final_project\final.X\setting_hardaware/buttonversion.c
+5BC intcode_body CODE >36:D:\college\111-1\MicroProcessor\microprocessor_final_project\final.X\setting_hardaware/buttonversion.c
+5C0 intcode_body CODE >43:D:\college\111-1\MicroProcessor\microprocessor_final_project\final.X\setting_hardaware/buttonversion.c
+5C2 intcode_body CODE >44:D:\college\111-1\MicroProcessor\microprocessor_final_project\final.X\setting_hardaware/buttonversion.c
+5C4 intcode_body CODE >45:D:\college\111-1\MicroProcessor\microprocessor_final_project\final.X\setting_hardaware/buttonversion.c
+5C6 intcode_body CODE >46:D:\college\111-1\MicroProcessor\microprocessor_final_project\final.X\setting_hardaware/buttonversion.c
+5C8 intcode_body CODE >47:D:\college\111-1\MicroProcessor\microprocessor_final_project\final.X\setting_hardaware/buttonversion.c
+546 text4 CODE >58:D:\college\111-1\MicroProcessor\microprocessor_final_project\final.X\setting_hardaware/buttonversion.c
+546 text4 CODE >60:D:\college\111-1\MicroProcessor\microprocessor_final_project\final.X\setting_hardaware/buttonversion.c
+54A text4 CODE >62:D:\college\111-1\MicroProcessor\microprocessor_final_project\final.X\setting_hardaware/buttonversion.c
+54C text4 CODE >63:D:\college\111-1\MicroProcessor\microprocessor_final_project\final.X\setting_hardaware/buttonversion.c
+554 text4 CODE >65:D:\college\111-1\MicroProcessor\microprocessor_final_project\final.X\setting_hardaware/buttonversion.c
+55C text4 CODE >67:D:\college\111-1\MicroProcessor\microprocessor_final_project\final.X\setting_hardaware/buttonversion.c
+564 text4 CODE >68:D:\college\111-1\MicroProcessor\microprocessor_final_project\final.X\setting_hardaware/buttonversion.c
+56C text4 CODE >70:D:\college\111-1\MicroProcessor\microprocessor_final_project\final.X\setting_hardaware/buttonversion.c
+570 text4 CODE >71:D:\college\111-1\MicroProcessor\microprocessor_final_project\final.X\setting_hardaware/buttonversion.c
+574 text4 CODE >73:D:\college\111-1\MicroProcessor\microprocessor_final_project\final.X\setting_hardaware/buttonversion.c
+578 text4 CODE >75:D:\college\111-1\MicroProcessor\microprocessor_final_project\final.X\setting_hardaware/buttonversion.c
+57C text4 CODE >76:D:\college\111-1\MicroProcessor\microprocessor_final_project\final.X\setting_hardaware/buttonversion.c
+584 text4 CODE >78:D:\college\111-1\MicroProcessor\microprocessor_final_project\final.X\setting_hardaware/buttonversion.c
+588 text4 CODE >79:D:\college\111-1\MicroProcessor\microprocessor_final_project\final.X\setting_hardaware/buttonversion.c
 590 text4 CODE >80:D:\college\111-1\MicroProcessor\microprocessor_final_project\final.X\setting_hardaware/buttonversion.c
-368 text3 CODE >7:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c99\common\awdiv.c
-368 text3 CODE >13:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c99\common\awdiv.c
-36C text3 CODE >14:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c99\common\awdiv.c
-37A text3 CODE >15:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c99\common\awdiv.c
-382 text3 CODE >16:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c99\common\awdiv.c
-386 text3 CODE >18:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c99\common\awdiv.c
-394 text3 CODE >19:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c99\common\awdiv.c
-39C text3 CODE >20:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c99\common\awdiv.c
-3A0 text3 CODE >22:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c99\common\awdiv.c
-3A8 text3 CODE >23:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c99\common\awdiv.c
-3BA text3 CODE >24:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c99\common\awdiv.c
-3BE text3 CODE >25:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c99\common\awdiv.c
-3C2 text3 CODE >26:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c99\common\awdiv.c
-3C8 text3 CODE >27:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c99\common\awdiv.c
-3CA text3 CODE >25:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c99\common\awdiv.c
-3D8 text3 CODE >30:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c99\common\awdiv.c
-3DE text3 CODE >31:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c99\common\awdiv.c
-3F4 text3 CODE >32:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c99\common\awdiv.c
-3FC text3 CODE >33:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c99\common\awdiv.c
-3FE text3 CODE >35:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c99\common\awdiv.c
-404 text3 CODE >36:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c99\common\awdiv.c
-40A text3 CODE >38:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c99\common\awdiv.c
-41A text3 CODE >39:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c99\common\awdiv.c
-422 text3 CODE >40:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c99\common\awdiv.c
-42A text3 CODE >41:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c99\common\awdiv.c
+364 text3 CODE >7:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c99\common\awdiv.c
+364 text3 CODE >13:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c99\common\awdiv.c
+368 text3 CODE >14:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c99\common\awdiv.c
+376 text3 CODE >15:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c99\common\awdiv.c
+37E text3 CODE >16:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c99\common\awdiv.c
+382 text3 CODE >18:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c99\common\awdiv.c
+390 text3 CODE >19:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c99\common\awdiv.c
+398 text3 CODE >20:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c99\common\awdiv.c
+39C text3 CODE >22:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c99\common\awdiv.c
+3A4 text3 CODE >23:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c99\common\awdiv.c
+3B6 text3 CODE >24:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c99\common\awdiv.c
+3BA text3 CODE >25:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c99\common\awdiv.c
+3BE text3 CODE >26:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c99\common\awdiv.c
+3C4 text3 CODE >27:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c99\common\awdiv.c
+3C6 text3 CODE >25:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c99\common\awdiv.c
+3D4 text3 CODE >30:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c99\common\awdiv.c
+3DA text3 CODE >31:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c99\common\awdiv.c
+3F0 text3 CODE >32:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c99\common\awdiv.c
+3F8 text3 CODE >33:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c99\common\awdiv.c
+3FA text3 CODE >35:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c99\common\awdiv.c
+400 text3 CODE >36:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c99\common\awdiv.c
+406 text3 CODE >38:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c99\common\awdiv.c
+416 text3 CODE >39:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c99\common\awdiv.c
+41E text3 CODE >40:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c99\common\awdiv.c
+426 text3 CODE >41:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c99\common\awdiv.c
 12 text2 CODE >97:D:\college\111-1\MicroProcessor\microprocessor_final_project\final.X\setting_hardaware/buttonversion.c
 12 text2 CODE >98:D:\college\111-1\MicroProcessor\microprocessor_final_project\final.X\setting_hardaware/buttonversion.c
 14 text2 CODE >99:D:\college\111-1\MicroProcessor\microprocessor_final_project\final.X\setting_hardaware/buttonversion.c
@@ -202,77 +201,77 @@ F0 text2 CODE >130:D:\college\111-1\MicroProcessor\microprocessor_final_project\
 358 text2 CODE >167:D:\college\111-1\MicroProcessor\microprocessor_final_project\final.X\setting_hardaware/buttonversion.c
 35A text2 CODE >168:D:\college\111-1\MicroProcessor\microprocessor_final_project\final.X\setting_hardaware/buttonversion.c
 35E text2 CODE >169:D:\college\111-1\MicroProcessor\microprocessor_final_project\final.X\setting_hardaware/buttonversion.c
-366 text2 CODE >170:D:\college\111-1\MicroProcessor\microprocessor_final_project\final.X\setting_hardaware/buttonversion.c
-60C text1 CODE >83:D:\college\111-1\MicroProcessor\microprocessor_final_project\final.X\setting_hardaware/buttonversion.c
-60C text1 CODE >85:D:\college\111-1\MicroProcessor\microprocessor_final_project\final.X\setting_hardaware/buttonversion.c
-60E text1 CODE >86:D:\college\111-1\MicroProcessor\microprocessor_final_project\final.X\setting_hardaware/buttonversion.c
-610 text1 CODE >87:D:\college\111-1\MicroProcessor\microprocessor_final_project\final.X\setting_hardaware/buttonversion.c
-612 text1 CODE >88:D:\college\111-1\MicroProcessor\microprocessor_final_project\final.X\setting_hardaware/buttonversion.c
-614 text1 CODE >89:D:\college\111-1\MicroProcessor\microprocessor_final_project\final.X\setting_hardaware/buttonversion.c
-618 text1 CODE >92:D:\college\111-1\MicroProcessor\microprocessor_final_project\final.X\setting_hardaware/buttonversion.c
-61C text1 CODE >93:D:\college\111-1\MicroProcessor\microprocessor_final_project\final.X\setting_hardaware/buttonversion.c
-620 text1 CODE >94:D:\college\111-1\MicroProcessor\microprocessor_final_project\final.X\setting_hardaware/buttonversion.c
-622 text1 CODE >95:D:\college\111-1\MicroProcessor\microprocessor_final_project\final.X\setting_hardaware/buttonversion.c
-42C text0 CODE >171:D:\college\111-1\MicroProcessor\microprocessor_final_project\final.X\setting_hardaware/buttonversion.c
-42C text0 CODE >175:D:\college\111-1\MicroProcessor\microprocessor_final_project\final.X\setting_hardaware/buttonversion.c
-430 text0 CODE >176:D:\college\111-1\MicroProcessor\microprocessor_final_project\final.X\setting_hardaware/buttonversion.c
-432 text0 CODE >177:D:\college\111-1\MicroProcessor\microprocessor_final_project\final.X\setting_hardaware/buttonversion.c
-432 text0 CODE >178:D:\college\111-1\MicroProcessor\microprocessor_final_project\final.X\setting_hardaware/buttonversion.c
-43A text0 CODE >179:D:\college\111-1\MicroProcessor\microprocessor_final_project\final.X\setting_hardaware/buttonversion.c
-442 text0 CODE >180:D:\college\111-1\MicroProcessor\microprocessor_final_project\final.X\setting_hardaware/buttonversion.c
-450 text0 CODE >181:D:\college\111-1\MicroProcessor\microprocessor_final_project\final.X\setting_hardaware/buttonversion.c
-452 text0 CODE >182:D:\college\111-1\MicroProcessor\microprocessor_final_project\final.X\setting_hardaware/buttonversion.c
-454 text0 CODE >183:D:\college\111-1\MicroProcessor\microprocessor_final_project\final.X\setting_hardaware/buttonversion.c
-45C text0 CODE >184:D:\college\111-1\MicroProcessor\microprocessor_final_project\final.X\setting_hardaware/buttonversion.c
-464 text0 CODE >186:D:\college\111-1\MicroProcessor\microprocessor_final_project\final.X\setting_hardaware/buttonversion.c
-468 text0 CODE >187:D:\college\111-1\MicroProcessor\microprocessor_final_project\final.X\setting_hardaware/buttonversion.c
-46A text0 CODE >188:D:\college\111-1\MicroProcessor\microprocessor_final_project\final.X\setting_hardaware/buttonversion.c
-46C text0 CODE >189:D:\college\111-1\MicroProcessor\microprocessor_final_project\final.X\setting_hardaware/buttonversion.c
-46E text0 CODE >190:D:\college\111-1\MicroProcessor\microprocessor_final_project\final.X\setting_hardaware/buttonversion.c
-470 text0 CODE >191:D:\college\111-1\MicroProcessor\microprocessor_final_project\final.X\setting_hardaware/buttonversion.c
-472 text0 CODE >193:D:\college\111-1\MicroProcessor\microprocessor_final_project\final.X\setting_hardaware/buttonversion.c
-474 text0 CODE >194:D:\college\111-1\MicroProcessor\microprocessor_final_project\final.X\setting_hardaware/buttonversion.c
-47C text0 CODE >197:D:\college\111-1\MicroProcessor\microprocessor_final_project\final.X\setting_hardaware/buttonversion.c
-484 text0 CODE >200:D:\college\111-1\MicroProcessor\microprocessor_final_project\final.X\setting_hardaware/buttonversion.c
-48C text0 CODE >205:D:\college\111-1\MicroProcessor\microprocessor_final_project\final.X\setting_hardaware/buttonversion.c
-490 text0 CODE >206:D:\college\111-1\MicroProcessor\microprocessor_final_project\final.X\setting_hardaware/buttonversion.c
-494 text0 CODE >208:D:\college\111-1\MicroProcessor\microprocessor_final_project\final.X\setting_hardaware/buttonversion.c
-498 text0 CODE >212:D:\college\111-1\MicroProcessor\microprocessor_final_project\final.X\setting_hardaware/buttonversion.c
-49C text0 CODE >213:D:\college\111-1\MicroProcessor\microprocessor_final_project\final.X\setting_hardaware/buttonversion.c
-4A0 text0 CODE >214:D:\college\111-1\MicroProcessor\microprocessor_final_project\final.X\setting_hardaware/buttonversion.c
-4A4 text0 CODE >215:D:\college\111-1\MicroProcessor\microprocessor_final_project\final.X\setting_hardaware/buttonversion.c
-4A6 text0 CODE >216:D:\college\111-1\MicroProcessor\microprocessor_final_project\final.X\setting_hardaware/buttonversion.c
-4AA text0 CODE >217:D:\college\111-1\MicroProcessor\microprocessor_final_project\final.X\setting_hardaware/buttonversion.c
-4AE text0 CODE >218:D:\college\111-1\MicroProcessor\microprocessor_final_project\final.X\setting_hardaware/buttonversion.c
-4BC text0 CODE >219:D:\college\111-1\MicroProcessor\microprocessor_final_project\final.X\setting_hardaware/buttonversion.c
-4C0 text0 CODE >220:D:\college\111-1\MicroProcessor\microprocessor_final_project\final.X\setting_hardaware/buttonversion.c
-4CE text0 CODE >216:D:\college\111-1\MicroProcessor\microprocessor_final_project\final.X\setting_hardaware/buttonversion.c
-5DA cinit CODE >474:C:\Users\User\AppData\Local\Temp\xcAs167s.s
-5DA cinit CODE >476:C:\Users\User\AppData\Local\Temp\xcAs167s.s
-5DA cinit CODE >479:C:\Users\User\AppData\Local\Temp\xcAs167s.s
-5DA cinit CODE >511:C:\Users\User\AppData\Local\Temp\xcAs167s.s
-5DC cinit CODE >512:C:\Users\User\AppData\Local\Temp\xcAs167s.s
-5DE cinit CODE >513:C:\Users\User\AppData\Local\Temp\xcAs167s.s
-5E0 cinit CODE >514:C:\Users\User\AppData\Local\Temp\xcAs167s.s
-5E2 cinit CODE >515:C:\Users\User\AppData\Local\Temp\xcAs167s.s
-5E4 cinit CODE >516:C:\Users\User\AppData\Local\Temp\xcAs167s.s
-5E6 cinit CODE >517:C:\Users\User\AppData\Local\Temp\xcAs167s.s
-5EA cinit CODE >518:C:\Users\User\AppData\Local\Temp\xcAs167s.s
-5EE cinit CODE >519:C:\Users\User\AppData\Local\Temp\xcAs167s.s
-5EE cinit CODE >520:C:\Users\User\AppData\Local\Temp\xcAs167s.s
-5F0 cinit CODE >521:C:\Users\User\AppData\Local\Temp\xcAs167s.s
-5F4 cinit CODE >522:C:\Users\User\AppData\Local\Temp\xcAs167s.s
-5F6 cinit CODE >523:C:\Users\User\AppData\Local\Temp\xcAs167s.s
-5F8 cinit CODE >524:C:\Users\User\AppData\Local\Temp\xcAs167s.s
-5FA cinit CODE >528:C:\Users\User\AppData\Local\Temp\xcAs167s.s
-5FC cinit CODE >529:C:\Users\User\AppData\Local\Temp\xcAs167s.s
-5FE cinit CODE >530:C:\Users\User\AppData\Local\Temp\xcAs167s.s
-600 cinit CODE >531:C:\Users\User\AppData\Local\Temp\xcAs167s.s
-602 cinit CODE >537:C:\Users\User\AppData\Local\Temp\xcAs167s.s
-602 cinit CODE >539:C:\Users\User\AppData\Local\Temp\xcAs167s.s
-604 cinit CODE >540:C:\Users\User\AppData\Local\Temp\xcAs167s.s
-606 cinit CODE >541:C:\Users\User\AppData\Local\Temp\xcAs167s.s
-608 cinit CODE >542:C:\Users\User\AppData\Local\Temp\xcAs167s.s
+362 text2 CODE >170:D:\college\111-1\MicroProcessor\microprocessor_final_project\final.X\setting_hardaware/buttonversion.c
+5FE text1 CODE >83:D:\college\111-1\MicroProcessor\microprocessor_final_project\final.X\setting_hardaware/buttonversion.c
+5FE text1 CODE >85:D:\college\111-1\MicroProcessor\microprocessor_final_project\final.X\setting_hardaware/buttonversion.c
+600 text1 CODE >86:D:\college\111-1\MicroProcessor\microprocessor_final_project\final.X\setting_hardaware/buttonversion.c
+602 text1 CODE >87:D:\college\111-1\MicroProcessor\microprocessor_final_project\final.X\setting_hardaware/buttonversion.c
+604 text1 CODE >88:D:\college\111-1\MicroProcessor\microprocessor_final_project\final.X\setting_hardaware/buttonversion.c
+606 text1 CODE >89:D:\college\111-1\MicroProcessor\microprocessor_final_project\final.X\setting_hardaware/buttonversion.c
+60A text1 CODE >92:D:\college\111-1\MicroProcessor\microprocessor_final_project\final.X\setting_hardaware/buttonversion.c
+60E text1 CODE >93:D:\college\111-1\MicroProcessor\microprocessor_final_project\final.X\setting_hardaware/buttonversion.c
+612 text1 CODE >94:D:\college\111-1\MicroProcessor\microprocessor_final_project\final.X\setting_hardaware/buttonversion.c
+614 text1 CODE >95:D:\college\111-1\MicroProcessor\microprocessor_final_project\final.X\setting_hardaware/buttonversion.c
+428 text0 CODE >171:D:\college\111-1\MicroProcessor\microprocessor_final_project\final.X\setting_hardaware/buttonversion.c
+428 text0 CODE >175:D:\college\111-1\MicroProcessor\microprocessor_final_project\final.X\setting_hardaware/buttonversion.c
+42C text0 CODE >176:D:\college\111-1\MicroProcessor\microprocessor_final_project\final.X\setting_hardaware/buttonversion.c
+42E text0 CODE >177:D:\college\111-1\MicroProcessor\microprocessor_final_project\final.X\setting_hardaware/buttonversion.c
+42E text0 CODE >178:D:\college\111-1\MicroProcessor\microprocessor_final_project\final.X\setting_hardaware/buttonversion.c
+436 text0 CODE >179:D:\college\111-1\MicroProcessor\microprocessor_final_project\final.X\setting_hardaware/buttonversion.c
+43E text0 CODE >180:D:\college\111-1\MicroProcessor\microprocessor_final_project\final.X\setting_hardaware/buttonversion.c
+44C text0 CODE >181:D:\college\111-1\MicroProcessor\microprocessor_final_project\final.X\setting_hardaware/buttonversion.c
+44E text0 CODE >182:D:\college\111-1\MicroProcessor\microprocessor_final_project\final.X\setting_hardaware/buttonversion.c
+450 text0 CODE >183:D:\college\111-1\MicroProcessor\microprocessor_final_project\final.X\setting_hardaware/buttonversion.c
+458 text0 CODE >184:D:\college\111-1\MicroProcessor\microprocessor_final_project\final.X\setting_hardaware/buttonversion.c
+460 text0 CODE >186:D:\college\111-1\MicroProcessor\microprocessor_final_project\final.X\setting_hardaware/buttonversion.c
+464 text0 CODE >187:D:\college\111-1\MicroProcessor\microprocessor_final_project\final.X\setting_hardaware/buttonversion.c
+466 text0 CODE >188:D:\college\111-1\MicroProcessor\microprocessor_final_project\final.X\setting_hardaware/buttonversion.c
+468 text0 CODE >189:D:\college\111-1\MicroProcessor\microprocessor_final_project\final.X\setting_hardaware/buttonversion.c
+46A text0 CODE >190:D:\college\111-1\MicroProcessor\microprocessor_final_project\final.X\setting_hardaware/buttonversion.c
+46C text0 CODE >191:D:\college\111-1\MicroProcessor\microprocessor_final_project\final.X\setting_hardaware/buttonversion.c
+46E text0 CODE >193:D:\college\111-1\MicroProcessor\microprocessor_final_project\final.X\setting_hardaware/buttonversion.c
+470 text0 CODE >194:D:\college\111-1\MicroProcessor\microprocessor_final_project\final.X\setting_hardaware/buttonversion.c
+478 text0 CODE >197:D:\college\111-1\MicroProcessor\microprocessor_final_project\final.X\setting_hardaware/buttonversion.c
+480 text0 CODE >200:D:\college\111-1\MicroProcessor\microprocessor_final_project\final.X\setting_hardaware/buttonversion.c
+488 text0 CODE >205:D:\college\111-1\MicroProcessor\microprocessor_final_project\final.X\setting_hardaware/buttonversion.c
+48C text0 CODE >206:D:\college\111-1\MicroProcessor\microprocessor_final_project\final.X\setting_hardaware/buttonversion.c
+490 text0 CODE >208:D:\college\111-1\MicroProcessor\microprocessor_final_project\final.X\setting_hardaware/buttonversion.c
+494 text0 CODE >212:D:\college\111-1\MicroProcessor\microprocessor_final_project\final.X\setting_hardaware/buttonversion.c
+498 text0 CODE >213:D:\college\111-1\MicroProcessor\microprocessor_final_project\final.X\setting_hardaware/buttonversion.c
+49C text0 CODE >214:D:\college\111-1\MicroProcessor\microprocessor_final_project\final.X\setting_hardaware/buttonversion.c
+4A0 text0 CODE >215:D:\college\111-1\MicroProcessor\microprocessor_final_project\final.X\setting_hardaware/buttonversion.c
+4A2 text0 CODE >216:D:\college\111-1\MicroProcessor\microprocessor_final_project\final.X\setting_hardaware/buttonversion.c
+4A6 text0 CODE >217:D:\college\111-1\MicroProcessor\microprocessor_final_project\final.X\setting_hardaware/buttonversion.c
+4AA text0 CODE >218:D:\college\111-1\MicroProcessor\microprocessor_final_project\final.X\setting_hardaware/buttonversion.c
+4B8 text0 CODE >219:D:\college\111-1\MicroProcessor\microprocessor_final_project\final.X\setting_hardaware/buttonversion.c
+4BC text0 CODE >220:D:\college\111-1\MicroProcessor\microprocessor_final_project\final.X\setting_hardaware/buttonversion.c
+4CA text0 CODE >216:D:\college\111-1\MicroProcessor\microprocessor_final_project\final.X\setting_hardaware/buttonversion.c
+5CC cinit CODE >474:C:\Users\User\AppData\Local\Temp\xcAsvas.s
+5CC cinit CODE >476:C:\Users\User\AppData\Local\Temp\xcAsvas.s
+5CC cinit CODE >479:C:\Users\User\AppData\Local\Temp\xcAsvas.s
+5CC cinit CODE >511:C:\Users\User\AppData\Local\Temp\xcAsvas.s
+5CE cinit CODE >512:C:\Users\User\AppData\Local\Temp\xcAsvas.s
+5D0 cinit CODE >513:C:\Users\User\AppData\Local\Temp\xcAsvas.s
+5D2 cinit CODE >514:C:\Users\User\AppData\Local\Temp\xcAsvas.s
+5D4 cinit CODE >515:C:\Users\User\AppData\Local\Temp\xcAsvas.s
+5D6 cinit CODE >516:C:\Users\User\AppData\Local\Temp\xcAsvas.s
+5D8 cinit CODE >517:C:\Users\User\AppData\Local\Temp\xcAsvas.s
+5DC cinit CODE >518:C:\Users\User\AppData\Local\Temp\xcAsvas.s
+5E0 cinit CODE >519:C:\Users\User\AppData\Local\Temp\xcAsvas.s
+5E0 cinit CODE >520:C:\Users\User\AppData\Local\Temp\xcAsvas.s
+5E2 cinit CODE >521:C:\Users\User\AppData\Local\Temp\xcAsvas.s
+5E6 cinit CODE >522:C:\Users\User\AppData\Local\Temp\xcAsvas.s
+5E8 cinit CODE >523:C:\Users\User\AppData\Local\Temp\xcAsvas.s
+5EA cinit CODE >524:C:\Users\User\AppData\Local\Temp\xcAsvas.s
+5EC cinit CODE >528:C:\Users\User\AppData\Local\Temp\xcAsvas.s
+5EE cinit CODE >529:C:\Users\User\AppData\Local\Temp\xcAsvas.s
+5F0 cinit CODE >530:C:\Users\User\AppData\Local\Temp\xcAsvas.s
+5F2 cinit CODE >531:C:\Users\User\AppData\Local\Temp\xcAsvas.s
+5F4 cinit CODE >537:C:\Users\User\AppData\Local\Temp\xcAsvas.s
+5F4 cinit CODE >539:C:\Users\User\AppData\Local\Temp\xcAsvas.s
+5F6 cinit CODE >540:C:\Users\User\AppData\Local\Temp\xcAsvas.s
+5F8 cinit CODE >541:C:\Users\User\AppData\Local\Temp\xcAsvas.s
+5FA cinit CODE >542:C:\Users\User\AppData\Local\Temp\xcAsvas.s
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -285,51 +284,51 @@ F0 text2 CODE >130:D:\college\111-1\MicroProcessor\microprocessor_final_project\
 # was defined in a psect then <psect> will be "-". File-name
 # is the name of the object file in which the symbol was defined.
 %SYMTAB
-_A 17 0 COMRAM 1 dataCOMRAM dist/default/debug\final.X.debug.o
-_B 11 0 COMRAM 1 dataCOMRAM dist/default/debug\final.X.debug.o
-_i 23 0 COMRAM 1 bssCOMRAM dist/default/debug\final.X.debug.o
-___awdiv@counter 7 0 COMRAM 1 cstackCOMRAM dist/default/debug\final.X.debug.o
+_A 16 0 COMRAM 1 dataCOMRAM dist/default/debug\final.X.debug.o
+_B 10 0 COMRAM 1 dataCOMRAM dist/default/debug\final.X.debug.o
+_i 22 0 COMRAM 1 bssCOMRAM dist/default/debug\final.X.debug.o
+___awdiv@counter 6 0 COMRAM 1 cstackCOMRAM dist/default/debug\final.X.debug.o
 __Lmediumconst 0 0 MEDIUMCONST 0 mediumconst dist/default/debug\final.X.debug.o
-__Hspace_0 630 0 ABS 0 - dist/default/debug\final.X.debug.o
-__Hspace_1 26 0 ABS 0 - dist/default/debug\final.X.debug.o
+__Hspace_0 622 0 ABS 0 - dist/default/debug\final.X.debug.o
+__Hspace_1 25 0 ABS 0 - dist/default/debug\final.X.debug.o
 __Hspace_2 0 0 ABS 0 - dist/default/debug\final.X.debug.o
 __Hspace_4 60000E 0 ABS 0 - dist/default/debug\final.X.debug.o
 __Hibigdata 0 0 CODE 0 ibigdata dist/default/debug\final.X.debug.o
-__mediumconst 0 0 MEDIUMCONST 0 mediumconst C:\Users\User\AppData\Local\Temp\xcAs167s.o
+__mediumconst 0 0 MEDIUMCONST 0 mediumconst C:\Users\User\AppData\Local\Temp\xcAsvas.o
 __Heeprom_data 0 0 EEDATA 0 eeprom_data dist/default/debug\final.X.debug.o
 __Lsmallconst 0 0 SMALLCONST 0 smallconst dist/default/debug\final.X.debug.o
 _LATC F8B 0 ABS 0 - dist/default/debug\final.X.debug.o
 _LATD F8C 0 ABS 0 - dist/default/debug\final.X.debug.o
-___sp 0 0 STACK 2 stack C:\Users\User\AppData\Local\Temp\xcAs167s.o
-_main 42C 0 CODE 0 text0 dist/default/debug\final.X.debug.o
-btemp 25 0 COMRAM 1 temp dist/default/debug\final.X.debug.o
+___sp 0 0 STACK 2 stack C:\Users\User\AppData\Local\Temp\xcAsvas.o
+_main 428 0 CODE 0 text0 dist/default/debug\final.X.debug.o
+btemp 24 0 COMRAM 1 temp dist/default/debug\final.X.debug.o
 _servo_start 12 0 CODE 0 text2 dist/default/debug\final.X.debug.o
-start E 0 CODE 0 init C:\Users\User\AppData\Local\Temp\xcAs167s.o
+start E 0 CODE 0 init C:\Users\User\AppData\Local\Temp\xcAsvas.o
 __HbssCOMRAM 0 0 ABS 0 bssCOMRAM dist/default/debug\final.X.debug.o
 __Hpowerup E 0 CODE 0 powerup dist/default/debug\final.X.debug.o
 _T0CONbits FD5 0 ABS 0 - dist/default/debug\final.X.debug.o
-ttemp5 26 0 COMRAM 1 temp dist/default/debug\final.X.debug.o
-ttemp6 29 0 COMRAM 1 temp dist/default/debug\final.X.debug.o
-ttemp7 2D 0 COMRAM 1 temp dist/default/debug\final.X.debug.o
+ttemp5 25 0 COMRAM 1 temp dist/default/debug\final.X.debug.o
+ttemp6 28 0 COMRAM 1 temp dist/default/debug\final.X.debug.o
+ttemp7 2C 0 COMRAM 1 temp dist/default/debug\final.X.debug.o
 __LnvCOMRAM 0 0 ABS 0 nvCOMRAM dist/default/debug\final.X.debug.o
 __HdataCOMRAM 0 0 ABS 0 dataCOMRAM dist/default/debug\final.X.debug.o
-__accesstop 80 0 ABS 0 - C:\Users\User\AppData\Local\Temp\xcAs167s.o
-intlevel0 0 0 CODE 0 text C:\Users\User\AppData\Local\Temp\xcAs167s.o
-intlevel1 0 0 CODE 0 text C:\Users\User\AppData\Local\Temp\xcAs167s.o
-intlevel2 0 0 CODE 0 text C:\Users\User\AppData\Local\Temp\xcAs167s.o
-intlevel3 0 0 CODE 0 text C:\Users\User\AppData\Local\Temp\xcAs167s.o
+__accesstop 80 0 ABS 0 - C:\Users\User\AppData\Local\Temp\xcAsvas.o
+intlevel0 0 0 CODE 0 text C:\Users\User\AppData\Local\Temp\xcAsvas.o
+intlevel1 0 0 CODE 0 text C:\Users\User\AppData\Local\Temp\xcAsvas.o
+intlevel2 0 0 CODE 0 text C:\Users\User\AppData\Local\Temp\xcAsvas.o
+intlevel3 0 0 CODE 0 text C:\Users\User\AppData\Local\Temp\xcAsvas.o
 __LbssCOMRAM 0 0 ABS 0 bssCOMRAM dist/default/debug\final.X.debug.o
 _OSCCONbits FD3 0 ABS 0 - dist/default/debug\final.X.debug.o
 __LnvFARRAM 0 0 FARRAM 0 nvFARRAM dist/default/debug\final.X.debug.o
-wtemp8 26 0 COMRAM 1 temp dist/default/debug\final.X.debug.o
+wtemp8 25 0 COMRAM 1 temp dist/default/debug\final.X.debug.o
 __Hifardata 0 0 CODE 0 ifardata dist/default/debug\final.X.debug.o
-___awdiv@sign 8 0 COMRAM 1 cstackCOMRAM dist/default/debug\final.X.debug.o
+___awdiv@sign 7 0 COMRAM 1 cstackCOMRAM dist/default/debug\final.X.debug.o
 __Hclrtext 0 0 ABS 0 clrtext dist/default/debug\final.X.debug.o
-__pidataCOMRAM 624 0 CODE 0 idataCOMRAM dist/default/debug\final.X.debug.o
+__pidataCOMRAM 616 0 CODE 0 idataCOMRAM dist/default/debug\final.X.debug.o
 _ADCON1 FC1 0 ABS 0 - dist/default/debug\final.X.debug.o
-___awdiv@dividend 3 0 COMRAM 1 cstackCOMRAM dist/default/debug\final.X.debug.o
-___inthi_sp 0 0 STACK 2 stack C:\Users\User\AppData\Local\Temp\xcAs167s.o
-___intlo_sp 0 0 STACK 2 stack C:\Users\User\AppData\Local\Temp\xcAs167s.o
+___awdiv@dividend 2 0 COMRAM 1 cstackCOMRAM dist/default/debug\final.X.debug.o
+___inthi_sp 0 0 STACK 2 stack C:\Users\User\AppData\Local\Temp\xcAsvas.o
+___intlo_sp 0 0 STACK 2 stack C:\Users\User\AppData\Local\Temp\xcAsvas.o
 __LdataCOMRAM 0 0 ABS 0 dataCOMRAM dist/default/debug\final.X.debug.o
 _CCPR1L FBE 0 ABS 0 - dist/default/debug\final.X.debug.o
 _CCPR2L FBB 0 ABS 0 - dist/default/debug\final.X.debug.o
@@ -337,19 +336,19 @@ __Hintcode_body 0 0 ABS 0 intcode_body dist/default/debug\final.X.debug.o
 __Lintsave_regs 0 0 BIGRAM 1 intsave_regs dist/default/debug\final.X.debug.o
 __Hmediumconst 0 0 MEDIUMCONST 0 mediumconst dist/default/debug\final.X.debug.o
 __Hintcodelo E 0 CODE 0 intcodelo dist/default/debug\final.X.debug.o
-___awdiv@divisor 5 0 COMRAM 1 cstackCOMRAM dist/default/debug\final.X.debug.o
-__end_of___awdiv 42C 0 CODE 0 text3 dist/default/debug\final.X.debug.o
-_timer0_setups 60C 0 CODE 0 text1 dist/default/debug\final.X.debug.o
+___awdiv@divisor 4 0 COMRAM 1 cstackCOMRAM dist/default/debug\final.X.debug.o
+__end_of___awdiv 428 0 CODE 0 text3 dist/default/debug\final.X.debug.o
+_timer0_setups 5FE 0 CODE 0 text1 dist/default/debug\final.X.debug.o
 __LidataCOMRAM 0 0 ABS 0 idataCOMRAM dist/default/debug\final.X.debug.o
 __HnvCOMRAM 0 0 ABS 0 nvCOMRAM dist/default/debug\final.X.debug.o
 _INTCON3bits FF0 0 ABS 0 - dist/default/debug\final.X.debug.o
 __Lintcodelo E 0 CODE 0 intcodelo dist/default/debug\final.X.debug.o
-start_initialization 5DA 0 CODE 0 cinit dist/default/debug\final.X.debug.o
+start_initialization 5CC 0 CODE 0 cinit dist/default/debug\final.X.debug.o
 __HnvFARRAM 0 0 FARRAM 0 nvFARRAM dist/default/debug\final.X.debug.o
 __end_of_servo_motor_setups 592 0 CODE 0 text4 dist/default/debug\final.X.debug.o
-_direction 21 0 COMRAM 1 bssCOMRAM dist/default/debug\final.X.debug.o
+_direction 20 0 COMRAM 1 bssCOMRAM dist/default/debug\final.X.debug.o
 ___rparam_used 1 0 ABS 0 - dist/default/debug\final.X.debug.o
-isa$xinst 0 0 ABS 0 - C:\Users\User\AppData\Local\Temp\xcAs167s.o
+isa$xinst 0 0 ABS 0 - C:\Users\User\AppData\Local\Temp\xcAsvas.o
 __Hbank0 0 0 ABS 0 bank0 dist/default/debug\final.X.debug.o
 __Hbank1 0 0 ABS 0 bank1 dist/default/debug\final.X.debug.o
 __Hbank2 0 0 ABS 0 bank2 dist/default/debug\final.X.debug.o
@@ -373,8 +372,8 @@ __Htext6 0 0 ABS 0 text6 dist/default/debug\final.X.debug.o
 __Hbigbss 0 0 BIGRAM 1 bigbss dist/default/debug\final.X.debug.o
 __Hbigram 0 0 ABS 0 bigram dist/default/debug\final.X.debug.o
 __Hbigsfr 0 0 ABS 0 bigsfr dist/default/debug\final.X.debug.o
-_servo_motor_setups 54A 0 CODE 0 text4 dist/default/debug\final.X.debug.o
-__smallconst 0 0 SMALLCONST 0 smallconst C:\Users\User\AppData\Local\Temp\xcAs167s.o
+_servo_motor_setups 546 0 CODE 0 text4 dist/default/debug\final.X.debug.o
+__smallconst 0 0 SMALLCONST 0 smallconst C:\Users\User\AppData\Local\Temp\xcAsvas.o
 __Hcomram 0 0 ABS 0 comram dist/default/debug\final.X.debug.o
 __Hconfig 30000E 0 CONFIG 4 config dist/default/debug\final.X.debug.o
 __Lbank0 0 0 ABS 0 bank0 dist/default/debug\final.X.debug.o
@@ -399,7 +398,7 @@ __Ltext4 0 0 ABS 0 text4 dist/default/debug\final.X.debug.o
 __Ltext6 0 0 ABS 0 text6 dist/default/debug\final.X.debug.o
 __Hfarbss 0 0 FARRAM 0 farbss dist/default/debug\final.X.debug.o
 __Lintcode_body 0 0 ABS 0 intcode_body dist/default/debug\final.X.debug.o
-__end_of_servo_start 368 0 CODE 0 text2 dist/default/debug\final.X.debug.o
+__end_of_servo_start 364 0 CODE 0 text2 dist/default/debug\final.X.debug.o
 _INTCONbits FF2 0 ABS 0 - dist/default/debug\final.X.debug.o
 __Habs1 0 0 ABS 0 abs1 dist/default/debug\final.X.debug.o
 __Hdata 0 0 ABS 0 data dist/default/debug\final.X.debug.o
@@ -407,7 +406,7 @@ __Hheap 0 0 HEAP 7 heap dist/default/debug\final.X.debug.o
 __Hinit 12 0 CODE 0 init dist/default/debug\final.X.debug.o
 __Hrbit 0 0 COMRAM 1 rbit dist/default/debug\final.X.debug.o
 __Hrbss 0 0 COMRAM 1 rbss dist/default/debug\final.X.debug.o
-__Htemp 26 0 COMRAM 1 temp dist/default/debug\final.X.debug.o
+__Htemp 25 0 COMRAM 1 temp dist/default/debug\final.X.debug.o
 __Htext 0 0 ABS 0 text dist/default/debug\final.X.debug.o
 __Labs1 0 0 ABS 0 abs1 dist/default/debug\final.X.debug.o
 __Ldata 0 0 ABS 0 data dist/default/debug\final.X.debug.o
@@ -415,32 +414,32 @@ __Lheap 0 0 HEAP 7 heap dist/default/debug\final.X.debug.o
 __Linit E 0 CODE 0 init dist/default/debug\final.X.debug.o
 __Lrbit 0 0 COMRAM 1 rbit dist/default/debug\final.X.debug.o
 __Lrbss 0 0 COMRAM 1 rbss dist/default/debug\final.X.debug.o
-__Ltemp 25 0 COMRAM 1 temp dist/default/debug\final.X.debug.o
+__Ltemp 24 0 COMRAM 1 temp dist/default/debug\final.X.debug.o
 __Ltext 0 0 ABS 0 text dist/default/debug\final.X.debug.o
-int$flags 25 0 COMRAM 1 temp dist/default/debug\final.X.debug.o
+int$flags 24 0 COMRAM 1 temp dist/default/debug\final.X.debug.o
 __HcstackCOMRAM 0 0 ABS 0 cstackCOMRAM dist/default/debug\final.X.debug.o
 __Hintret 0 0 ABS 0 intret dist/default/debug\final.X.debug.o
 _COMP_ISR 8 0 CODE 0 intcode dist/default/debug\final.X.debug.o
 __Hirdata 0 0 CODE 0 irdata dist/default/debug\final.X.debug.o
 _PR2 FCB 0 ABS 0 - dist/default/debug\final.X.debug.o
-__S0 630 0 ABS 0 - dist/default/debug\final.X.debug.o
-__S1 26 0 ABS 0 - dist/default/debug\final.X.debug.o
+__S0 622 0 ABS 0 - dist/default/debug\final.X.debug.o
+__S1 25 0 ABS 0 - dist/default/debug\final.X.debug.o
 __S4 0 0 ABS 0 - dist/default/debug\final.X.debug.o
 __S5 0 0 ABS 0 - dist/default/debug\final.X.debug.o
-servo_start@j E 0 COMRAM 1 cstackCOMRAM dist/default/debug\final.X.debug.o
-__pnvCOMRAM 1D 0 COMRAM 1 nvCOMRAM dist/default/debug\final.X.debug.o
-__end_of_COMP_ISR 5DA 0 CODE 0 intcode_body dist/default/debug\final.X.debug.o
+servo_start@j D 0 COMRAM 1 cstackCOMRAM dist/default/debug\final.X.debug.o
+__pnvCOMRAM 1C 0 COMRAM 1 nvCOMRAM dist/default/debug\final.X.debug.o
+__end_of_COMP_ISR 5CC 0 CODE 0 intcode_body dist/default/debug\final.X.debug.o
 __HidataCOMRAM 0 0 ABS 0 idataCOMRAM dist/default/debug\final.X.debug.o
 __Lbigdata 0 0 BIGRAM 1 bigdata dist/default/debug\final.X.debug.o
 __Hnvrram 0 0 COMRAM 1 nvrram dist/default/debug\final.X.debug.o
 int_func 592 0 CODE 0 intcode_body dist/default/debug\final.X.debug.o
-__end_of_timer0_setups 624 0 CODE 0 text1 dist/default/debug\final.X.debug.o
+__end_of_timer0_setups 616 0 CODE 0 text1 dist/default/debug\final.X.debug.o
 __Lintentry 0 0 ABS 0 intentry dist/default/debug\final.X.debug.o
 __Hramtop 600 0 RAM 0 ramtop dist/default/debug\final.X.debug.o
 __Hrparam 0 0 COMRAM 1 rparam dist/default/debug\final.X.debug.o
 __activetblptr 0 0 ABS 0 - dist/default/debug\final.X.debug.o
 __Hstruct 0 0 COMRAM 1 struct dist/default/debug\final.X.debug.o
-___awdiv 368 0 CODE 0 text3 dist/default/debug\final.X.debug.o
+___awdiv 364 0 CODE 0 text3 dist/default/debug\final.X.debug.o
 __pintcode_body 592 0 CODE 0 intcode_body dist/default/debug\final.X.debug.o
 __Lbigbss 0 0 BIGRAM 1 bigbss dist/default/debug\final.X.debug.o
 __Lbigram 0 0 ABS 0 bigram dist/default/debug\final.X.debug.o
@@ -449,9 +448,9 @@ __Lcomram 0 0 ABS 0 comram dist/default/debug\final.X.debug.o
 __Lconfig 0 0 CONFIG 4 config dist/default/debug\final.X.debug.o
 __Lfarbss 0 0 FARRAM 0 farbss dist/default/debug\final.X.debug.o
 __Lfardata 0 0 FARRAM 0 fardata dist/default/debug\final.X.debug.o
-isa$std 1 0 ABS 0 - C:\Users\User\AppData\Local\Temp\xcAs167s.o
-stackhi 0 0 ABS 0 - C:\Users\User\AppData\Local\Temp\xcAs167s.o
-stacklo 0 0 ABS 0 - C:\Users\User\AppData\Local\Temp\xcAs167s.o
+isa$std 1 0 ABS 0 - C:\Users\User\AppData\Local\Temp\xcAsvas.o
+stackhi 0 0 ABS 0 - C:\Users\User\AppData\Local\Temp\xcAsvas.o
+stacklo 0 0 ABS 0 - C:\Users\User\AppData\Local\Temp\xcAsvas.o
 __Lintcode 8 0 CODE 0 intcode dist/default/debug\final.X.debug.o
 __Lintret 0 0 ABS 0 intret dist/default/debug\final.X.debug.o
 __Lirdata 0 0 CODE 0 irdata dist/default/debug\final.X.debug.o
@@ -459,43 +458,43 @@ __Lspace_0 0 0 ABS 0 - dist/default/debug\final.X.debug.o
 __Lspace_1 0 0 ABS 0 - dist/default/debug\final.X.debug.o
 __Lspace_2 0 0 ABS 0 - dist/default/debug\final.X.debug.o
 __Lspace_4 0 0 ABS 0 - dist/default/debug\final.X.debug.o
-__pbssCOMRAM 21 0 COMRAM 1 bssCOMRAM dist/default/debug\final.X.debug.o
+__pbssCOMRAM 20 0 COMRAM 1 bssCOMRAM dist/default/debug\final.X.debug.o
 __LcstackCOMRAM 0 0 ABS 0 cstackCOMRAM dist/default/debug\final.X.debug.o
-end_of_initialization 602 0 CODE 0 cinit dist/default/debug\final.X.debug.o
+end_of_initialization 5F4 0 CODE 0 cinit dist/default/debug\final.X.debug.o
 __Lnvrram 0 0 COMRAM 1 nvrram dist/default/debug\final.X.debug.o
 __Hintentry 0 0 ABS 0 intentry dist/default/debug\final.X.debug.o
-___awdiv@quotient 9 0 COMRAM 1 cstackCOMRAM dist/default/debug\final.X.debug.o
-?___awdiv 3 0 COMRAM 1 cstackCOMRAM dist/default/debug\final.X.debug.o
+___awdiv@quotient 8 0 COMRAM 1 cstackCOMRAM dist/default/debug\final.X.debug.o
+?___awdiv 2 0 COMRAM 1 cstackCOMRAM dist/default/debug\final.X.debug.o
 __Hreset_vec 4 0 CODE 0 reset_vec dist/default/debug\final.X.debug.o
 __Lramtop 600 0 RAM 0 ramtop dist/default/debug\final.X.debug.o
 __Lrparam 0 0 COMRAM 1 rparam dist/default/debug\final.X.debug.o
-__pcinit 5DA 0 CODE 0 cinit dist/default/debug\final.X.debug.o
-__ptext0 42C 0 CODE 0 text0 dist/default/debug\final.X.debug.o
-__ptext1 60C 0 CODE 0 text1 dist/default/debug\final.X.debug.o
+__pcinit 5CC 0 CODE 0 cinit dist/default/debug\final.X.debug.o
+__ptext0 428 0 CODE 0 text0 dist/default/debug\final.X.debug.o
+__ptext1 5FE 0 CODE 0 text1 dist/default/debug\final.X.debug.o
 __ptext2 12 0 CODE 0 text2 dist/default/debug\final.X.debug.o
-__ptext3 368 0 CODE 0 text3 dist/default/debug\final.X.debug.o
-__ptext4 54A 0 CODE 0 text4 dist/default/debug\final.X.debug.o
-__ptext6 4E4 0 CODE 0 text6 dist/default/debug\final.X.debug.o
+__ptext3 364 0 CODE 0 text3 dist/default/debug\final.X.debug.o
+__ptext4 546 0 CODE 0 text4 dist/default/debug\final.X.debug.o
+__ptext6 4E0 0 CODE 0 text6 dist/default/debug\final.X.debug.o
 __Lstruct 0 0 COMRAM 1 struct dist/default/debug\final.X.debug.o
-__ramtop 600 0 RAM 0 ramtop C:\Users\User\AppData\Local\Temp\xcAs167s.o
+__ramtop 600 0 RAM 0 ramtop C:\Users\User\AppData\Local\Temp\xcAsvas.o
 __Lpowerup E 0 CODE 0 powerup dist/default/debug\final.X.debug.o
 __Leeprom_data 0 0 EEDATA 0 eeprom_data dist/default/debug\final.X.debug.o
 __Lreset_vec 0 0 CODE 0 reset_vec dist/default/debug\final.X.debug.o
-___heap_hi 0 0 ABS 0 - C:\Users\User\AppData\Local\Temp\xcAs167s.o
-___heap_lo 0 0 ABS 0 - C:\Users\User\AppData\Local\Temp\xcAs167s.o
+___heap_hi 0 0 ABS 0 - C:\Users\User\AppData\Local\Temp\xcAsvas.o
+___heap_lo 0 0 ABS 0 - C:\Users\User\AppData\Local\Temp\xcAsvas.o
 ___param_bank 0 0 ABS 0 - dist/default/debug\final.X.debug.o
 __Hbigdata 0 0 BIGRAM 1 bigdata dist/default/debug\final.X.debug.o
-__end_of__initialization 602 0 CODE 0 cinit dist/default/debug\final.X.debug.o
-_player1 1F 0 COMRAM 1 nvCOMRAM dist/default/debug\final.X.debug.o
-_player2 1D 0 COMRAM 1 nvCOMRAM dist/default/debug\final.X.debug.o
+__end_of__initialization 5F4 0 CODE 0 cinit dist/default/debug\final.X.debug.o
+_player1 1E 0 COMRAM 1 nvCOMRAM dist/default/debug\final.X.debug.o
+_player2 1C 0 COMRAM 1 nvCOMRAM dist/default/debug\final.X.debug.o
 __Libigdata 0 0 CODE 0 ibigdata dist/default/debug\final.X.debug.o
-_servo_start$992 C 0 COMRAM 1 cstackCOMRAM dist/default/debug\final.X.debug.o
+_servo_start$992 B 0 COMRAM 1 cstackCOMRAM dist/default/debug\final.X.debug.o
 __Lclrtext 0 0 ABS 0 clrtext dist/default/debug\final.X.debug.o
 __pcstackCOMRAM 1 0 COMRAM 1 cstackCOMRAM dist/default/debug\final.X.debug.o
-__end_of_main 4E4 0 CODE 0 text0 dist/default/debug\final.X.debug.o
+__end_of_main 4E0 0 CODE 0 text0 dist/default/debug\final.X.debug.o
 _CCP2CONbits FBA 0 ABS 0 - dist/default/debug\final.X.debug.o
 __pintcode 8 0 CODE 0 intcode dist/default/debug\final.X.debug.o
-__end_of_check 54A 0 CODE 0 text6 dist/default/debug\final.X.debug.o
+__end_of_check 546 0 CODE 0 text6 dist/default/debug\final.X.debug.o
 _TMR0H FD7 0 ABS 0 - dist/default/debug\final.X.debug.o
 _TMR0L FD6 0 ABS 0 - dist/default/debug\final.X.debug.o
 _TRISC F94 0 ABS 0 - dist/default/debug\final.X.debug.o
@@ -508,9 +507,9 @@ __LRAM 1 0 ABS 0 - dist/default/debug\final.X.debug.o
 __Lbss 0 0 RAM 1 bss dist/default/debug\final.X.debug.o
 __Lram 0 0 ABS 0 ram dist/default/debug\final.X.debug.o
 __Lsfr 0 0 ABS 0 sfr dist/default/debug\final.X.debug.o
-_check 4E4 0 CODE 0 text6 dist/default/debug\final.X.debug.o
-__initialization 5DA 0 CODE 0 cinit dist/default/debug\final.X.debug.o
-__pdataCOMRAM 11 0 COMRAM 1 dataCOMRAM dist/default/debug\final.X.debug.o
+_check 4E0 0 CODE 0 text6 dist/default/debug\final.X.debug.o
+__initialization 5CC 0 CODE 0 cinit dist/default/debug\final.X.debug.o
+__pdataCOMRAM 10 0 COMRAM 1 dataCOMRAM dist/default/debug\final.X.debug.o
 _T2CONbits FCA 0 ABS 0 - dist/default/debug\final.X.debug.o
 __Hfardata 0 0 FARRAM 0 fardata dist/default/debug\final.X.debug.o
 __Hsmallconst 0 0 SMALLCONST 0 smallconst dist/default/debug\final.X.debug.o
@@ -542,9 +541,9 @@ __Hintcode E 0 CODE 0 intcode dist/default/debug\final.X.debug.o
 # and size are in units of delta. The file address is in units of bytes.
 # All other numeric quantities are in decimal.
 %SEGMENTS
-cstackCOMRAM 1 1 1 25 1
+cstackCOMRAM 1 1 1 24 1
 reset_vec 0 0 0 4 1
-intcode 0 8 8 628 1
+intcode 0 8 8 61A 1
 # %NOTES Section
 # This section contains data of all the note-psects.  The beginning of the section
 # is indicated by %NOTES. The first line indicates the name and decimal

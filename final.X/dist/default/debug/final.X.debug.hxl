@@ -11,12 +11,12 @@
 ### Memory Usage ###
  Intel Hex-file ranges:
   0h - 3h		(dist/default/debug\final.X.debug.hex)
-  8h - 62Fh		(dist/default/debug\final.X.debug.hex)
+  8h - 621h		(dist/default/debug\final.X.debug.hex)
   200000h - 200007h		(dist/default/debug\final.X.debug.hex)
   300000h - 30000Dh		(dist/default/debug\final.X.debug.hex)
  Unused ranges:
   4h - 7h
-  630h - 1FFFFFh
+  622h - 1FFFFFh
   200008h - 2FFFFFh
 
 ### Hex Memory Map ###
@@ -124,7 +124,7 @@
 000005F0 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
 00000600 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
 00000610 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
-00000620 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+00000620 | H1 H1 -- -- -- -- -- -- -- -- -- -- -- -- -- --
 ----------------------------------------------------------
 00200000 | H1 H1 H1 H1 H1 H1 H1 H1 -- -- -- -- -- -- -- --
 ----------------------------------------------------------

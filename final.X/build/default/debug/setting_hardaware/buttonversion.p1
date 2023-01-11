@@ -1,10 +1,6 @@
 Version 4.0 HI-TECH Software Intermediate Code
 [t ~ __interrupt . k ]
 [t T41 __interrupt ]
-[v F192 `(v ~T0 @X0 1 tf1`ul ]
-"12 C:\Program Files\Microchip\xc8\v2.40\pic\include\builtins.h
-[v __delay `JF192 ~T0 @X0 0 e ]
-[p i __delay ]
 "6699 C:\Program Files\Microchip\xc8\v2.40\pic\include\proc\pic18f4520.h
 [; ;C:\Program Files\Microchip\xc8\v2.40\pic\include\proc\pic18f4520.h: 6699:     struct {
 [s S275 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
@@ -156,8 +152,12 @@ Version 4.0 HI-TECH Software Intermediate Code
 "1314
 [; ;C:\Program Files\Microchip\xc8\v2.40\pic\include\proc\pic18f4520.h: 1314: extern volatile unsigned char LATD __attribute__((address(0xF8C)));
 [v _LATD `Vuc ~T0 @X0 0 e@3980 ]
+[v F192 `(v ~T0 @X0 1 tf1`ul ]
+"12 C:\Program Files\Microchip\xc8\v2.40\pic\include\builtins.h
+[v __delay `JF192 ~T0 @X0 0 e ]
+[p i __delay ]
 [p mainexit ]
-"2144
+"2144 C:\Program Files\Microchip\xc8\v2.40\pic\include\proc\pic18f4520.h
 [; ;C:\Program Files\Microchip\xc8\v2.40\pic\include\proc\pic18f4520.h: 2144: extern volatile unsigned char TRISD __attribute__((address(0xF95)));
 [v _TRISD `Vuc ~T0 @X0 0 e@3989 ]
 "55 C:\Program Files\Microchip\xc8\v2.40\pic\include\proc\pic18f4520.h
@@ -638,9 +638,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 [e :U _COMP_ISR ]
 [f ]
-"25
-[; ;setting_hardaware/buttonversion.c: 25:     check();
-[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
 "26
 [; ;setting_hardaware/buttonversion.c: 26: 
 [e = . . _INTCONbits 0 4 -> -> 0 `i `uc ]
@@ -749,10 +746,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;setting_hardaware/buttonversion.c: 65:     CCP1CONbits.DC1B = (1450/32)%4;
 [e = . . _OSCCONbits 0 3 -> -> 1 `i `uc ]
 "67
-[; ;setting_hardaware/buttonversion.c: 67:     CCPR2L = 500/32/4;
+[; ;setting_hardaware/buttonversion.c: 67:     CCPR2L = 1100/32/4;
 [e = . . _CCP1CONbits 0 0 -> -> 12 `i `uc ]
 "68
-[; ;setting_hardaware/buttonversion.c: 68:     CCP2CONbits.DC2B = (500/32)%4;
+[; ;setting_hardaware/buttonversion.c: 68:     CCP2CONbits.DC2B = (1100/32)%4;
 [e = . . _CCP2CONbits 0 0 -> -> 12 `i `uc ]
 "70
 [; ;setting_hardaware/buttonversion.c: 70: 
@@ -771,10 +768,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = . . _CCP1CONbits 0 1 -> % / -> 1450 `i -> 32 `i -> 4 `i `uc ]
 "78
 [; ;setting_hardaware/buttonversion.c: 78:     T0CONbits.T0PS = 0b111;
-[e = _CCPR2L -> / / -> 500 `i -> 32 `i -> 4 `i `uc ]
+[e = _CCPR2L -> / / -> 1100 `i -> 32 `i -> 4 `i `uc ]
 "79
 [; ;setting_hardaware/buttonversion.c: 79: 
-[e = . . _CCP2CONbits 0 1 -> % / -> 500 `i -> 32 `i -> 4 `i `uc ]
+[e = . . _CCP2CONbits 0 1 -> % / -> 1100 `i -> 32 `i -> 4 `i `uc ]
 "80
 [; ;setting_hardaware/buttonversion.c: 80: 
 [e :UE 290 ]
@@ -1016,10 +1013,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;setting_hardaware/buttonversion.c: 156:     T0CONbits.TMR0ON = 0;
 [e = _CCPR1L -> / / _j -> 32 `i -> 4 `i `uc ]
 "157
-[; ;setting_hardaware/buttonversion.c: 157:     CCPR2L = 1450/32/4;
+[; ;setting_hardaware/buttonversion.c: 157:     CCPR2L = 2200/32/4;
 [e = . . _CCP1CONbits 0 1 -> % / _j -> 32 `i -> 4 `i `uc ]
 "158
-[; ;setting_hardaware/buttonversion.c: 158:     CCP2CONbits.DC2B = (1450/32)%4;
+[; ;setting_hardaware/buttonversion.c: 158:     CCP2CONbits.DC2B = (2200/32)%4;
 [e =- _j -> 100 `i ]
 "159
 [; ;setting_hardaware/buttonversion.c: 159: }
@@ -1062,10 +1059,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = . . _T0CONbits 0 5 -> -> 0 `i `uc ]
 "168
 [; ;setting_hardaware/buttonversion.c: 168:         player2 = 0;
-[e = _CCPR2L -> / / -> 1450 `i -> 32 `i -> 4 `i `uc ]
+[e = _CCPR2L -> / / -> 2200 `i -> 32 `i -> 4 `i `uc ]
 "169
 [; ;setting_hardaware/buttonversion.c: 169:         while(INTCON3bits.INT2IF != 1);
-[e = . . _CCP2CONbits 0 1 -> % / -> 1450 `i -> 32 `i -> 4 `i `uc ]
+[e = . . _CCP2CONbits 0 1 -> % / -> 2200 `i -> 32 `i -> 4 `i `uc ]
 "170
 [; ;setting_hardaware/buttonversion.c: 170:         INTCON3bits.INT2IE = 0;
 [e :UE 292 ]

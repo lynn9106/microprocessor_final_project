@@ -8,8 +8,8 @@
 #pragma config LVP = OFF        // Low Voltage (single -supply) In-Circute Serial Pragramming Enable bit
 #pragma config CPD = OFF        // Data EEPROM?Memory Code Protection bit (Data EEPROM code protection off)
 #define _XTAL_FREQ 4000000
-#define HAND_INIT 500
-#define HAND_END 1450
+#define HAND_INIT 1100
+#define HAND_END 2200
 #define BASE_INIT 1450
 #define player1hit 500
 #define player2hit 2400
@@ -22,7 +22,7 @@ int player1=0;
 int player2=0;
 void check();
 void __interrupt() COMP_ISR(void){
-    __delay_ms(10);
+    //__delay_ms(1);
     INTCONbits.INT0IE = 0;
     INTCON3bits.INT1IE = 0;
     if(INTCONbits.INT0IF == 1){
