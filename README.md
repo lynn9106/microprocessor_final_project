@@ -20,3 +20,8 @@
 在遊戲過程中，不論是哪一個按鈕被觸發都會判斷當前是誰按的次數較少，會驅動伺服馬達往那個人的方向轉。
 * 按鈕控制遊戲及背景音樂開始  
 有一個按鈕控制砸派機及音樂撥放器，按下按鈕即遊戲開始，兩顆伺服馬達回到預設位置、蜂鳴器播放音樂，遊戲結束後再次按下按鈕會直接重新開始
+
+## 裝置圖片
+<div align=center>
+<img src="https://github.com/lynn9106/microprocessor_final_project/blob/main/%E8%A3%9D%E7%BD%AE%E4%BB%8B%E7%B4%B9%E5%9C%96.png" height="800px" width="600px" />
+</div>div>
